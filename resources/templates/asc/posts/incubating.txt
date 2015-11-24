@@ -1,0 +1,2 @@
+for f in * ; do title=$(grep title= $f | cut -f2 -d=) ; cat <(sed -e "s/TITLE/$title/"
+title-template.edn) <(sed -e '/^[a-z]*=.*$/d' -e '/^~/d' $f) > fixed-meta/$f ; done

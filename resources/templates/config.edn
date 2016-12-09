@@ -6,7 +6,7 @@
  :tag-root           "tags"
  :page-root          "pages"
  :blog-prefix        ""
- :rss-name           "rss.xml"
+ :rss-name           "feed.xml"
  :rss-filters        []
  :recent-posts       3
  :post-date-format   "yyyy-MM-dd"

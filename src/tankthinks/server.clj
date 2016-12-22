@@ -1,4 +1,4 @@
-(ns cryogen.server
+(ns tankthinks.server
   (:require [compojure.core :refer [GET defroutes]]
             [compojure.route :as route]
             [ring.util.response :refer [redirect]]

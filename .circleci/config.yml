@@ -1,10 +1,13 @@
+defaults: &defaults
+  working_directory: ~/tankthinks.net
+
 version: 2
 jobs:
   build:
+    <<: *defaults
     docker:
       - image: clojure:lein-2.7.1-alpine
 
-    working_directory: ~/tankthinks.net
     steps:
       - checkout
 
@@ -13,5 +16,29 @@ jobs:
           command: |
             lein run
 
-      - store_artifacts:
-          path: ~/tankthinks.net/resources/public
+      - persist_to_workspace:
+          root: resources/public
+
+  deploy:
+    <<: *defaults
+    docker:
+      - image: mesosphere/aws-cli:latest
+
+    steps:
+      - attach_workspace:
+          at: resources/public
+
+      - run:
+        name: Deploy to s3
+        command: |
+          aws -v
+
+workflows:
+  version: 2
+
+  btd:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build

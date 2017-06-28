@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: clojure:lein-2.7.1-alpine
 
-    working_directory: /tmp
+    working_directory: ~/tankthinks.net
     steps:
       - checkout
       - run:

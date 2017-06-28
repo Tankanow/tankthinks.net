@@ -7,12 +7,16 @@ jobs:
     working_directory: ~/tankthinks.net
     steps:
       - checkout
+
+      - run:
+          name: Cache Dependencies
+          command: |
+            lein deps
+
       - run:
           name: Create Static Website
           command: |
-            pwd;
-            ls -lart;
             lein run
 
       - store_artifacts:
-          path: /tmp/public/resources
+          path: ~/tankthinks.net/public/resources

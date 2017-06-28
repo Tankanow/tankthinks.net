@@ -17,7 +17,9 @@ jobs:
             lein run
 
       - persist_to_workspace:
-          root: resources/public
+          root: resources
+          paths:
+            - public
 
   deploy:
     <<: *defaults
@@ -26,7 +28,7 @@ jobs:
 
     steps:
       - attach_workspace:
-          at: resources/public
+          at: resources
 
       - run:
         name: Deploy to s3

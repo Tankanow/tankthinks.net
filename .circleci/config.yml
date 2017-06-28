@@ -4,7 +4,6 @@ jobs:
     docker:
       - image: clojure:lein-2.7.1-alpine
 
-    working_directory: /tmp
     steps:
       - run:
           name: Create Static Website

@@ -14,4 +14,4 @@ jobs:
             lein run
 
       - store_artifacts:
-          path: ~/tankthinks.net/public/resources
+          path: ~/tankthinks.net/resources/public

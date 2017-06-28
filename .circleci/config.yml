@@ -14,7 +14,10 @@ jobs:
       - run:
           name: Create Static Website
           command: |
-            lein run
+            lein run;
+            pwd;
+            ls -lart;
+            ls -lart resources/public;
 
       - persist_to_workspace:
           root: resources

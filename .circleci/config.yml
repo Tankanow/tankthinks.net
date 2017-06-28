@@ -20,6 +20,7 @@ jobs:
             ls -lart resources/public;
 
       - persist_to_workspace:
+          root: workspace
           paths:
             - resources/public
 
@@ -30,7 +31,7 @@ jobs:
 
     steps:
       - attach_workspace:
-          at: resources/public
+          at: workspace
 
       - run:
         name: Deploy to s3

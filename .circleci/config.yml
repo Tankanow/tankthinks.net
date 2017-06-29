@@ -1,40 +1,68 @@
-defaults: &defaults
-  working_directory: /tmp
-  docker:
-    - image: buildpack-deps:jessie
+version: 2.0
 
-version: 2
+defaults: &defaults
+  working_directory: ~/tankthinks.net
+
 jobs:
-  build:
+  checkout_code:
     <<: *defaults
+    docker:
+      - image: circleci/clojure:lein-2.7.1
     steps:
-      - run: mkdir -p workspace
-      - run: echo "Hello, world!" > workspace/echo-output
+      - checkout
+      - run: |
+        echo $PWD
+        ls -aslh .
+        ls -aslh ~
+        ls -aslh ~/tankthinks.net
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  build_site:
+    <<: *defaults
+    docker:
+      - image: circleci/clojure:lein-2.7.1
+    steps:
+      - attach_workspace:
+          at: ~/tankthinks.net
+
+      - run: lein run
 
       - persist_to_workspace:
-          root: workspace
+          root: .
           paths:
-            - echo-output
+            - resources/public
 
   deploy:
     <<: *defaults
+    machine:
+        enabled: true
+
     steps:
       - attach_workspace:
-          at: /tmp/workspace
-
-      - run: |
-          if [[ `cat /tmp/workspace/echo-output` == "Hello, world!" ]]; then
-            echo "It worked!";
-          else
-            echo "Nope!"; exit 1
-          fi
+          at: ~/tankthinks.net/resources/public
+      - run:
+          name: Are my assets here?
+          command: |
+            pwd
+            ls -lrt
+            
+      - run:
+          name: Is awscli here?
+          command: |
+            aws -v
 
 workflows:
   version: 2
-
-  btd:
+  build-and-deploy:
     jobs:
-      - build
+      - checkout_code
+      - build_site:
+          requires:
+            - checkout_code
       - deploy:
           requires:
-            - build
+            - checkout_code
+            - build_site

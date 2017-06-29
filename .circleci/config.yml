@@ -2,7 +2,7 @@ version: 2.0
 
 jobs:
   checkout_code:
-    working_directory: /tmp
+    working_directory: ~/tmp
     docker:
       - image: circleci/clojure:lein-2.7.1
     steps:
@@ -13,19 +13,19 @@ jobs:
             echo $PWD
             ls -aslh .
             ls -aslh ~
-            ls -aslh /tmp
+            ls -aslh ~/tmp
       - persist_to_workspace:
           root: .
           paths:
             - .
 
   build_site:
-    working_directory: /tmp
+    working_directory: ~/tmp
     docker:
       - image: circleci/clojure:lein-2.7.1
     steps:
       - attach_workspace:
-          at: /tmp
+          at: ~/tmp
 
       - run:
           name: build
@@ -38,13 +38,13 @@ jobs:
             - resources/public
 
   deploy:
-    working_directory: /tmp
+    working_directory: ~/tmp
     machine:
         enabled: true
 
     steps:
       - attach_workspace:
-          at: /tmp/resources/public
+          at: ~/tmp/resources/public
 
       - run:
           name: Are my assets here?

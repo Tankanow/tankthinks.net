@@ -1,45 +1,40 @@
 defaults: &defaults
-  working_directory: ~/tankthinks.net
+  working_directory: /tmp
+  docker:
+    - image: buildpack-deps:jessie
 
 version: 2
 jobs:
-  build:
+  flow:
     <<: *defaults
-    docker:
-      - image: clojure:lein-2.7.1-alpine
-
     steps:
-      - checkout
-
-      - run: lein run
       - run: mkdir -p workspace
-      - run: cp -rv resources/public workspace/
-          
+      - run: echo "Hello, world!" > workspace/echo-output
+
       - persist_to_workspace:
           root: workspace
           paths:
-            - public
+            - echo-output
 
-  deploy:
+  downstream:
     <<: *defaults
-    docker:
-      - image: mesosphere/aws-cli:latest
-
     steps:
       - attach_workspace:
-          at: workspace
+          at: /tmp/workspace
 
-      - run:
-        name: Deploy to s3
-        command: |
-          aws -v
+      - run: |
+          if [[ `cat /tmp/workspace/echo-output` == "Hello, world!" ]]; then
+            echo "It worked!";
+          else
+            echo "Nope!"; exit 1
+          fi
 
 workflows:
   version: 2
 
   btd:
     jobs:
-      - build
-      - deploy:
+      - flow
+      - downstream:
           requires:
-            - build
+            - flow

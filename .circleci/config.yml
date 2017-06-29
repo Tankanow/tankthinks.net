@@ -7,11 +7,13 @@ jobs:
       - image: circleci/clojure:lein-2.7.1
     steps:
       - checkout
-      - run: |
-        echo $PWD
-        ls -aslh .
-        ls -aslh ~
-        ls -aslh ~/tankthinks.net
+      - run:
+          name: post checkout check
+          command: |
+            echo $PWD
+            ls -aslh .
+            ls -aslh ~
+            ls -aslh ~/tankthinks.net
       - persist_to_workspace:
           root: .
           paths:
@@ -25,7 +27,10 @@ jobs:
       - attach_workspace:
           at: ~/tankthinks.net
 
-      - run: lein run
+      - run:
+          name: build
+          command: |
+            lein run
 
       - persist_to_workspace:
           root: .
@@ -40,6 +45,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/tankthinks.net/resources/public
+
       - run:
           name: Are my assets here?
           command: |

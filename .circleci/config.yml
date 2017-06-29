@@ -1,11 +1,8 @@
 version: 2.0
 
-defaults: &defaults
-  working_directory: ~/tankthinks.net
-
 jobs:
   checkout_code:
-    <<: *defaults
+    working_directory: ~/tankthinks.net
     docker:
       - image: circleci/clojure:lein-2.7.1
     steps:
@@ -21,7 +18,7 @@ jobs:
             - .
 
   build_site:
-    <<: *defaults
+    working_directory: ~/tankthinks.net
     docker:
       - image: circleci/clojure:lein-2.7.1
     steps:
@@ -36,7 +33,7 @@ jobs:
             - resources/public
 
   deploy:
-    <<: *defaults
+    working_directory: ~/tankthinks.net
     machine:
         enabled: true
 

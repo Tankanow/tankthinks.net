@@ -5,7 +5,7 @@ defaults: &defaults
 
 version: 2
 jobs:
-  flow:
+  build:
     <<: *defaults
     steps:
       - run: mkdir -p workspace
@@ -16,7 +16,7 @@ jobs:
           paths:
             - echo-output
 
-  downstream:
+  deploy:
     <<: *defaults
     steps:
       - attach_workspace:
@@ -34,7 +34,7 @@ workflows:
 
   btd:
     jobs:
-      - flow
-      - downstream:
+      - build
+      - deploy:
           requires:
-            - flow
+            - build

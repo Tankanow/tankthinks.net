@@ -19,7 +19,7 @@ jobs:
           key: tankthinks.net-{{ checksum "project.clj" }}
       - run: lein do run
       - persist_to_workspace:
-          root: /tmp/public
+          root: workspace
           path: resources/public
 
   deploy:
@@ -28,13 +28,13 @@ jobs:
     working_directory: ~/tankthinks.net
     steps:
       - attach_workspace:
-          at: /tmp/public
+          at: /tmp/workspace
       - run:
           name: Install awscli
           command: sudo pip install awscli
       - run:
           name: Deploy to S3
-          command: aws s3 sync /tmp/public/ s3://tankthinks.net/
+          command: aws s3 sync /tmp/workspace/public/ s3://tankthinks.net/
 
 workflows:
   version: 2

@@ -18,7 +18,7 @@ jobs:
             - ~/.m2
           key: tankthinks.net-{{ checksum "project.clj" }}
       - run: lein do run
-      - run: ls -lrt resources
+      - run: pwd && ls -lrt resources
       - persist_to_workspace:
           root: ./resources
           path: public

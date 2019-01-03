@@ -1,5 +1,6 @@
 version: 2
 jobs:
+
   build:
     working_directory: ~/tankthinks.net
     docker:
@@ -20,3 +21,27 @@ jobs:
       - store_artifacts:
           path: resources/public
           destination: public
+
+  deploy:
+    docker:
+      - image: circleci/python:2.7-jessie
+    working_directory: ~/tankthinks.net
+    steps:
+      - run:
+          name: Install awscli
+          command: sudo pip install awscli
+      - run:
+          name: Deploy to S3
+          command: aws s3 sync public/ s3://tankthinks.net/
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

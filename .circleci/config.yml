@@ -19,8 +19,8 @@ jobs:
           key: tankthinks.net-{{ checksum "project.clj" }}
       - run: lein do run
       - persist_to_workspace:
-          root: workspace
-          path: resources/public
+          root: ~/tankthinks.net/resources
+          path: public
 
   deploy:
     docker:

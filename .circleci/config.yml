@@ -18,7 +18,6 @@ jobs:
             - ~/.m2
           key: tankthinks.net-{{ checksum "project.clj" }}
       - run: lein do run
-      - run: pwd && ls -lrt ./ && ls -lrt ./resources/
       - persist_to_workspace:
           root: ~/tankthinks.net
           paths:
@@ -36,7 +35,7 @@ jobs:
           command: sudo pip install awscli
       - run:
           name: Deploy to S3
-          command: aws s3 sync /tmp/workspace/public/ s3://tankthinks.net/
+          command: cd /tmp/workspace/resources/public/ && aws s3 sync . s3://tankthinks.net/
 
 workflows:
   version: 2

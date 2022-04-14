@@ -1,0 +1,25 @@
+{:title "Surely You're Joking Mr. Feynman" :layout :post :tags ["cuwab" "booknote"] :toc true}
+
+![Surely You're Joking](/img/20160110_surelyyourejoking.jpg)
+
+In his episodic memoir [Surely You're Joking, Mr. Feynman](http://www.amazon.com/gp/product/0393316041?keywords=surely%20you're%20joking&qid=1452476231&ref_=sr_1_1&sr=8-1), Richard Feynman wisks you away on his adventures through life, physics, music, art, love and - of course - safe-cracking.
+
+Feynman greatest gifts are curiosity and honesty; these are what make the man, and his books, resonate today as if each of us were students in one of his passionate lectures at Caltech. Feynman teaches us *not* to accept face value:
+
+> This is all amateurish; everyone knows the answer, but *I* didn't know the answer.
+
+Feynman was honest, even as he played intellectual games with ... well ... everyone: peers, colleagues, professors, generals, and friends. None of his fraternity brothers at MIT believed him when he confessed to stealing a roomate's door and hiding it behind the boiler in the basement, causing Feynman to muse:
+
+> I'm usually honest in a certain way, in such a way that no one believes me.
+
+He believed that science requires experimentation, and that if you are going to test you must publish your results, whether they support your hypothesis or not. He wanted to [take the bologna out of science](http://www.ted.com/talks/leonard_susskind_my_friend_richard_feynman).
+
+For this honesty, he was sought out by the greatest minds of science. One anectode tells of Neils Bohr's son finding Feynman to discuss theories with Neils before the *big* discussion with the "great minds" because Neils knew that only Feynman would speak his mind truly without "yes yes"ing the great Danish Physicist.
+
+Feynman worked on the Manhatten project at Los Alamos, where aside from helping develop the atomic bomb he became an amateur safe-cracker, taking extreme pleasure in showing colleagues and generals how flaccid was the security of their secrets. But he also travelled to Brazil twice, teaching physics while becoming a Carnival playing Samba percussionist. After taking a position teaching at Caltech, he became interested in art and gave at least one successful showing of his nude portraits. Feynman won the Nobel Prize in Physics in 1965 - an award that he tried to refuse, accepting it only after realizing that he would be *more* famous if his refusal was successful. Later in life he experimented with altered states and lucid dreaming. He was always testing a theory, perpetually curious regarding every aspect of life:
+
+> I have to understand the world, you see.
+
+His curiosity only dwarfed by his integrity. He often turned down financial rewards to maintain his freedom. At the Caltech 1974 commencement address, he had but one wish for the graduates:
+
+> I have just one wish for you - the good luck to be somewhere where you are free to maintain the kind of integrity I have described, and where you do not feel forced by a need to maintain your position in the organization, or financial support, or so on, to lose your integrity. May you have that freedom.

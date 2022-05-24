@@ -1,0 +1,29 @@
+name: deploy
+
+on: [push]
+
+permissions:
+ id-token: write
+ contents: read  # This is required for actions/checkout@v2
+
+jobs:
+ aws:
+   runs-on: ubuntu-latest
+
+   env:
+     AWS_DEFAULT_REGION: us-east-1
+
+   steps:
+   - name: configureawscredentials
+     uses: aws-actions/configure-aws-credentials@v1
+     with:
+       role-to-assume: arn:aws:iam::540063184503:role/tankthinks-core-infrastructure-GithubActionsRole-104U5GSUL1J5A
+       role-session-name: github-role-session
+       aws-region: us-east-1
+
+   - name: Checkout
+     uses: actions/checkout@v2
+
+   - name: Some AWS commands
+     run: |
+       aws sts get-caller-identity

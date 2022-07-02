@@ -1,0 +1,168 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  tankthinks-core-infrastructure
+
+  Sample SAM Template for tankthinks-core-infrastructure
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+# Globals:
+Parameters:
+  Domain:
+    Type: String
+
+  HostedZoneId:
+    Type: String
+
+Resources:
+  # S3 START
+  WebsiteBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: new.tankthinks.net
+      AccessControl: Private
+      VersioningConfiguration:
+        Status: Enabled
+
+  LogsBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      AccessControl: LogDeliveryWrite
+      BucketName: new.tankthinks.net-weblogs
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      VersioningConfiguration:
+        Status: Enabled
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: True
+        BlockPublicPolicy: True
+        IgnorePublicAcls: True
+        RestrictPublicBuckets: True
+
+  WebsiteBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref WebsiteBucket
+      PolicyDocument:
+        Statement:
+          - Sid: PublicReadGetObject
+            Effect: Allow
+            Principal:
+              CanonicalUser: !GetAtt WebsiteBucketOAI.S3CanonicalUserId
+            Action:
+              - s3:GetObject
+            Resource: !Sub 'arn:aws:s3:::${WebsiteBucket}/*'
+  # S3 END
+
+  # CloudFront START
+  WebsiteBucketOAI:
+    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: 'new.tankthinks.net bucket OAI'
+
+  DefaultCachePolicy:
+    Type: AWS::CloudFront::CachePolicy
+    Properties:
+      CachePolicyConfig:
+        Comment: Default Tankthinks Cache Policy
+        DefaultTTL: 86400
+        MaxTTL: 172800
+        MinTTL: 1
+        Name: TankthinksDefaultCachePolicy
+        ParametersInCacheKeyAndForwardedToOrigin:
+          CookiesConfig:
+            CookieBehavior: none
+          EnableAcceptEncodingBrotli: true
+          EnableAcceptEncodingGzip: true
+          HeadersConfig:
+            HeaderBehavior: none
+          QueryStringsConfig:
+            QueryStringBehavior: none
+
+  Distribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Aliases:
+          - !Ref Domain
+        PriceClass: PriceClass_All
+        Origins:
+          - DomainName: !GetAtt WebsiteBucket.DomainName
+            Id: WebsiteBucket
+            S3OriginConfig:
+              OriginAccessIdentity: !Sub 'origin-access-identity/cloudfront/${WebsiteBucketOAI}'
+        Enabled: true
+        Comment: 'CloudFront Distribution for tankthinks.net'
+        DefaultRootObject: index.html
+        DefaultCacheBehavior:
+          CachePolicyId: !GetAtt DefaultCachePolicy.Id
+          AllowedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+          CachedMethods:
+            - HEAD
+            - GET
+          TargetOriginId: WebsiteBucket
+          ViewerProtocolPolicy: redirect-to-https
+        ViewerCertificate:
+          AcmCertificateArn: !Ref Certificate
+          SslSupportMethod: 'sni-only'
+          MinimumProtocolVersion: TLSv1.2_2021
+        Logging:
+          IncludeCookies: false
+          Bucket: !Sub '${LogsBucket}.s3.amazonaws.com'
+          Prefix: cloudfront
+        WebACLId: !GetAtt WebACL.Arn
+  # CloudFront END
+
+  # ACM START
+  Certificate:
+    Type: AWS::CertificateManager::Certificate
+    Properties:
+      DomainName: !Ref Domain
+      ValidationMethod: DNS
+
+  # ACM END
+
+  # Route53 START
+  # HostedZone:
+  #   Type: AWS::Route53::HostedZone
+  #   Properties:
+  #     Name: !Ref Domain
+
+  Route53ApiEntry:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      AliasTarget:
+        DNSName: !GetAtt Distribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2
+      Comment: 'Alias for Tankthinks Net behind CloudFront'
+      HostedZoneId: !Ref HostedZoneId
+      Name: !Ref Domain
+      Type: A
+  # Route53 END
+
+  # WAF START
+  WebACL:
+    Type: AWS::WAFv2::WebACL
+    Properties:
+      Name: TankthinksNetACL
+      Scope: CLOUDFRONT
+      Description: 'tankthinks.net ACL'
+      DefaultAction:
+        Allow: {}
+      VisibilityConfig:
+        SampledRequestsEnabled: true
+        CloudWatchMetricsEnabled: true
+        MetricName: TankthinksNetACLMetric
+  # WAF END
+
+Outputs:
+  DistributionDomainName:
+    Value: !GetAtt Distribution.DomainName
+  DistributionId:
+    Value: !Ref Distribution

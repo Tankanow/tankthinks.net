@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Tank Thinks: Run Length Decoding</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+    <link href="/css/asciidoc.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1><a class="navbar-brand" href="/index.html">Tank Thinks</a></h1>
+            </div>
+            <!-- nav links -->
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li ><a href="/index.html">Home</a></li>
+                    <li ><a href="/archives.html">Archives</a></li>
+                    
+                    <li><a href="/feed.xml">RSS</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div id="wrapper" class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="content">
+                
+<div id="post">
+    <div id="post-header">
+    <h2>Run Length Decoding</h2>
+    <div id="post-meta">
+        
+    </div>
+</div>
+<div>
+    
+    <div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>&#8230;&#8203;an idea is no more an even relatively constant thing than is a feeling or emotion or volitional process. There exist only changing and transient ideational processes; there are no permanent ideas that return again and disappear again.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Wilhelm Wundt<br>
+<cite>An Introduction to Psychology</cite>
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Complexity and Likeablity</div>
+<p>Wilhelm Wundt is famous for his many contributions to psychology. I have been interested in one particular contribution of his for many years now: the Wundt Curve. The Wundt Curve is a Bell-like curve laying on the x and y axes of Complexity and Likeability. The Wundt Curve shows how we like things to be more complex to a point (the apex of the curve) at which point any more complexity results in a decrease in likeability. The Wundt Curve plays nicely both into Clojure and the Run-Length encoding problem - <a href="http://www.ic.unicamp.br/~meidanis/courses/mc336/2006s2/funcional/L-99_Ninety-Nine_Lisp_Problems.html"># 12 in 99 Lisp Problems</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">Clojure</div>
+<p>First, since I would prefer not to incure the wrath of Rich Hickey, I must clearly state that the complexity I spoke of in the previous paragraph is not the complexity Rich spoke of in his seminal presentation <a href="http://www.infoq.com/presentations/Simple-Made-Easy">Simple Made Easy</a>. In fact, just to make things clear I won&#8217;t use the word complexity anymore - suffice to say that we are talking about novelty here and not something consisting of interwoven parts.</p>
+</div>
+<div class="paragraph">
+<p>I love Clojure. It is simply beautiful. For the other Comp Sci students like me that learned assembly and C rather than Lisp, it certainly has novelty in syntax, but over time, the Clojure student realizes that this novelty sits nicely in a spot that is very likeable. Beyond the syntax, the budding Clojurist realizes that the language is filled with beautiful data structures, ubiquitous interfaces (protocols) and a simple power that is <em>both</em> novel and very likeable indeed.</p>
+</div>
+<div class="paragraph">
+<div class="title">Information Theory</div>
+<p>The Wundt curve always makes me think of Information Theory, of entropy and bits and data compression. Run length encoding is a simple form of lossless compression where the encoder reduces the size of an input sequence by representing repeating input elements as a tuple of the element and the count of the "run", for example we can encode the following input sequence <code>[:a :a :a :a :b :b :b :c :c]</code> as <code>[(4 :a) (3 :b) (2 :c)]</code> reducing our input by 33%.</p>
+</div>
+<div class="paragraph">
+<p>Problem 12 in the 99 Lisp Problems concerns writing a run-length <em>decoder</em>. A very simple way to write this in Clojure is:</p>
+</div>
+<pre class="brush: clojure">
+(defn rl-decode
+  [xs]
+  (->> xs
+    (map #(if (coll? %)
+            (let [n (first %)
+                  x (second %)]
+              (repeat n x))
+            %))
+    flatten))
+</pre>
+<div class="paragraph">
+<p>First we thread our input collection <code>xs</code> into <code>map</code> with an anonymous function that either (a) returns the element unchanged or if the element is itself a collection (b) takes the first element as the count and the second element as the item to be repeated and does just that. Finally, thread that output to <code>flatten</code>, which could probably be replaced with better use of <code>mapcat</code>.</p>
+</div>
+<div class="paragraph">
+<p>In any case, this is an elegent simple concise solution to an elegant simple concise problem. Huzzah.</p>
+</div>
+</div>
+<div class="date">March 17, 2014</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/cryogen.html">cryogen</a>
+    
+    <a href="/asciidoc.html">asciidoc</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/posts/2014-03-30-microservices-1.html">&laquo; Microservices 1</a>
+        
+        
+        ||
+        
+        
+        <a href="/posts/2014-03-12-just-enough-design.html">Just Enough Design &raquo;</a>
+        
+    </div>
+
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//tankthinks.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+
+
+</div>
+
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div id="sidebar">
+                    <h3>Links</h3>
+                    <ul id="links">
+                        
+                    </ul>
+                    <div id="recent">
+                        <h3>Recent Posts</h3>
+                        <ul>
+                        
+                        <li><a href="/posts/2016-12-23-arachne.html">Arachne</a></li>
+                        
+                        <li><a href="/posts/2016-12-21-research-group-introduction.html">Research Group Introduction and Application</a></li>
+                        
+                        <li><a href="/posts/2016-12-07-introduction-to-clojure.html">Introduction to Clojure</a></li>
+                        
+                        </ul>
+                    </div>
+                    <div id="tags">
+                        <h3>Tags</h3>
+                        <ul>
+                        
+                        <li><a href="/dynamic.html">dynamic</a></li>
+                        
+                        <li><a href="/static.html">static</a></li>
+                        
+                        <li><a href="/cryogen.html">cryogen</a></li>
+                        
+                        <li><a href="/learning.html">learning</a></li>
+                        
+                        <li><a href="/clojure.html">clojure</a></li>
+                        
+                        <li><a href="/aws.html">aws</a></li>
+                        
+                        <li><a href="/3tilt.html">3tilt</a></li>
+                        
+                        <li><a href="/booknote.html">booknote</a></li>
+                        
+                        <li><a href="/failure.html">failure</a></li>
+                        
+                        <li><a href="/asciidoc.html">asciidoc</a></li>
+                        
+                        <li><a href="/languages.html">languages</a></li>
+                        
+                        <li><a href="/presentation.html">presentation</a></li>
+                        
+                        <li><a href="/brain.html">brain</a></li>
+                        
+                        <li><a href="/docker.html">docker</a></li>
+                        
+                        <li><a href="/cuwab.html">cuwab</a></li>
+                        
+                        <li><a href="/sketchnote.html">sketchnote</a></li>
+                        
+                        <li><a href="/clojure-conj-2015.html">clojure-conj-2015</a></li>
+                        
+                        <li><a href="/research-group.html">research-group</a></li>
+                        
+                        <li><a href="/arachne.html">arachne</a></li>
+                        
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>Copyright &copy; 2014 BLOGAWESOME
+            <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+    </div>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="/js/highlight.pack.js" type="text/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Tank Thinks: I wonder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+    <link href="/css/asciidoc.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1><a class="navbar-brand" href="/index.html">Tank Thinks</a></h1>
+            </div>
+            <!-- nav links -->
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li ><a href="/index.html">Home</a></li>
+                    <li ><a href="/archives.html">Archives</a></li>
+                    
+                    <li><a href="/feed.xml">RSS</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div id="wrapper" class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="content">
+                
+<div id="post">
+    <div id="post-header">
+    <h2>I wonder</h2>
+    <div id="post-meta">
+        
+    </div>
+</div>
+<div>
+    
+    <div class="paragraph">
+<p>I think my brother is coming into an opportunity. He is working at a new company that has lots of room for improvement. I asked him to bring a notebook to work and note any inefficiencies he comes across.</p>
+</div>
+<div class="paragraph">
+<p>It got me thinking that I could free-lance for this company. However, I wonder if I have the skills to architect large solutions. I think I&#8217;m a strong software developer. I must not be an idiot because Yaning thinks I&#8217;m pretty smart. I think Peter thouht I was smart too. However, I did not do well in the HubSpot interview. Though that is really confusing to me.</p>
+</div>
+<div class="paragraph">
+<p>What did I not do well on.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Memoize</p>
+</li>
+<li>
+<p>Circular Buffer</p>
+</li>
+<li>
+<p>Write SQL to return Twitter feed</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>I don&#8217;t think I nailed any of these. I think I did the best on the Circular Buffer - I did OK there. I shot myself in the foot with Memoize because I tried and failed at Clojure before moving on to a bad Java solution. The SQL I did OK, but again, failed to understand B-Trees and some basic SQL stuff.</p>
+</div>
+<div class="paragraph">
+<p>Memoize in clojure:</p>
+</div>
+<div class="paragraph">
+<p>(defn memoize
+  [f]
+  (let [cache (atom {})]
+    (fn [x]
+      (if-let [ret (get @cache x)]
+        (val ret)
+        (let [fx (f x)]
+          (do
+            (swap! cache assoc x fx)
+            fx))))))</p>
+</div>
+</div>
+<div class="date">March 1, 2014</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/cryogen.html">cryogen</a>
+    
+    <a href="/asciidoc.html">asciidoc</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/posts/2014-03-01-ten-observations-from-scrumbut.html">&laquo; 10 Observations From Scrumbut</a>
+        
+        
+        
+    </div>
+
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//tankthinks.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+
+
+</div>
+
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div id="sidebar">
+                    <h3>Links</h3>
+                    <ul id="links">
+                        
+                    </ul>
+                    <div id="recent">
+                        <h3>Recent Posts</h3>
+                        <ul>
+                        
+                        <li><a href="/posts/2016-12-23-arachne.html">Arachne</a></li>
+                        
+                        <li><a href="/posts/2016-12-21-research-group-introduction.html">Research Group Introduction and Application</a></li>
+                        
+                        <li><a href="/posts/2016-12-07-introduction-to-clojure.html">Introduction to Clojure</a></li>
+                        
+                        </ul>
+                    </div>
+                    <div id="tags">
+                        <h3>Tags</h3>
+                        <ul>
+                        
+                        <li><a href="/dynamic.html">dynamic</a></li>
+                        
+                        <li><a href="/static.html">static</a></li>
+                        
+                        <li><a href="/cryogen.html">cryogen</a></li>
+                        
+                        <li><a href="/learning.html">learning</a></li>
+                        
+                        <li><a href="/clojure.html">clojure</a></li>
+                        
+                        <li><a href="/aws.html">aws</a></li>
+                        
+                        <li><a href="/3tilt.html">3tilt</a></li>
+                        
+                        <li><a href="/booknote.html">booknote</a></li>
+                        
+                        <li><a href="/failure.html">failure</a></li>
+                        
+                        <li><a href="/asciidoc.html">asciidoc</a></li>
+                        
+                        <li><a href="/languages.html">languages</a></li>
+                        
+                        <li><a href="/presentation.html">presentation</a></li>
+                        
+                        <li><a href="/brain.html">brain</a></li>
+                        
+                        <li><a href="/docker.html">docker</a></li>
+                        
+                        <li><a href="/cuwab.html">cuwab</a></li>
+                        
+                        <li><a href="/sketchnote.html">sketchnote</a></li>
+                        
+                        <li><a href="/clojure-conj-2015.html">clojure-conj-2015</a></li>
+                        
+                        <li><a href="/research-group.html">research-group</a></li>
+                        
+                        <li><a href="/arachne.html">arachne</a></li>
+                        
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>Copyright &copy; 2014 BLOGAWESOME
+            <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+    </div>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="/js/highlight.pack.js" type="text/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>

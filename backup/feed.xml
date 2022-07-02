@@ -1,0 +1,2133 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
+<channel>
+<atom:link href='http://tankthinks.net' rel='self' type='application/rss+xml'/>
+<title>
+Tank Thinks
+</title>
+<link>
+http://tankthinks.net
+</link>
+<description>
+Sometimes I do think about stuff.
+</description>
+<lastBuildDate>
+Fri, 04 Jan 2019 15:57:53 +0000
+</lastBuildDate>
+<generator>
+clj-rss
+</generator>
+<item>
+<guid>
+http://tankthinks.net/posts/2016-12-23-arachne.html
+</guid>
+<link>
+http://tankthinks.net/posts/2016-12-23-arachne.html
+</link>
+<title>
+Arachne
+</title>
+<description>
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_sketchnote&quot;&gt;Sketchnote&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20161223_sketchnotes_arachne.jpeg&quot;&gt;&lt;img src=&quot;/img/20161223_sketchnotes_arachne.jpeg&quot; alt=&quot;Research Group Introduction&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_ideas&quot;&gt;Ideas&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I watched Luke VanderHart&amp;#8217;s &lt;a href=&quot;https://skillsmatter.com/skillscasts/8717-arachne-building-a-framework-in-clojure&quot;&gt;Building a Framework in Clojure&lt;/a&gt; this morning.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_takeaways&quot;&gt;Takeaways&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Structural Frameworks&lt;/strong&gt; have benefits, which may be worth the costs if you buy in to the conceit.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Arachne&amp;#8217;s goals are:&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;clojure&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;rapid development&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;shallow learning curve&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;modular&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Arachne answers the questions:&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;What if my application was described in &lt;strong&gt;data&lt;/strong&gt;?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What if that data were stored in a &lt;strong&gt;database&lt;/strong&gt;?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What if that database had a &lt;strong&gt;schema&lt;/strong&gt;?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Arachne introduces 2 ideas:&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;application &lt;strong&gt;concepts&lt;/strong&gt; &lt;em&gt;as&lt;/em&gt; &lt;strong&gt;configuration&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;applicaiton is a composition of 2 individually executable programs&lt;/p&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;configuration&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;runtime&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 23 Dec 2016 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2016-12-21-research-group-introduction.html
+</guid>
+<link>
+http://tankthinks.net/posts/2016-12-21-research-group-introduction.html
+</link>
+<title>
+Research Group Introduction and Application
+</title>
+<description>
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_introduction&quot;&gt;Introduction&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20161221_research_group_introduction.jpg&quot;&gt;&lt;img src=&quot;/img/20161221_research_group_introduction.jpg&quot; alt=&quot;Research Group Introduction&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Hi,&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Last year, at Clojure/Conj 2015, &lt;a href=&quot;https://twitter.com/exupero&quot;&gt;@exupero&lt;/a&gt; inspired me to reify my love of margin doodling into a &lt;a href=&quot;https://twitter.com/search?q=%23cuwab&amp;amp;src=typd&quot;&gt;year of reading and sketchnoting&lt;/a&gt;, in which I read a book a week and sketchnoted each one. This is the first resolution I&amp;#8217;ve completed in 34 years. Aristotle said that quality is not an act, it is a habit. I believe in the universal power of habit. You and Elon Musk both put on your pants the same way, it&amp;#8217;s just that the rest of his day is spent on habits that help him change the world.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;My formal education is in Computer Science. I got a job out of school coding but I couldn&amp;#8217;t find the art of it. I had always loved music so I got a degree in Music Engineering and wrote about  &lt;a href=&quot;http://mue.music.miami.edu/wp-content/uploads/2010/03/2007.AdamTankanow.Thesis.pdf&quot;&gt;music complexity&lt;/a&gt; after being inspired by Jeff Hawkins' &lt;a href=&quot;https://www.amazon.com/Intelligence-Jeff-Hawkins/dp/0805078533/ref=sr_1_1?ie=UTF8&amp;amp;qid=1482376777&amp;amp;sr=8-1&amp;amp;keywords=on+intelligence&quot;&gt;On Intelligence&lt;/a&gt;. I got a job out of school in music and then working on distributed backend speech processing platform, in which I unexpectedly found the art of computer science I had lost. I worked in Java, Perl, Python, Bash for almost 8 years before finding and falling in love with Clojure. For the past year I&amp;#8217;ve worked in FinTech, the past few months focused on &lt;a href=&quot;http://openid.net/specs/openid-connect-core-1_0.html&quot;&gt;OpenID Connect&lt;/a&gt; and Clojure.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I&amp;#8217;m also continually trying to improve. I read books like &lt;a href=&quot;https://www.amazon.com/Deep-Work-Focused-Success-Distracted/dp/1455586692/ref=sr_1_1?ie=UTF8&amp;amp;qid=1482377154&amp;amp;sr=8-1&amp;amp;keywords=deep+work&quot;&gt;Deep Work&lt;/a&gt;,  &lt;a href=&quot;https://www.amazon.com/How-Learn-Almost-Anything-Hours/dp/1440597766/ref=sr_1_1?ie=UTF8&amp;amp;qid=1482377125&amp;amp;sr=8-1&amp;amp;keywords=how+to+learn+almost+anything+in+48+hours&quot;&gt;How to Learn Almost Anything in 48 Hours&lt;/a&gt;, and Tim Ferriss' meta self-improvement compendium &lt;a href=&quot;https://www.amazon.com/Tools-Titans-Billionaires-World-Class-Performers/dp/1328683788/ref=sr_1_1?s=books&amp;amp;ie=UTF8&amp;amp;qid=1482377218&amp;amp;sr=1-1&amp;amp;keywords=tools+of+titans&quot;&gt;Tools of Titans&lt;/a&gt;. I am interested in nutrition hacks, so I eat lots &lt;a href=&quot;https://bengreenfieldfitness.com/2016/05/algae-health-benefits/&quot;&gt;algae&lt;/a&gt;, &lt;a href=&quot;https://bengreenfieldfitness.com/2013/01/my-personal-notes-from-the-bulletproof-biohacking-conference/&quot;&gt;MCT Oil&lt;/a&gt;, and do &lt;a href=&quot;http://fourhourworkweek.com/2015/09/07/the-iceman-wim-hof/&quot;&gt;Wim Hof breathing and cold exposure&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_research_question&quot;&gt;Research Question&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;How do &lt;a href=&quot;http://webcomponents.org/&quot;&gt;Web Components&lt;/a&gt; fit into the Clojurescript eco-system?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Web Components and React.js are compatible technologies: the former is about encapsulation and the latter about performance; however, I&amp;#8217;m not quite sure how they fit together in the Clojurescript world. A colleague created an example project combining React.js with &lt;a href=&quot;http://x-tag.github.io/&quot;&gt;x-tag&lt;/a&gt; but I haven&amp;#8217;t found any Clojurescript examples. I need to do further research to better understand Web Components, what problem it solves, and what problem my team is solving with it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_example_discoveries_digest&quot;&gt;Example Discoveries Digest&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The &lt;a href=&quot;http://www.worldmemorychampionships.com&quot;&gt;World Memory Championships&lt;/a&gt; are 25 years old. One might think that the average winner of this competition is a naturally gifted intelligence with an IQ north of mensa, but the truth is that anyone can and has won this competition.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_resources&quot;&gt;Resources&lt;/h3&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Joshua Foer wrote the enjoyable &lt;a href=&quot;https://www.amazon.com/Moonwalking-Einstein-Science-Remembering-Everything/dp/0143120530/ref=sr_1_1?ie=UTF8&amp;amp;qid=1482378188&amp;amp;sr=8-1&amp;amp;keywords=moonwalking+with+einstein&quot;&gt;Moonwalking with Einstein&lt;/a&gt; about transforming himself from parents' basement dwelling writer to memory champion.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/How-Develop-Brilliant-Memory-Week/dp/1780287909/ref=sr_1_1?ie=UTF8&amp;amp;qid=1482378390&amp;amp;sr=8-1&amp;amp;keywords=how+to+develop+a+brilliant+memory+week+by+week&quot;&gt;Dominic O&amp;#8217;Brien&lt;/a&gt; and &lt;a href=&quot;https://www.amazon.com/How-Learn-Almost-Anything-Hours/dp/1440597766/ref=sr_1_1?ie=UTF8&amp;amp;qid=1482378365&amp;amp;sr=8-1&amp;amp;keywords=how+to+learn+almost+anything+in+48+hours&quot;&gt;Tansel Ali&lt;/a&gt; have practical guide books.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_takeaways&quot;&gt;Takeaways&lt;/h3&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The brain is a &lt;strong&gt;visual&lt;/strong&gt; organ. Create &lt;strong&gt;stories&lt;/strong&gt; with &lt;strong&gt;scenes&lt;/strong&gt; for it to remember.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Method_of_loci&quot;&gt;The Method of Loci&lt;/a&gt;, or Memory Palace, is a 2000 year old technique still used by the world&amp;#8217;s top memorisors.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;This may explain why Daniel Tammet, and others with &lt;a href=&quot;https://en.wikipedia.org/wiki/Synesthesia&quot;&gt;synesthesia&lt;/a&gt;, are so good at memorizing thousands of digits of PI.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Wed, 21 Dec 2016 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2016-12-07-introduction-to-clojure.html
+</guid>
+<link>
+http://tankthinks.net/posts/2016-12-07-introduction-to-clojure.html
+</link>
+<title>
+Introduction to Clojure
+</title>
+<description>
+&lt;script async class=&quot;speakerdeck-embed&quot; data-id=&quot;c498ce98613d43f983b0cd3b7d390140&quot; data-ratio=&quot;1.33333333333333&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Today I gave this presentation to some new colleagues. I&amp;#8217;ve given this presentation a few times over the past few months. I think people have found it useful, at least no one has said otherwise yet. =)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I&amp;#8217;m not sure how useful it will be to you without my dulcet voiceover, but I share it here nonetheless.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Cheers,&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Tank&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Wed, 07 Dec 2016 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2016-12-06-clojure-conj-sketchnotes.html
+</guid>
+<link>
+http://tankthinks.net/posts/2016-12-06-clojure-conj-sketchnotes.html
+</link>
+<title>
+Clojure Conj Sketchnotes
+</title>
+<description>
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I recently attended &lt;a href=&quot;http://2016.clojure-conj.org/&quot;&gt;Clojure/Conj&lt;/a&gt;, sketchnoting all of the talks I saw. I &lt;a href=&quot;https://twitter.com/atankanow&quot;&gt;tweeted&lt;/a&gt; them after each session, however I wanted to collect them here too.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Asher Corey&amp;#8217;s &lt;a href=&quot;https://www.youtube.com/watch?v=K6ZoF3CHsa0&amp;amp;list=PLZdCLR02grLofiMKo0bCeLHZC0_2rpqsz&amp;amp;index=5&quot;&gt;40K LOCs to Build 1st Web Sonogram&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20161204_conj_40klocs.jpeg&quot;&gt;&lt;img src=&quot;/img/20161204_conj_40klocs.jpeg&quot; alt=&quot;40klocs&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/lucascs&quot;&gt;@lucascs&lt;/a&gt;'s talk &lt;a href=&quot;https://www.youtube.com/watch?v=aw6y4r4NAlw&amp;amp;list=PLZdCLR02grLofiMKo0bCeLHZC0_2rpqsz&amp;amp;index=10&quot;&gt;Building a Powerful Double Entry Accounting System&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20161204_conj_doubleaccounting.jpeg&quot;&gt;&lt;img src=&quot;/img/20161204_conj_doubleaccounting.jpeg&quot; alt=&quot;Double Entry Accounting&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/bpiel&quot;&gt;@bpiel&lt;/a&gt;'s debugging library &lt;a href=&quot;https://www.youtube.com/watch?v=ipDhvd1NsmE&amp;amp;list=PLZdCLR02grLofiMKo0bCeLHZC0_2rpqsz&amp;amp;index=11&quot;&gt;Sayid&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20161204_conj_sayid.jpeg&quot;&gt;&lt;img src=&quot;/img/20161204_conj_sayid.jpeg&quot; alt=&quot;Sayid&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/richhickey&quot;&gt;@richhickey&lt;/a&gt; &lt;a href=&quot;https://www.youtube.com/watch?v=oyLBGkS5ICk&amp;amp;list=PLZdCLR02grLofiMKo0bCeLHZC0_2rpqsz&amp;amp;index=1&quot;&gt;spec-ulation&lt;/a&gt; on the value of contribution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20161204_conj_speculation.jpeg&quot;&gt;&lt;img src=&quot;/img/20161204_conj_speculation.jpeg&quot; alt=&quot;Speculation&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/webyrd&quot;&gt;@webyrd&lt;/a&gt;'s Unsession on Scientific Research&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20161204_conj_research.jpeg&quot;&gt;&lt;img src=&quot;/img/20161204_conj_research.jpeg&quot; alt=&quot;research&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/DrPaulRobertson&quot;&gt;@DrPaulRobertson&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/tmarble&quot;&gt;@tmarble&lt;/a&gt;'s &lt;a href=&quot;https://www.youtube.com/watch?v=i84i1X9k8_g&amp;amp;list=PLZdCLR02grLofiMKo0bCeLHZC0_2rpqsz&amp;amp;index=12&quot;&gt;PAMELA&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20161204_conj_pamela.jpeg&quot;&gt;&lt;img src=&quot;/img/20161204_conj_pamela.jpeg&quot; alt=&quot;pamela&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/cgrand&quot;&gt;@cgrand&lt;/a&gt; and Igor Ges on &lt;a href=&quot;https://www.youtube.com/watch?v=OxUHgP4Ox5Q&amp;amp;list=PLZdCLR02grLofiMKo0bCeLHZC0_2rpqsz&amp;amp;index=13&quot;&gt;Powderkeg: Teaching Clojure to Spark&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20161204_conj_powderkeg.jpeg&quot;&gt;&lt;img src=&quot;/img/20161204_conj_powderkeg.jpeg&quot; alt=&quot;powderkeg&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/ShaunMahood&quot;&gt;@ShaunMahood&lt;/a&gt;'s &quot;re-frame your clojurescript apps&quot;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20161204_conj_reframe.jpeg&quot;&gt;&lt;img src=&quot;/img/20161204_conj_reframe.jpeg&quot; alt=&quot;re-frame&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Adam Wright&amp;#8217;s &lt;a href=&quot;https://www.youtube.com/watch?v=RzE9iencxT0&amp;amp;list=PLZdCLR02grLofiMKo0bCeLHZC0_2rpqsz&amp;amp;index=18&quot;&gt;Wormbase database migration to Datomic&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20161204_conj_wormbase.jpeg&quot;&gt;&lt;img src=&quot;/img/20161204_conj_wormbase.jpeg&quot; alt=&quot;wormbase&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=404UXttr8kw&amp;amp;list=PLZdCLR02grLofiMKo0bCeLHZC0_2rpqsz&amp;amp;index=21&quot;&gt;Composing Music w/ closure.spec&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/apogsasis&quot;&gt;@apogsasis&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20161204_conj_composing.jpeg&quot;&gt;&lt;img src=&quot;/img/20161204_conj_composing.jpeg&quot; alt=&quot;composing&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Scott Tuddenham&amp;#8217;s &lt;a href=&quot;https://www.youtube.com/watch?v=94NjRg8zoCA&amp;amp;list=PLZdCLR02grLofiMKo0bCeLHZC0_2rpqsz&amp;amp;index=22&quot;&gt;Adventures in Understanding Documents&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20161204_conj_documents.jpeg&quot;&gt;&lt;img src=&quot;/img/20161204_conj_documents.jpeg&quot; alt=&quot;documents&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/webyrd&quot;&gt;@webyrd&lt;/a&gt; and Gregory L Rosenblatt&amp;#8217;s mind blowing &lt;a href=&quot;https://www.youtube.com/watch?v=er_lLvkklsk&amp;amp;list=PLZdCLR02grLofiMKo0bCeLHZC0_2rpqsz&amp;amp;index=23&quot;&gt;Barliman&lt;/a&gt;!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20161204_conj_barliman.jpeg&quot;&gt;&lt;img src=&quot;/img/20161204_conj_barliman.jpeg&quot; alt=&quot;barliman&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/miner&quot;&gt;@miner&lt;/a&gt; &lt;a href=&quot;https://www.youtube.com/watch?v=TqG176T69VM&amp;amp;list=PLZdCLR02grLofiMKo0bCeLHZC0_2rpqsz&amp;amp;index=24&quot;&gt;Juggling Patterns and Programs&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20161204_conj_juggling.jpg&quot;&gt;&lt;img src=&quot;/img/20161204_conj_juggling.jpg&quot; alt=&quot;juggling&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/KimCrayton1&quot;&gt;@KimCrayton1&lt;/a&gt;'s amazing &lt;a href=&quot;https://www.youtube.com/watch?v=gqnvSW9yniU&amp;amp;list=PLZdCLR02grLofiMKo0bCeLHZC0_2rpqsz&amp;amp;index=17&quot;&gt;Overcoming the Challenges of Mentoring&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20161204_conj_mentoring.jpeg&quot;&gt;&lt;img src=&quot;/img/20161204_conj_mentoring.jpeg&quot; alt=&quot;mentoring&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/ericnormand&quot;&gt;@ericnormand&lt;/a&gt;'s &lt;a href=&quot;https://www.youtube.com/watch?v=jJIUoaIvD20&amp;amp;list=PLZdCLR02grLofiMKo0bCeLHZC0_2rpqsz&amp;amp;index=14&quot;&gt;Building Composable Abstractions&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20161204_conj_abstractions.jpeg&quot;&gt;&lt;img src=&quot;/img/20161204_conj_abstractions.jpeg&quot; alt=&quot;abstractions&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 06 Dec 2016 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2016-02-15-superbetter.html
+</guid>
+<link>
+http://tankthinks.net/posts/2016-02-15-superbetter.html
+</link>
+<title>
+SuperBetter
+</title>
+<description>
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20160215_superbetter.jpg&quot;&gt;&lt;img src=&quot;/img/20160215_superbetter.jpg&quot; alt=&quot;SuperBetter&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The heart, soul, and extra-life of
+&lt;a href=&quot;http://www.amazon.com/gp/product/1594206368?keywords=superbetter&amp;amp;qid=1455586338&amp;amp;ref_=sr_1_1&amp;amp;sr=8-1&quot;&gt;SuperBetter&lt;/a&gt;
+by &lt;a href=&quot;https://twitter.com/avantgame&quot;&gt;Jane McGonigal&lt;/a&gt; is:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;You are stronger than you know. You are surrounded by potential
+allies. You are the hero of your own story.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Jane weaves the narrative of her own post-concussion recovery story
+with scientifically proven benifits of living a gameful life in the
+inspiring SuperBetter. What does it mean to be gameful?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Being gameful means bringing the psychological strengths you naturally
+display when you play games - such as optimism, creativity, courage,
+and determination - to your life.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The book comprises three parts: the first explains, in scientific
+detail, the benefits of games; the second describes SuperBetter The
+Game, a framework for living life gamefully; the final part gives
+three example adventures that the reader can tackle right now.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I love that this book is actionable. Jane sprinkles quests - little
+asides that can and should be completed as you go - that give the
+reader the feeling of &quot;levelling up&quot; as he progresses through the
+book. When I came across the first quest I started to get nervous: I
+was reading the book on the train and I was afraind I would have to
+get up and do something embarassing in front of my fellow
+commuters. Fortunately I didn&amp;#8217;t but the book asks you to make a
+decision right then - are you playing?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If you want to quit something, anything, just solve a puzzle.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The reader cannot deny the power of games. Games have been shown to
+help with &lt;a href=&quot;https://en.wikipedia.org/wiki/Ptsd&quot;&gt;PTSD&lt;/a&gt;, anxiety,
+and depression. Games can help you quit bad habits and even help with
+chronic pain. You can find social fulfillment through games with
+friends and family and even strangers. In fact, games help strengthen
+empathy:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Modeling reciprocity means showing other people that we care about
+them and that hey can trust us to offer help.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Reminding yourself that you are the hero of your own story build
+self-efficacy, the key to unlocking the doors that cage us in doubt,
+anxiety, procrastination, regret, and unhappiness. It helps us live a
+calm and connected life full of resiliencea and reward.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;How do you do all this? Simply play games with a purpose. SuperBetter
+will help you do just that.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;SuperBetter reminded me of one of my favorite books
+&lt;a href=&quot;http://www.amazon.com/gp/product/0307887448?keywords=ready%20player%20one&amp;amp;qid=1455587727&amp;amp;ref_=sr_1_1&amp;amp;sr=8-1&quot;&gt;Ready
+Player One&lt;/a&gt;. It&amp;#8217;s as if I am a hero grunter. Except instead
+of leveling up to search for easter eggs to save the OASIS from
+corporate greed, I am leveling up to live a happy, healthy, productive
+life. Awesome.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Mon, 15 Feb 2016 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2016-02-07-the-windup-bird-chronicles.html
+</guid>
+<link>
+http://tankthinks.net/posts/2016-02-07-the-windup-bird-chronicles.html
+</link>
+<title>
+The Wind-Up Bird Chronicle
+</title>
+<description>
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20160206_thewindupbirdchronicle.jpg&quot;&gt;&lt;img src=&quot;/img/20160206_thewindupbirdchronicle.jpg&quot; alt=&quot;The Wind-Up Bird Chronicle&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.amazon.com/gp/product/B00QPF0HHU?keywords=the%20wind-up%20bird%20chronicle&amp;amp;qid=1454894417&amp;amp;ref_=sr_1_2&amp;amp;sr=8-2&quot;&gt;The
+Wind-Up Bird Chronicle&lt;/a&gt; is a twisting dream from Haruki Murakami. A
+series of odd phone calls and the disappearance of a cat signal
+change, though Toru Okada doesn&amp;#8217;t realize it yet. When his wife Kumiko
+doesn&amp;#8217;t come home one day, Toru is forced to search for the
+source. His journey takes him into a literal deep well of dreams to
+find and return his life to normal.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;My life has been nothing more than a convenient passageway.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I love this book. Even translated from the source Japanese, the
+language is beautiful. Murakami&amp;#8217;s characters are colorful. Many scenes
+stirred me to react physically. The story takes us through a
+dream labyrinth without losing us in its corridors. It is one of the
+best book of dreams I&amp;#8217;ve encountered.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This book captured the soul of much of the Japanese media I&amp;#8217;ve consumed over the
+years, reminding me the most of the anime adaptation of
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Welcome_to_the_N.H.K&quot;&gt;Welcome to the
+N.H.K.&lt;/a&gt; Toru reminded me of the lonely Hikikomori, pulling inward to
+resolve the confusing torments of social life. There are even a few
+references to the NHK broadcaster contributing to Toru&amp;#8217;s strife.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Patti Smith &lt;a href=&quot;https://www.brainpickings.org/2015/11/02/patti-smith-favorite-books-m-train&quot;&gt;described it this way&lt;/a&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I finished it and was
+immediately obliged to reread it. For one thing I did not wish to exit
+its atmosphere. But also, the ghost of a phrase was eating at
+me. Something that untied a neat knot and let the frayed edges brush
+against my cheek as I slept.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I agree. In fact, as I write this, I am picking at one of those untied
+knots, gaining a deeper understanding of the universe a just left. I
+recommend you go down the well.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sun, 07 Feb 2016 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2016-01-31-when-getting-ahead-fails.html
+</guid>
+<link>
+http://tankthinks.net/posts/2016-01-31-when-getting-ahead-fails.html
+</link>
+<title>
+When Getting Ahead Failed Me
+</title>
+<description>
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;My last post was 3 weeks ago. What happened? Why am I so behind? Because I ran ahead, stumbled, and fell out of my habit.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I have been reading at least a book a week for the past two months. 3 weeks ago I finished &quot;Surely You&amp;#8217;re Joking Mr. Feynman&quot; mid-week, grabbed &quot;A Thousand Splendid Suns&quot; which I finished by Friday night. I was stoked! I had finished 2 books before the weekend. I write these posts before bed on Sunday night so I had plenty of time to do my #sketchnote and post. Only I wasn&amp;#8217;t.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I know that my favorite authors have posts in the can, that is they don&amp;#8217;t write every post the day they publish it. I was hoping to build a backlog of completed posts so that I would always have one to post on Sunday and I could sprinkle the rest throughout the week. However, I had not been writing every day, I had only been writing on Sundays. My reading workcenter was ahead of my writing workcenter. By finishing an extra book, I flooded myself with extra work I was not ready to handle. I was my own bottleneck!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;What happens when a machine on the factory floor is overworked? It breaks down. Instead of making sure that I sat down to write every Sunday just to make sure I got something out the door, I patted myself on the back for doing extra reading and took a Sunday off. That was all it took to break my newly formed habit. That is the power of the process.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The good news is that I&amp;#8217;ve kept up my reading and sketchnoting, though I&amp;#8217;ve slipped 2 days on the sketchnotes. Back on the saddle. I&amp;#8217;m writing at least every Sunday and I will get my sketchnotes done on Saturday so I&amp;#8217;m not doing double duty on Sunday &amp;#8230;&amp;#8203; except for this week &amp;#8230;&amp;#8203; I need to finish my Sketchnote for &quot;Hero with A Thousand Faces&quot; by Joseph Campbell tomorrow.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sun, 31 Jan 2016 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2016-01-10-surely-youre-joking.html
+</guid>
+<link>
+http://tankthinks.net/posts/2016-01-10-surely-youre-joking.html
+</link>
+<title>
+Surely You're Joking Mr. Feynman
+</title>
+<description>
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20160110_surelyyourejoking.jpg&quot;&gt;&lt;img src=&quot;/img/20160110_surelyyourejoking.jpg&quot; alt=&quot;Surely You&amp;#8217;re Joking&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In his episodic memoir &lt;a href=&quot;http://www.amazon.com/gp/product/0393316041?keywords=surely%20you&amp;#8217;re%20joking&amp;amp;qid=1452476231&amp;amp;ref_=sr_1_1&amp;amp;sr=8-1&quot;&gt;Surely You&amp;#8217;re Joking, Mr. Feynman&lt;/a&gt;, Richard Feynman wisks you away on his adventures through life, physics, music, art, love and - of course - safe-cracking.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Feynman greatest gifts are curiosity and honesty; these are what make the man, and his books, resonate today as if each of us were students in one of his passionate lectures at Caltech. Feynman teaches us &lt;em&gt;not&lt;/em&gt; to accept face value:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This is all amateurish; everyone knows the answer, but &lt;em&gt;I&lt;/em&gt; didn&amp;#8217;t know the answer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Feynman was honest, even as he played intellectual games with &amp;#8230;&amp;#8203; well &amp;#8230;&amp;#8203; everyone: peers, colleagues, professors, generals, and friends. None of his fraternity brothers at MIT believed him when he confessed to stealing a roomate&amp;#8217;s door and hiding it behind the boiler in the basement, causing Feynman to muse:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I&amp;#8217;m usually honest in a certain way, in such a way that no one believes me.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;He believed that science requires experimentation, and that if you are going to test you must publish your results, whether they support your hypothesis or not. He wanted to &lt;a href=&quot;http://www.ted.com/talks/leonard_susskind_my_friend_richard_feynman&quot;&gt;take the bologna out of science&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For this honesty, he was sought out by the greatest minds of science. One anectode tells of Neils Bohr&amp;#8217;s son finding Feynman to discuss theories with Neils before the &lt;em&gt;big&lt;/em&gt; discussion with the &quot;great minds&quot; because Neils knew that only Feynman would speak his mind truly without &quot;yes yes&quot;ing the great Danish Physicist.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Feynman worked on the Manhatten project at Los Alamos, where aside from helping develop the atomic bomb he became an amateur safe-cracker, taking extreme pleasure in showing colleagues and generals how flaccid was the security of their secrets. But he also travelled to Brazil twice, teaching physics while becoming a Carnival playing Samba percussionist. After taking a position teaching at Caltech, he became interested in art and gave at least one successful showing of his nude portraits. Feynman won the Nobel Prize in Physics in 1965 - an award that he tried to refuse, accepting it only after realizing that he would be &lt;em&gt;more&lt;/em&gt; famous if his refusal was successful. Later in life he experimented with altered states and lucid dreaming. He was always testing a theory, perpetually curious regarding every aspect of life:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I have to understand the world, you see.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;His curiosity only dwarfed by his integrity. He often turned down financial rewards to maintain his freedom. At the Caltech 1974 commencement address, he had but one wish for the graduates:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I have just one wish for you - the good luck to be somewhere where you are free to maintain the kind of integrity I have described, and where you do not feel forced by a need to maintain your position in the organization, or financial support, or so on, to lose your integrity. May you have that freedom.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sun, 10 Jan 2016 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2016-01-03-norwegian-wood.html
+</guid>
+<link>
+http://tankthinks.net/posts/2016-01-03-norwegian-wood.html
+</link>
+<title>
+Norwegian Wood
+</title>
+<description>
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Last week I read
+&lt;a href=&quot;http://www.amazon.com/gp/product/B004UZ66M2?keywords=norwegian%20wood&amp;amp;qid=1451867120&amp;amp;ref_=sr_1_3&amp;amp;sr=8-3&quot;&gt;Norwegian
+Wood&lt;/a&gt; by
+&lt;a href=&quot;http://www.amazon.com/s/ref=dp_byline_sr_book_1?ie=UTF8&amp;amp;field-author=Haruki+Murakami&amp;amp;search-alias=books&amp;amp;text=Haruki+Murakami&amp;amp;sort=relevancerank&quot;&gt;Haruki
+Murakami&lt;/a&gt;. Many friends and colleagues have recommended Murakami over
+the years; however, this is the first of his I&amp;#8217;ve read. Though I had
+heard any good things about
+&lt;a href=&quot;http://www.amazon.com/Wind-Up-Bird-Chronicle-Novel/dp/0679775439/ref=sr_1_1?s=books&amp;amp;ie=UTF8&amp;amp;qid=1451867168&amp;amp;sr=1-1&quot;&gt;The
+Wind-Up Bird Chronicle&lt;/a&gt; and
+&lt;a href=&quot;http://www.amazon.com/Kafka-Shore-Haruki-Murakami/dp/1400079276/ref=sr_1_4?s=books&amp;amp;ie=UTF8&amp;amp;qid=1451867168&amp;amp;sr=1-4&quot;&gt;Kafka
+on the Shore&lt;/a&gt; I decided to go with the more convential but less
+Murakami &quot;Norwegian Wood&quot; not for any literary reason but simply
+because that is what was available at the library and I love eponymous
+song by The Beatles.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The theme of &quot;Norwegian Wood&quot; is responsibility: how responsibility
+changes as we mature and our responsibility for the happiness of
+ourselves and others. Murakami pays little attention the era of the
+1960s, it seems as though the only reason for the novel&amp;#8217;s timeplace is
+its relation to the author&amp;#8217;s own experience. But no matter, for at its
+heart &quot;Norwegian Wood&quot; is a timeless coming of age love story.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I love quotations. I usually fill my notebook with them while
+reading. I did not find a lot of quotations from &quot;Norwegian Wood&quot; but
+the one&amp;#8217;s I noted are magical&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I like you a lot &amp;#8230;&amp;#8203; like a spring bear.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;and this exchange betweet the narrator Watanabe and his counterpoint Midori:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;How much do you love me?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Enough to melt all the tigers in the world to butter.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Murakami&amp;#8217;s power is in his figurative language, elegant dialog, and
+unique lived-in worlds. I will smell the rain of Reiko and Naoko&amp;#8217;s
+mountain retreat for months to come.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20151230_norwegianwood.jpg&quot;&gt;&lt;img src=&quot;/img/20151230_norwegianwood.jpg&quot; alt=&quot;Norwegian Wood&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sun, 03 Jan 2016 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2015-12-27-of-dice-and-men.html
+</guid>
+<link>
+http://tankthinks.net/posts/2015-12-27-of-dice-and-men.html
+</link>
+<title>
+Of Dice and Men
+</title>
+<description>
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I&amp;#8217;ve always been nerdy (cereberal) and geeked (into) out on relatively
+obscure pop culture when I&amp;#8217;m feeling dorky. (Forthcoming post to describe the canonical
+meanings of &lt;code&gt;nerd&lt;/code&gt;, &lt;code&gt;geek&lt;/code&gt;, and &lt;code&gt;dork&lt;/code&gt;). In other words, I should have
+played &lt;a href=&quot;http://dnd.wizards.com/&quot;&gt;Dungeons and Dragons&lt;/a&gt; when I was
+younger. But the wind finds the inner Grognard eventually. So when a
+new work friend told me he was creating a world and assuming the
+Dungeon Master mantle for the first time I downloaded the 300+ page
+PDF of D&amp;amp;D rules 3.5 and rolled a Human Knight from a special order in
+my friends world. We start in January and I&amp;#8217;m stoked.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In honor of my first adventure I grabbed
+&lt;a href=&quot;http://www.amazon.com/Of-Dice-Men-Dungeons-Dragons/dp/1491514191&quot;&gt;Of
+Dice and Men&lt;/a&gt; from my local library. It is an interesting book, half
+narrative and half exposition, it tells the tale of the author David
+M. Ewalt&amp;#8217;s refound love of D&amp;amp;D while recounding it&amp;#8217;s history.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Dungeons and Dragons is one of the most innovative games of all
+time. &lt;a href=&quot;https://en.wikipedia.org/wiki/Gary_Gygax&quot;&gt;Gary Gygax&lt;/a&gt; and
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Dave_Arneson&quot;&gt;Dave Arneson&lt;/a&gt; met while
+playing military strategy games in the 1960s. While both loved
+wargames they knew something was missing. Both agreed that wargames
+were too contricting, that a game where a player could create and &lt;em&gt;be&lt;/em&gt;
+a character hero was more powerful that acting a proxy for an army or
+situation. Arneson added the &quot;Dungeon&quot; to host the adventure as well
+as the idea of &quot;leveling&quot; up the player character. Gygax added the art
+of storytelling and &lt;em&gt;Fantasy Game&lt;/em&gt; was born. The truth is that these
+innovations gave birth to the video game industry in addition to every
+other role playing game.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This book is a nice read for anyone interested in why people play
+games or a history of D&amp;amp;D itself.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20151225_ofdiceandmen.jpg&quot;&gt;&lt;img src=&quot;/img/20151225_ofdiceandmen.jpg&quot; alt=&quot;Of Dice and Men&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sun, 27 Dec 2015 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2015-12-21-on-the-shortness-of-life.html
+</guid>
+<link>
+http://tankthinks.net/posts/2015-12-21-on-the-shortness-of-life.html
+</link>
+<title>
+On the Shortness of Life
+</title>
+<description>
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The first thing you notice when you read Seneca is we have changed
+little in 2000 years. Yes we&amp;#8217;ve progressed from wax tablets to iPhones
+but apparently we&amp;#8217;ve come no closer to solving our mind&amp;#8217;s traps than
+Stoic philosophers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.amazon.com/Shortness-Life-Penguin-Great-Ideas/dp/0143036327&quot;&gt;On
+the Shortness of Life&lt;/a&gt; by
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Seneca_the_Younger&quot;&gt;Seneca&lt;/a&gt; comprises
+three essays/letters written between 42 and 63 AD. &quot;Consolation to
+Helvia&quot; is a letter Seneca wrote to his mother shortly after his
+exile. Seneca alternates praising Helvia&amp;#8217;s courage with extolling the
+pleasantry of simple life. Exile is not bad, it is a gift.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This humble shack gives shelter [&amp;#8230;&amp;#8203;] to the virtues.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Nothing satisfies greed but even a little satisfies nature.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;No man has been shattered by the blows of fortune unless he was first
+deceived by her favors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I love this final quote. Seneca describes succinctly the folly of
+being taken by success.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In the essay &quot;On the Shortness of Life&quot; Seneca advises&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If each of us could have a tally of his future years &amp;#8230;&amp;#8203; how carefully
+would they use them.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We see this repeatedly in transformational inspirational stories of those who have
+stared mortality in its face, those who&amp;#8217;ve realized that our only true
+currency is time, that the wise sage is a&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;thrifty guardian of his time. He never found anything for which it was
+worth exchanging.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The greatest obstacle to life is expectancy.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We must choose our teachers well and dedicate our time to learning and
+to civic duties.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Finally, &quot;On Tranquility of Mind&quot; is Seneca&amp;#8217;s response to his friend
+Serenus when Serenus bewails his struggle living the simple life
+without envy. Seneca responds that we are&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;not insufficiently healed, but &amp;#8230;&amp;#8203; insufficiently used to health.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;suggesting that Serenus' anguish is commonplace among their Roman
+contemporaries. Seneca extols study, utility, moderation, and
+rest. He condemns complaining, suggesting instead a more lighthearted
+outlook:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;It is more civilized to make fun of life than bewail it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Seneca&amp;#8217;s writings are a tardis; his words a portal to the past and
+future. A simple, mindful life full of gratitude is a 2000 year old
+tested path to happy fulfilled life.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20151221_ontheshortnessoflife.jpg&quot;&gt;&lt;img src=&quot;/img/20151221_ontheshortnessoflife.jpg&quot; alt=&quot;On the Shortness of Life&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Mon, 21 Dec 2015 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2015-12-14-shantaram.html
+</guid>
+<link>
+http://tankthinks.net/posts/2015-12-14-shantaram.html
+</link>
+<title>
+Shantaram
+</title>
+<description>
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Last week I curled up with &lt;a href=&quot;http://www.amazon.com/gp/product/0312330537?keywords=shantaram&amp;amp;qid=1450147384&amp;amp;ref_=sr_1_1&amp;amp;sr=8-1&quot;&gt;Shantaram&lt;/a&gt; by Gregory David Roberts, a book &lt;a href=&quot;https://twitter.com/tferriss&quot;&gt;Tim Ferriss&lt;/a&gt; mentioned many times on his podcast. I didn&amp;#8217;t know anything about the book when I found it in the fiction stacks of my local library. Shantaram is a story of prison breaks, thievery, acceptance, kindness, warmth, loss, lost, love, treachery, and war. It is a book about being free.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Loosly based on events in the author&amp;#8217;s life, Roberts' vivid descriptions of India, her life and culture, are the hearth of the book. The warmth emanates from Bombay&amp;#8217;s smiles, Sunder village&amp;#8217;s sustenance, the community of the zhopadpatti hutments, and Leopold&amp;#8217;s - Bombay&amp;#8217;s cousin to Rick&amp;#8217;s Cafe Americain.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Here are some quotes I collected while reading the book.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Every day, when you&amp;#8217;re on the run, is the whole of your life.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;and happy always has it good appetites.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I want everything &amp;#8230;&amp;#8203; the real trick in life is to want nothing, and
+to succeed in getting it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In your country, Lin, don&amp;#8217;t you know where the river stops?&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The truth is there are no good men, or bad men &amp;#8230;&amp;#8203; it is the deeds that have goodness or badness in them.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Prisons are temples where devils learn to prey. Every time we turn the key we twist the knife of fate, because every time we cage a man we close him in with hate.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Every virtuous act is inspired by a dark secret.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If we envy someone for all the right reasons, we&amp;#8217;re halfway to wisdom.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Here is my sketchnote for the book, based mainly on these quotes and the theme of freedom.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20151214_shantaram.jpg&quot;&gt;&lt;img src=&quot;/img/20151214_shantaram.jpg&quot; alt=&quot;Shantaram&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Mon, 14 Dec 2015 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2015-12-06-cuwab-1.html
+</guid>
+<link>
+http://tankthinks.net/posts/2015-12-06-cuwab-1.html
+</link>
+<title>
+Cuwab
+</title>
+<description>
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;My second grade teacher Ms. Cappabianca arranged comfy pillows in an
+otherwise odd nook in her classroom and put the word cuwab on the wall
+in funky construction paper letters. I remember it vividly even though
+it was over 26 years ago. I remember excitedly rushing to claim the
+best pillow before scanning the shelves to see if the Guinness Book of
+Records was still available.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Did you &lt;a href=&quot;http://duckduckgo.com&quot;&gt;duckduckgo&lt;/a&gt; cuwab yet? It does not exist
+on the internet! Amazing. It is an acronym for &lt;strong&gt;C&lt;/strong&gt;url &lt;strong&gt;U&lt;/strong&gt;p &lt;strong&gt;W&lt;/strong&gt;ith &lt;strong&gt;A&lt;/strong&gt;
+&lt;strong&gt;B&lt;/strong&gt; ook, and I intend to do so once a week starting now.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Also, &lt;a href=&quot;https://twitter.com/exupero&quot;&gt;@exupero&lt;/a&gt; inspired me to start
+&lt;a href=&quot;http://rohdesign.com/handbook&quot;&gt;sketchnoting&lt;/a&gt;. I bought a pad and few
+pens and sat down for 45 minutes at the local library and drew out
+notes to
+&lt;a href=&quot;http://www.amazon.com/gp/product/159143209X?keywords=remapping%20your%20mind&amp;amp;qid=1449451230&amp;amp;ref_=sr_1_1&amp;amp;sr=8-1&quot;&gt;Remapping
+Your Mind&lt;/a&gt;, a book I grabbed off the library new non-fiction shelf
+last week when I was returning Felicia Day&amp;#8217;s excellent memoir
+&lt;a href=&quot;http://www.amazon.com/Youre-Never-Weird-Internet-Almost-ebook/dp/B00QNW8KR4&quot;&gt;You&amp;#8217;re
+Never Weird on the Internet (almost)&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Here is that sketchnote. I plan to sketchnote each weekly book. Follow
+along to see how I do.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/img/20151205_remappingyourmind.jpg&quot;&gt;&lt;img src=&quot;/img/20151205_remappingyourmind.jpg&quot; alt=&quot;Remapping Your Mind&quot; width=&quot;75%&quot;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sun, 06 Dec 2015 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2015-11-30-3tilt-kickoff.html
+</guid>
+<link>
+http://tankthinks.net/posts/2015-11-30-3tilt-kickoff.html
+</link>
+<title>
+3tilt Kickoff
+</title>
+<description>
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The learning principle is to plunge into the detailed mystery of the
+micro in order to understand what makes the macro tick.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;attribution&quot;&gt;
+&amp;#8212; Josh Waitzkin&lt;br&gt;
+&lt;cite&gt;The Art of Learning&lt;/cite&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I&amp;#8217;ve been recording &quot;3 Things I Learned Today&quot; off and on for the
+past year. I was inspired by Raju Gandhi&amp;#8217;s
+(&lt;a href=&quot;https://twitter.com/looselytyped&quot;&gt;@looselytyped&lt;/a&gt;) NFJS talk &quot;Learning
+to Learn&quot; a few years ago. In May I gave a career day presentation to
+7th graders at my wife&amp;#8217;s school and told them to start a &quot;3tilt&quot; (3
+things I learned today) journal. The things you learn don&amp;#8217;t have to be
+traditionally academic: you could learn how to beat a difficult
+mission in Starcraft II or even the train schedule. The point of the
+exercise is reflection, gratitude, and continuous learning.&lt;/p&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;div class=&quot;dlist&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;3 Things I Learned Today:&lt;/div&gt;
+&lt;dl&gt;
+&lt;dt class=&quot;hdlist1&quot;&gt;&lt;code&gt;docker-compose&lt;/code&gt; is a good tool for dev testing&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;&amp;#8230;&amp;#8203; especially if you&amp;#8217;re travelling down the microservices route where your app has several external resources. A few recommendations when using &lt;code&gt;docker-compose&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;image&lt;/code&gt; &amp;gt; &lt;code&gt;build&lt;/code&gt; in the &lt;code&gt;docker-compose&lt;/code&gt; configuration file: i.e. build the images for the app and its resources outside &lt;code&gt;docker-compose&lt;/code&gt; and reference those prebuilt images from its configuration. Play around a bit, you&amp;#8217;ll see I&amp;#8217;m right.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;upgrade to &lt;code&gt;docker-compose&lt;/code&gt; v 1.5.0 or greater so you can use variable substitution in your &lt;code&gt;image&lt;/code&gt; references&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;remember that your links and environment are injected at &lt;code&gt;docker&lt;/code&gt; &quot;run&quot; time, you can use the same images for testing and production with different environments&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/dd&gt;
+&lt;dt class=&quot;hdlist1&quot;&gt;create links between Elastic Beanstalk environments&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;&amp;#8230;&amp;#8203; much like
+&lt;code&gt;docker-compose&lt;/code&gt; allows you to create links between containers,
+Elastic Beanstalk let&amp;#8217;s you
+&lt;a href=&quot;http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-links.html&quot;&gt;create
+links between environments&lt;/a&gt;: simply create an &lt;code&gt;env.yaml&lt;/code&gt; file in the
+root directory of your application (more precisely the root dir where
+you will call the &lt;code&gt;eb&lt;/code&gt; cli) and follow AWS&amp;#8217;s always sensible
+randomized configuration file format.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&quot;hdlist1&quot;&gt;stories are powerful&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;&amp;#8230;&amp;#8203; I grabbed
+&lt;a href=&quot;http://www.amazon.com/gp/product/159143209X?keywords=remapping%20your%20mind&amp;amp;qid=1448935799&amp;amp;ref_=sr_1_1&amp;amp;sr=8-1&quot;&gt;Remapping
+Your Mind&lt;/a&gt; off the &quot;New Non-Fiction&quot; shelf of my local library when I
+returned Felicia Day&amp;#8217;s excellent memoir
+&lt;a href=&quot;http://www.amazon.com/gp/product/1476785651?keywords=felicia%20day&amp;amp;qid=1448935874&amp;amp;ref_=sr_1_1&amp;amp;sr=8-1&quot;&gt;You&amp;#8217;re
+Never Weird on the Internet (almost)&lt;/a&gt;. I love the brain and usually
+read any book with the words &quot;synapse&quot;, &quot;mind&quot;,
+&quot;neuroscience&quot;, etc. on the cover. This book makes a compelling case
+for the position stories in medicine. The authors use a plethora of
+techniques ranging from NLP to Native American spirit quests to help
+patients recover from acute medical conditions. A real testament to
+the power of the mind and the true physiology of the brain.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Mon, 30 Nov 2015 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2015-11-29-dynamic-static-languages.html
+</guid>
+<link>
+http://tankthinks.net/posts/2015-11-29-dynamic-static-languages.html
+</link>
+<title>
+Dynamic vs Static Languages
+</title>
+<description>
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Elben Shira&amp;#8217;s thoughtprovoking
+&lt;a href=&quot;http://elbenshira.com/blog/the-end-of-dynamic-languages/&quot;&gt;The End of
+Dynamic Languages&lt;/a&gt; inspired many wonderful responses, for example
+&lt;a href=&quot;http://pointersgonewild.com/2015/11/25/have-static-languages-won/&quot;&gt;Have
+Static Languages Won?&lt;/a&gt;,
+&lt;a href=&quot;http://exupero.org/hazard/post/what-constitutes-winning/&quot;&gt;What
+Consitutes Winning&lt;/a&gt;, and
+&lt;a href=&quot;http://yogthos.net/posts/2015-11-28-TheSkyIsNotFalling.html&quot;&gt;The Sky Is
+Not Falling&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If Elben is offering odds then I will absolutely put money a new
+successful dynamic programming language for 3 reasons:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;Most programmers don&amp;#8217;t start in a language with a powerful static type
+system. Organically these programmers seek
+the expression and creativity dynamic languages provide. Only
+after experiencing some malevolent runtime bugs will they seek out
+the safety of powerful type systems.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Not all problems require static typing. To
+&lt;a href=&quot;https://twitter.com/yogthos&quot;&gt;@Yoghos&amp;#8217;s&lt;/a&gt; point, we correctly seek out
+languages that concisely express the solution. We need static typing
+in shell scripting languages and I&amp;#8217;m sure
+a new one will come along at some point to replace Bash.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Even if statically typed languages &lt;em&gt;are&lt;/em&gt; the messiah, the discerning
+bettor must take the side of a single successful dynamic language
+appearing between now and the end of time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A more serious question:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;strong&gt;Can we prove program correctness without static typing?&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Yes: we can use a
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Specification_language&quot;&gt;Formal
+Specification Language&lt;/a&gt;. Oh boy, but that looks much &lt;em&gt;more&lt;/em&gt;
+complicated than using a powerful static type system &amp;#8230;&amp;#8203; and there are
+few tools to help us translate formal specifications to a programming
+language we can use. Ah. We have a short cut!
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Property_testing&quot;&gt;Property Testing&lt;/a&gt;!
+Property Testing allows us to build a formal functional specification
+of our programs, proving them correct without the need of a Formal
+Specification Language. Benjamin Pierce&amp;#8217;s keynote
+&lt;a href=&quot;https://www.youtube.com/watch?v=Y2jQe8DFzUM&quot;&gt;A Deep specification for
+Dropbox&lt;/a&gt; from Clojure/Conj 2105 delves deeper into Formal Specification and Property Testing
+for correctness.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sun, 29 Nov 2015 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2014-12-30-lamda-architecture.html
+</guid>
+<link>
+http://tankthinks.net/posts/2014-12-30-lamda-architecture.html
+</link>
+<title>
+5 Lamda Architecture Resources
+</title>
+<description>
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Lambda Archiecture is fascinating Architectural Pattern. I first read about it while researching &lt;a href=&quot;https://storm.apache.org/&quot;&gt;Apache Storm&lt;/a&gt;. Nathan Marz, the creator of Storm, discusses Lamda Archicture in his book &lt;a href=&quot;http://www.amazon.com/Big-Data-Principles-practices-scalable/dp/1617290343/ref=sr_1_1?ie=UTF8&amp;amp;qid=1419944429&amp;amp;sr=8-1&amp;amp;keywords=nathan+marz&quot;&gt;Big Data: Principles and best practices of scalable realtime data systems&lt;/a&gt;. Here are some good resources for learning more.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.slideshare.net/nathanmarz/runaway-complexity-in-big-data-and-a-plan-to-stop-it&quot;&gt;Runaway Complexity in Big Data and a Plan to Stop It&lt;/a&gt;
+Nathan Marz great slide deck on reducing complexity in Big Data.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.infoq.com/interviews/marz-lambda-architecture&quot;&gt;Nathan Marz on Storm, Immutability in the Lambda Architecture, Clojure&lt;/a&gt;
+Nathan Marz Q&amp;amp;A from QCon 2014.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.infoq.com/articles/lambda-architecture-scalable-big-data-solutions&quot;&gt;Lambda Architecture: Design Simpler, Resilient, Maintainable and Scalable Big Data Solutions&lt;/a&gt;
+A great primer complete with working source code examples.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.infoq.com/presentations/lambda-arch-spring-xd?utm_source=infoqEmail&amp;amp;utm_medium=WeeklyNL_EditorialContentArchitectureDesign&amp;amp;utm_campaign=12022014news&quot;&gt;Implementing the Lambda Architecture with Spring XD&lt;/a&gt;
+A nice presentation from SpringOne 2014 with multiple example implementations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.infoq.com/news/2014/09/lambda-architecture-questions&quot;&gt;Questions About the Lambda Architecture&lt;/a&gt;
+An interesting article summarizing some of the concerns about Lamda Architecture.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 30 Dec 2014 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2014-05-27-java-service-rpm-example.html
+</guid>
+<link>
+http://tankthinks.net/posts/2014-05-27-java-service-rpm-example.html
+</link>
+<title>
+Java Service RPM Example
+</title>
+<description>
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I just pushed a new repo &lt;a href=&quot;https://github.com/Tankanow/java-service-rpm-example&quot;&gt;Java Service RPM Example&lt;/a&gt; containing an example project for how to package your Java Microservice as an RPM for installation as a Linux SysV Init Script. I&amp;#8217;ll fill in this post in the days to come to let you know how it works.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 27 May 2014 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2014-05-05-one-reason-clojure-is-great.html
+</guid>
+<link>
+http://tankthinks.net/posts/2014-05-05-one-reason-clojure-is-great.html
+</link>
+<title>
+Why Clojure is Great: Data
+</title>
+<description>
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;It is better to have 100 functions operate on one data structure than 10 functions on 10 data structures.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;attribution&quot;&gt;
+&amp;#8212; Alan Perlis
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;You&amp;#8217;ve probably seen this quote before. I&amp;#8217;ve seen in in countless blogs and books. It is referenced in the wonderful Clojure book &lt;a href=&quot;http://joyofclojure.com/&quot;&gt;The Joy of Clojure&lt;/a&gt;. I recently experienced the joy of Clojure directly through Perlis' pearl of wisdom (all puns intended).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I recently read a nice blog post on avoiding &lt;a href=&quot;http://www.javacodegeeks.com/2014/05/clojure-how-to-prevent-expected-map-got-vector-and-similar-errors.html&quot;&gt;unexpected issues&lt;/a&gt; in Clojure functions. I like the advice: small fns, destructuring and pre/post conditions so thought I would integrate it into a few functions. The epiphany came with the pre/post conditions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Let&amp;#8217;s start with a simple function that transforms a list to a vector.&lt;/p&gt;
+&lt;/div&gt;
+&lt;pre class=&quot;brush: clojure&quot;&gt;
+(defn list-&gt;vector
+  [xs]
+  (reduce conj [] xs))
+&lt;/pre&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I want to add pre/post conditions to this simple function, but I can&amp;#8217;t seem to remember the syntax. Let&amp;#8217;s see if I can figure it out using the Clojure composite data types: set, vector, list and map.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;First: there are two named types of conditions, &lt;code&gt;:pre&lt;/code&gt; and &lt;code&gt;:post&lt;/code&gt;. Well the Clojure composite data type that supports named associations is a map, does this look right:&lt;/p&gt;
+&lt;/div&gt;
+&lt;pre class=&quot;brush: clojure&quot;&gt;
+{:pre nil :post nil}
+&lt;/pre&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Second, let&amp;#8217;s think of what the values for each of the &lt;code&gt;:pre&lt;/code&gt; and &lt;code&gt;:post&lt;/code&gt; keys should be. It seems reasonable that there could be more than one &lt;code&gt;:pre&lt;/code&gt; function and more than one &lt;code&gt;:post&lt;/code&gt; function, so each value should be a collection of some sort. We don&amp;#8217;t really need to name the elements of these collections, but some sort of sequential collection makes sense so that the Clojure internals can apply the functions in order. In fact, doesn&amp;#8217;t &lt;code&gt;seq&lt;/code&gt; makes sense because I&amp;#8217;m sure the Clojure internals would love to use first &lt;code&gt;first&lt;/code&gt; and &lt;code&gt;rest&lt;/code&gt; to apply a collection of somethings. It seems the choice is between &lt;code&gt;list&lt;/code&gt; and &lt;code&gt;vector&lt;/code&gt;, and when choosing between a list and vector, we usually use vectors unless we are generating code forms because of the nice visual offset of the &lt;code&gt;[]&lt;/code&gt;, so a vector makes sense for each value:&lt;/p&gt;
+&lt;/div&gt;
+&lt;pre class=&quot;brush: clojure&quot;&gt;
+{:pre [] :post []}
+&lt;/pre&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Lastly, we know that we are creating pre and post conditions, which are functions, so there&amp;#8217;s only one Clojure data types for this job, &lt;code&gt;list&lt;/code&gt;, I&amp;#8217;ve filled in each of the :pre and :post vectors with two functions that just have a bunk name &quot;fn&quot; and some &quot;args&quot;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;pre class=&quot;brush: clojure&quot;&gt;
+{:pre [(fn args) (fn args))] :post [(fn args) (fn args))]}
+&lt;/pre&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Let&amp;#8217;s say that we want our functions to ensure that our input is a list and not empty and our output is a vector and not empty; putting it all together:&lt;/p&gt;
+&lt;/div&gt;
+&lt;pre class=&quot;brush: clojure&quot;&gt;
+(defn list-&gt;vector
+  [xs]
+  {:pre [(list? xs) (not (empty? xs))] :post [(vector? %) (not (empty? %))]}
+  (reduce conj [] xs))
+[1 2 3]
+AssertionError Assert failed: (list? xs)  user/list-&gt;vector (form-init2119333260165711694.clj:1)
+AssertionError Assert failed: (not (empty? xs))  user/list-&gt;vector (form-init2119333260165711694.clj:1)
+&lt;/pre&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Imagine trying the same process of discovery in Java for example without the aid of an IDE to show you the available methods on each object. It would be nearly impossible to do this in Java because most bits of data are wrapped in Objects with named fields and methods. This is one of the reasons Clojure is so intuitively powerful. And one of the reasons Perlis was so right.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Mon, 05 May 2014 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2014-04-04-refocus-simplify-1.html
+</guid>
+<link>
+http://tankthinks.net/posts/2014-04-04-refocus-simplify-1.html
+</link>
+<title>
+Simplify and Focus Learning
+</title>
+<description>
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;To learn, read. To know, write. To master, teach.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;attribution&quot;&gt;
+&amp;#8212; anonymous&lt;br&gt;
+&lt;cite&gt;Yogi Tea Bag&lt;/cite&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;admonitionblock note&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Note&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+I&amp;#8217;ve seen a version of this quote attributed to &lt;a href=&quot;https://en.wikipedia.org/wiki/Yogi_Bhajan&quot;&gt;Yogi Bhajan&lt;/a&gt;; however, I first came across it on a &lt;a href=&quot;http://www.yogiproducts.com/&quot;&gt;Yogi&lt;/a&gt; Tea Bag.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We are trying to learn so much all of the time. We are all passionate developers trying to improve as fast as we can. However, we inundate ourselves with learning materials and end up slowing down. We actually want to learn and get better. How? We simplify and focus.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I am always trying to learn and improve. I&amp;#8217;ve been a manager for a little over a year now; however, I am still very passionate about technical learning. To this end, I usually schedule one dev task for myself each sprint and I spend much of my spare time reading &lt;a href=&quot;http://infoq.com&quot;&gt;InfoQ&lt;/a&gt;, &lt;a href=&quot;http://martinfowler.com/bliki/&quot;&gt;Martin Fowler&lt;/a&gt;, &lt;a href=&quot;http://www.javacodegeeks.com&quot;&gt;Java Code Geeks&lt;/a&gt;, &lt;a href=&quot;http://planet.clojure.in&quot;&gt;Planet Clojure&lt;/a&gt; and any and every book of interest. This has resulted in an over-saturation of learning material.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For example, I started &lt;a href=&quot;http://www.amazon.com/The-Joy-Clojure-Michael-Fogus/dp/1617291412/ref=dp_ob_title_bk&quot;&gt;Joy of Clojure&lt;/a&gt; last year, stopped to do problems on &lt;a href=&quot;http://www.4clojure.com&quot;&gt;4clojure&lt;/a&gt;, stopped to write my own blog in Clojure, stopped to try to really understand &lt;a href=&quot;https://github.com/ring-clojure/ring&quot;&gt;Ring&lt;/a&gt; and &lt;a href=&quot;https://github.com/weavejester/compojure&quot;&gt;Compojure&lt;/a&gt;, stopped to really understand the &lt;a href=&quot;https://github.com/clojure/clojure&quot;&gt;Clojure source code&lt;/a&gt;, stopped to get &lt;a href=&quot;http://www.amazon.com/Introduction-Algorithms-Thomas-H-Cormen/dp/0262033844/ref=sr_1_1?ie=UTF8&amp;amp;qid=1396617984&amp;amp;sr=8-1&amp;amp;keywords=introduction+to+algorithms&quot;&gt;Introduction to Algorithms&lt;/a&gt; from the library. My library just sent me an email that it is so overdue that I might have to buy it from them. I read it for two weeks, but it&amp;#8217;s been propping up a lamp in my living for this last month because I&amp;#8217;ve been blogging more and writing more Clojure code again. Though I appreciate the beauty of the circle, this is getting crazy!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For many of us, this is an extension of &lt;a href=&quot;http://zenhabits.net/distractionitis/&quot;&gt;distractionitis&lt;/a&gt;, but it is also an indication of lack of focus and introduction of complexity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;It&amp;#8217;s time to re-balance my learning with Focus and Simplicity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We are trying to learn too much at once and losing. We will fix this by simplifying and focusing.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We all suffer from this at one point or another; actually, as developers, I think we are wired to do this to ourselves because we are depth-first by nature: we just &lt;em&gt;have&lt;/em&gt; to solve every problem we come across and we usually go down the rabbit hole directly in front of us.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;It&amp;#8217;s time to simplify and refocus. For me, I&amp;#8217;m going back to the Joy of Clojure. Also, I&amp;#8217;m adding one relatively orthogonal learning resource &lt;a href=&quot;http://pragprog.com/book/mnee/release-it&quot;&gt;Release It!&lt;/a&gt; because it is very relevant to my current job. I will be reading these books. Writing about these books. Teaching whomever will listen about the core values these books espouse. The road to mastery is begun.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 04 Apr 2014 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2014-04-02-four-ways-your-already-functional.html
+</guid>
+<link>
+http://tankthinks.net/posts/2014-04-02-four-ways-your-already-functional.html
+</link>
+<title>
+4 Ways Your Enterprise is Already Doing Functional Programming
+</title>
+<description>
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Can&amp;#8217;t see the forest for the trees.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;attribution&quot;&gt;
+&amp;#8212; idiom&lt;br&gt;
+&lt;cite&gt;humans&lt;/cite&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Most enterprise architectures are &lt;em&gt;scared&lt;/em&gt; of functional programming. The funny thing is that they&amp;#8217;re probably already doing &quot;functional&quot; programming in Java, just poorly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;The standard tiered architecture is more functional than OOP. Tiered architectures pushes everything into services. Services are just groups of functions, not unlike Clojure namespaces, with no data. This is mostly procedural code, but it is definitely closer to Functional than OOP.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lots of Value Objects with no behavior. This goes hand in hand with the tiered architecture. The truth here is that we just have lots of data separate from the methods that operate on that data. The fact that we create so many different containers for the data rather than just using maps is a non-functional thing we do, but the basic idea of &quot;data&quot; and separate &quot;functions&quot; is the same.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Immutable Classes. If you follow Joshua Bloch, as most enterprise java developers do, then they are almost certainly trying for immutability. We know it&amp;#8217;s a good idea. We just impose it ourselves with boilerplate code rather than allowing the language, e.g. Clojure, to ensure we are doing the right thing.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lots of anonymous classes. We create these all the time when we want to create executables or reify interfaces with one method. Often times we create anonymous classes solely for the purpose of passing them to as a parameter to a method. Where else have I seen that. Oh yeah. First class functions - the foundation of &quot;functional&quot; languages.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If your architect pushes back on you using a functional programming language because it is new, trendy and unproven - just point her to your enterprise standard tiered architecture and say we&amp;#8217;re doing this in the wrong tool.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Wed, 02 Apr 2014 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2014-03-30-microservices-1.html
+</guid>
+<link>
+http://tankthinks.net/posts/2014-03-30-microservices-1.html
+</link>
+<title>
+Microservices 1
+</title>
+<description>
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Systems must be clean too. An invasive architecture overwhelms the domain logic and impacts agility.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;attribution&quot;&gt;
+&amp;#8212; Bob Martin&lt;br&gt;
+&lt;cite&gt;Clean Code&lt;/cite&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;ACT 1&lt;/div&gt;
+&lt;p&gt;It&amp;#8217;s 2014 in Enterprise Development. You&amp;#8217;ve been developing for a few years in an enterprise setting - or even a start-up entering middle-age, learning a lot from peers and articles and conferences. Both your domain and engineering knowledge have grown in leaps and bounds. One day you realize that your are, most often, solving problems incidental to the core business problem your team/business-unit/department/division say they are solving. What gives?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I have been thinking about incidental complexity a lot recently. I&amp;#8217;ve also been thinking about Agile, especially since Dave Thomas' &lt;a href=&quot;http://pragdave.me/blog/2014/03/04/time-to-kill-agile/&quot;&gt;Time to Kill Agile&lt;/a&gt; blog post. In any case, incidental complexity and agility are related - we will come back to this later. The crux is this: we read lots of articles about exciting development &amp;#8230;&amp;#8203; about solving exciting problems.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We want to move fast and solve exciting problems too.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We can get back to solving interesting problems instead of incidental complexities with Microservices.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;http://martinfowler.com/&quot;&gt;Martin Fowler&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/boicy&quot;&gt;James Lewis&lt;/a&gt; recently published a blog in installments on martinfowler.com/articles/microservices.html[Microservices].
+- Examples
+- Turning Point: Remember, we want to develop with Agility.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;ACT 3&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The Crisis: Our develoment cycles are dragging us down.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The Solution: We can use microservices to return to the &quot;startup&quot;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The Climax: If you want to go back to the days when you were solving essential business problems instead of incidental complexity, microservices are a way to go.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The Resolution: Microservices are obviously not a silver bullet; &lt;a href=&quot;http://www.infoq.com/news/2014/03/microservices-soa&quot;&gt;some have already taken issue&lt;/a&gt; with Fowler and Lewis' mere mention of the word. However, Microservices are a valid architecture for those of us working in Enterprise who yearn to tackle Essential Business Problems again.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sun, 30 Mar 2014 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2014-03-17-run-length-decoding.html
+</guid>
+<link>
+http://tankthinks.net/posts/2014-03-17-run-length-decoding.html
+</link>
+<title>
+Run Length Decoding
+</title>
+<description>
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&amp;#8230;&amp;#8203;an idea is no more an even relatively constant thing than is a feeling or emotion or volitional process. There exist only changing and transient ideational processes; there are no permanent ideas that return again and disappear again.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;attribution&quot;&gt;
+&amp;#8212; Wilhelm Wundt&lt;br&gt;
+&lt;cite&gt;An Introduction to Psychology&lt;/cite&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Complexity and Likeablity&lt;/div&gt;
+&lt;p&gt;Wilhelm Wundt is famous for his many contributions to psychology. I have been interested in one particular contribution of his for many years now: the Wundt Curve. The Wundt Curve is a Bell-like curve laying on the x and y axes of Complexity and Likeability. The Wundt Curve shows how we like things to be more complex to a point (the apex of the curve) at which point any more complexity results in a decrease in likeability. The Wundt Curve plays nicely both into Clojure and the Run-Length encoding problem - &lt;a href=&quot;http://www.ic.unicamp.br/~meidanis/courses/mc336/2006s2/funcional/L-99_Ninety-Nine_Lisp_Problems.html&quot;&gt;# 12 in 99 Lisp Problems&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Clojure&lt;/div&gt;
+&lt;p&gt;First, since I would prefer not to incure the wrath of Rich Hickey, I must clearly state that the complexity I spoke of in the previous paragraph is not the complexity Rich spoke of in his seminal presentation &lt;a href=&quot;http://www.infoq.com/presentations/Simple-Made-Easy&quot;&gt;Simple Made Easy&lt;/a&gt;. In fact, just to make things clear I won&amp;#8217;t use the word complexity anymore - suffice to say that we are talking about novelty here and not something consisting of interwoven parts.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I love Clojure. It is simply beautiful. For the other Comp Sci students like me that learned assembly and C rather than Lisp, it certainly has novelty in syntax, but over time, the Clojure student realizes that this novelty sits nicely in a spot that is very likeable. Beyond the syntax, the budding Clojurist realizes that the language is filled with beautiful data structures, ubiquitous interfaces (protocols) and a simple power that is &lt;em&gt;both&lt;/em&gt; novel and very likeable indeed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Information Theory&lt;/div&gt;
+&lt;p&gt;The Wundt curve always makes me think of Information Theory, of entropy and bits and data compression. Run length encoding is a simple form of lossless compression where the encoder reduces the size of an input sequence by representing repeating input elements as a tuple of the element and the count of the &quot;run&quot;, for example we can encode the following input sequence &lt;code&gt;[:a :a :a :a :b :b :b :c :c]&lt;/code&gt; as &lt;code&gt;[(4 :a) (3 :b) (2 :c)]&lt;/code&gt; reducing our input by 33%.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Problem 12 in the 99 Lisp Problems concerns writing a run-length &lt;em&gt;decoder&lt;/em&gt;. A very simple way to write this in Clojure is:&lt;/p&gt;
+&lt;/div&gt;
+&lt;pre class=&quot;brush: clojure&quot;&gt;
+(defn rl-decode
+  [xs]
+  (-&gt;&gt; xs
+    (map #(if (coll? %)
+            (let [n (first %)
+                  x (second %)]
+              (repeat n x))
+            %))
+    flatten))
+&lt;/pre&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;First we thread our input collection &lt;code&gt;xs&lt;/code&gt; into &lt;code&gt;map&lt;/code&gt; with an anonymous function that either (a) returns the element unchanged or if the element is itself a collection (b) takes the first element as the count and the second element as the item to be repeated and does just that. Finally, thread that output to &lt;code&gt;flatten&lt;/code&gt;, which could probably be replaced with better use of &lt;code&gt;mapcat&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In any case, this is an elegent simple concise solution to an elegant simple concise problem. Huzzah.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Mon, 17 Mar 2014 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2014-03-12-just-enough-design.html
+</guid>
+<link>
+http://tankthinks.net/posts/2014-03-12-just-enough-design.html
+</link>
+<title>
+Just Enough Design
+</title>
+<description>
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Ticking away the moments that make up a dull day &amp;#8230;&amp;#8203;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;attribution&quot;&gt;
+&amp;#8212; Pink Floyd&lt;br&gt;
+&lt;cite&gt;Time&lt;/cite&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Tick tick tick &amp;#8230;&amp;#8203;&lt;/div&gt;
+&lt;p&gt;You were recently going through a codebase that was written no more than two years ago because a colleague asked you a domain question that was not answered in any spec. Despite a rigorous design and review process, the code is nigh unmaintainable. So you tick away a few hours trying to answer a simple question.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Over or Under&lt;/div&gt;
+&lt;p&gt;Sometimes we find that we &lt;strong&gt;over&lt;/strong&gt;-design software. In these cases we are most often left with `Strategy`s and `Abstract*Factory`s littered throughout the code without mention of a core domain Entity in site. This kind of software is difficult to maintain because it is difficult to understand.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Sometimes we find that we &lt;strong&gt;under&lt;/strong&gt;-design software. In these cases we are most often left with tightly coupled Class Hierarchies and broken dependencies in our wake. This kind of software is difficult to maintain because it is difficult to understand &amp;#8230;&amp;#8203; why we didn&amp;#8217;t think a little harder about what we were doing in the first place.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Just in Time! Design!&lt;/div&gt;
+&lt;p&gt;The truth is that it is quite difficult to design complex components. One nice guideline comes from Neal Ford&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Simplify Essential Complexity; Diminish Accidental Complexity&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;attribution&quot;&gt;
+&amp;#8212; Neal Ford&lt;br&gt;
+&lt;cite&gt;97 Things Every Software Architect Should Know&lt;/cite&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;What does this mean? Distill, as much as possible, your core domain problem - the essential complexity - into its simplest form; remove the trappings you think you need to build - the accidental complexity - that don&amp;#8217;t solve the core domain problem.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;So what kind of process might help us do this? One possible solution is &lt;code&gt;Just in Time Design&lt;/code&gt;. In JIT Design we put off rigorous design until just before we are about to implement a smallish component. We can and should still have well though out High-Level &lt;span class=&quot;line-though&quot;&gt;Architecture&lt;/span&gt; Shared Understanding that guides our smaller designs in the big picture, but put off the arguments about Class and Sequence diagrams until you are about to implement the goo.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Wed, 12 Mar 2014 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2014-03-10-where-is-the-oop-in-my-layers.html
+</guid>
+<link>
+http://tankthinks.net/posts/2014-03-10-where-is-the-oop-in-my-layers.html
+</link>
+<title>
+Where is the OOP in my Layers?
+</title>
+<description>
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Help! I think I&amp;#8217;ve lost the OOP in my Layers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Do I Smell Something?&lt;/div&gt;
+&lt;p&gt;Is it just me or did my OOP disappear somewhere between my DAL and my service layer? I bet you&amp;#8217;ve worked on a project with a tiered architecture that boiled down to something like &lt;code&gt;Controller Layer &amp;#8594; Service Layer &amp;#8594; Data Layer&lt;/code&gt; with a nice &lt;code&gt;Model&lt;/code&gt; holding the layers together tighter than a wrestlers unitard.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Our &lt;code&gt;Model&lt;/code&gt; is just a set of &lt;code&gt;Value Object&lt;/code&gt; classes because it&amp;#8217;s too difficult to use the data directly, and that is fine [sigh] but sends us down the slippery slope to follow. If we&amp;#8217;re using &lt;code&gt;Spring&lt;/code&gt;, you might as well push us off a cliff.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We end up with a bunch of Classes that encapsulate &lt;em&gt;only&lt;/em&gt; their injected dependencies but that are in all other ways groups of somewhat related (if we&amp;#8217;re lucky) functions. So at best we&amp;#8217;re doing poor man&amp;#8217;s functional programming in the context of a Class Diagram, or at worst we&amp;#8217;re in a procedural gobbledee-gook of spaghetti code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;All in the name of Cap&amp;#8217;n Crunch?&lt;/div&gt;
+&lt;p&gt;Usually this is all in the name of some Cerealization (or Serialization &amp;#8230;&amp;#8203; fine) library that turns our &lt;code&gt;Model&lt;/code&gt; objects into XML/JSON &amp;#8230;&amp;#8203; &lt;strong&gt;for free&lt;/strong&gt;! Or so the architects keep telling me as I wonder why my &lt;code&gt;getStatus&lt;/code&gt; method takes a &lt;code&gt;Job&lt;/code&gt; object and a bunch of other beans as parameters instead of living with its data &lt;em&gt;in&lt;/em&gt; the &lt;code&gt;Job&lt;/code&gt; class.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Mon, 10 Mar 2014 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2014-03-08-property-based-testing.html
+</guid>
+<link>
+http://tankthinks.net/posts/2014-03-08-property-based-testing.html
+</link>
+<title>
+Property Based Testing
+</title>
+<description>
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Found, but not proven.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;attribution&quot;&gt;
+&amp;#8212; Democritus
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Part of my learning Clojure journey is to question my beliefs regarding testing. For the past few years I&amp;#8217;ve lived the &lt;a href=&quot;http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_1/181-8179541-6211637?ie=UTF8&amp;amp;qid=1394325126&amp;amp;sr=8-1&amp;amp;keywords=clean+code&quot;&gt;Clean Code&lt;/a&gt; &lt;a href=&quot;http://www.amazon.com/Test-Driven-Development-By-Example/dp/0321146530/ref=sr_1_1?ie=UTF8&amp;amp;qid=1394325145&amp;amp;sr=8-1&amp;amp;keywords=test+driven+development&quot;&gt;TDD&lt;/a&gt; style of development: let the rails of unit tests guide you. However, the Clojure brain trust - Rich, Stu and the rest of the brilliant minds at &lt;a href=&quot;http://cognitect.com/&quot;&gt;Cognitect&lt;/a&gt; have made a compelling argument that unit tests, or at least expectation-based tests are old hat.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;dlist&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Expectation-Based Testing&lt;/div&gt;
+&lt;dl&gt;
+&lt;dt class=&quot;hdlist1&quot;&gt;What is &lt;em&gt;Expectation-Based Testing&lt;/em&gt;?&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;This is, simply, what most of us have been doing ad nauseum. If you&amp;#8217;re like me, the following &lt;code&gt;given&lt;/code&gt;-&lt;code&gt;when&lt;/code&gt;-&lt;code&gt;then&lt;/code&gt; structure will look familiar:&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;pre class=&quot;brush: java&quot;&gt;
+@Test
+public void testMethodExpectationStyle(){
+	// given
+	// here is where you would set up some mocks, or if you're working with bad/legacy
+	// code, curse loudly as you foolishly try to mock static methods in between reading
+	// the Mockito/Powermock docs
+
+	// when
+	Object actual = objectUnderTest.methodUnderTest(someKnownInput);
+
+	// then
+	assertThat(actual, equalTo(expected));
+}
+&lt;/pre&gt;
+&lt;div class=&quot;dlist&quot;&gt;
+&lt;dl&gt;
+&lt;dt class=&quot;hdlist1&quot;&gt;So what are the pros and cons of this approach?&lt;/dt&gt;
+&lt;dd&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Pros&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/dd&gt;
+&lt;dt class=&quot;hdlist1&quot;&gt;** simple&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;set up the state, run the method, check the output&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&quot;hdlist1&quot;&gt;** readability&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;well, sometimes, when the mocking doesn&amp;#8217;t get out of hand&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&quot;hdlist1&quot;&gt;** intention&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;you know up front what the method should do&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sidebarblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Intention&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Allow me a brief diversion on &lt;em&gt;Intention&lt;/em&gt;. It turns out &lt;em&gt;Intention&lt;/em&gt; is a blessing and a curse. The developer writing expection-based intends to test the functionality of a method by &lt;em&gt;knowing&lt;/em&gt; what it is supposed to do given a &lt;em&gt;known&lt;/em&gt; input. This is good, for example we know that the reverse of &quot;ball&quot; is &quot;llab&quot;, as such we can test our reverse method is way. However, what if our understanding of the method is wrong? What if it functions differently under different conditions?&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Cons&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;scale:: since we explicitly define the inputs and outputs, we are limited by the number of tests we are willing to write; we mitigate this by testing known boundary conditions, however, it is impractical to try to test &amp;gt; a handful of inputs for each method&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Property-Based Testing&lt;/div&gt;
+&lt;p&gt;Property-Based testing on the other hand is testing such that the developer defines properties of the method under test and uses a generator function to create large input sets. For example, in Clojure this might look like:&lt;/p&gt;
+&lt;/div&gt;
+&lt;pre class=&quot;brush: clojure&quot;&gt;
+;; my naive reverse a list implementation
+(defn myreverse
+  [xs]
+  (loop [n 0
+         ys []]
+    (if (&lt; n (count xs))
+      (recur (inc n) (cons (nth xs n) ys))
+      ys)))
+
+;; define a property about that
+;; in this case, simply that for all inputs, myreverse does the same thing as Clojure's reverse
+(def prop-myreverse-equalto-cljreverse
+  (prop/for-all [v (gen/vector gen/int)]
+    (= (reverse v) (myreverse v))))
+;; this is definitely cheating, because for any useful function, you won't have an existing one in the Clojure toolkit, so let's try again - how about that if a reverse twice I should get back the original list:
+(def prop-reverse-reverse
+  (prop/for-all [v (gen/vector gen/int)]
+    (= v (myreverse (myreverse v)))))
+
+;; then i can check these properties, N number of times (in this case N is 1000)
+(c/quick-check 1000 prop-myreverse-equalto-cljreverse)
+(c/quick-check 1000 prop-reverse-reverse)
+&lt;/pre&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;So the &lt;code&gt;test.check&lt;/code&gt; library I&amp;#8217;m using in this case will generate 1000 lists of different sizes of random integers and then check each list again the properties i defined.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The power of this is huge. Instead of explicitly enumerating all of the inputs for a given function under test, I can simply define some properties that should be true for all inputs and then let someone else schlep up and down a mountain generating lots of input for me!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The difficult part here is that you will never have the contrived first property example I gvae above: where you will have another function to test against. Instead, almost certainly, one property won&amp;#8217;t do it for any of your functions &amp;#8230;&amp;#8203; instead you will have to tease out all of the salient properties to ensure the functionality of your method.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We have swapped &quot;generate all of the import inputs and know what the outputs are supposed to be&quot; for &quot;generate all of the important properties&quot;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Which do you prefer?&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sat, 08 Mar 2014 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2014-03-07-try_again.html
+</guid>
+<link>
+http://tankthinks.net/posts/2014-03-07-try_again.html
+</link>
+<title>
+Happiness and Coding
+</title>
+<description>
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;In the Beginning&lt;/div&gt;
+&lt;p&gt;Am I the only one who feels like this?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Lost&lt;/div&gt;
+&lt;p&gt;Sometimes I feel so lost: I feel lost in life, love and happiness. Yes: I have first world problems. By most measures I have absolutely nothing to complain about, however most days I feel like I&amp;#8217;m doing something wrong. Do you feel like this sometimes too?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I feel like I&amp;#8217;m in a perpetual loop of &quot;Why didn&amp;#8217;t this go the way I want?&quot;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Well &amp;#8230;&amp;#8203; I&amp;#8217;m starting to think I don&amp;#8217;t know what I want. So &amp;#8230;&amp;#8203; let&amp;#8217;s make a list.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;The List&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;I want to be healthy&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I want to be around my family&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I want to be productive at work&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I want to always be learning&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The funny thing is that I &lt;em&gt;do&lt;/em&gt; get at least a few of these every day. So maybe the problem is that I&amp;#8217;m not in the moment. That is why I love coding so much: I am in the moment when I am coding. I get lost. I could wake up 3 hours later without knowing what happened, as the great philosopher &lt;a href=&quot;http://www.imdb.com/character/ch0009005/?ref_=tt_cl_t2&quot;&gt;Frank Ricard&lt;/a&gt; once did during a debate:&lt;/p&gt;
+&lt;/div&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/_yYDzLUH1NE&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Coding Snippet of the Day&lt;/div&gt;
+&lt;p&gt;I have been working my through the &lt;a href=&quot;http://www.ic.unicamp.br/~meidanis/courses/mc336/2006s2/funcional/L-99_Ninety-Nine_Lisp_Problems.html&quot;&gt;99 Lisp Problems&lt;/a&gt; since I heard about them from &lt;a href=&quot;http://rajugandhi.com/&quot;&gt;Raju Gandhi&lt;/a&gt;'s great &quot;Learning to Learn&quot; presentation at No Fluff.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Flattening a list gave me some issues: I kept banging my head against it with:&lt;/p&gt;
+&lt;/div&gt;
+&lt;pre class=&quot;brush: clojure&quot;&gt;
+(defn my-flatten
+  [xs]
+  (when-let [x (first xs)]
+    (cons
+      (if (seq? x)
+          (my-flatten x)
+          [x])
+      (my-flatten (rest xs)))))
+(my-flatten '(1 2 (3) (4 5) 6))
+
+ninetynine-clj-problems.core=&gt; (my-flatten '(1 2 (3) (4 5) 6))
+&lt;/pre&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;After &lt;em&gt;way&lt;/em&gt; too much time, I realized that I was literally 4 characters off (note the cons &amp;#8594; concat) &amp;#8230;&amp;#8203; so close.&lt;/p&gt;
+&lt;/div&gt;
+&lt;pre class=&quot;brush: clojure&quot;&gt;
+(defn my-flatten
+  [xs]
+  (when-let [x (first xs)]
+    (concat
+      (if (seq? x)
+          (my-flatten x)
+          [x])
+      (my-flatten (rest xs)))))
+(my-flatten '(1 2 (3) (4 5) 6))
+
+ninetynine-clj-problems.core=&gt; (my-flatten '(1 2 (3) (4 5) 6))
+&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 07 Mar 2014 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2014-03-01-ten-observations-from-scrumbut.html
+</guid>
+<link>
+http://tankthinks.net/posts/2014-03-01-ten-observations-from-scrumbut.html
+</link>
+<title>
+10 Observations From Scrumbut
+</title>
+<description>
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Scrumbut&lt;/div&gt;
+&lt;p&gt;What is scrumbut?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;10 Observations&lt;/div&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;Scrum has a lot of overhead
+Between the planning, scrums, review and retrospectives this is a heavy weight process.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scrumbut has &lt;em&gt;MORE&lt;/em&gt; overhead
+Does it? Or is this a nice headline&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We do the easy but least-effective parts of scrum
+I think Venkat said this in a presentation: we choose the easy but useless parts of scrum. We choose to do the daily standups but what benefit are they? We kind of do user stories&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Grooming the backlog is hard
+Speaking to you as an engineer turned manager: grooming the backlog is not easy. When you are scrumming in a fixed-length project, managing the backlog is essential &lt;em&gt;and&lt;/em&gt; difficult.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Functionality is everything
+You must build incremental functionality. Every sprint show something. Demo. Demo. Demo. Prototype if you have to. Just don&amp;#8217;t disappear down the rabbit hole for 3 weeks with nothing to show for it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Simplicity over All Else
+Rich Hickey joked about this in the seminal presentation Simple Made Easy; How can you sprint forever? Just fire the starting gun every 40 yards. Teams can&amp;#8217;t sprint forever. However, teams can build simple software that is easier to maintain and extend.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Binary Rules
+When in doubt, distill a problem to two alternatives &amp;#8230;&amp;#8203; then choose the one that is more flexible.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Baby Steps
+Take small steps. It doesn&amp;#8217;t make any sense to refactor your bad design into a perfect SOA in one sprint. As Bob said, &quot;baby steps&quot;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Executable Acceptance Tests over Unit Tests
+Don&amp;#8217;t get me wrong, I love unit tests. Unit tests are essential if you want to refactor later. However, unit tests don&amp;#8217;t guarantee functionality. Functional tests gaurantee funcitonality, but we don&amp;#8217;t know if it is the &lt;em&gt;right&lt;/em&gt; functionality. Only acceptance tests, executable use case acceptance tests, are valuable as repeatable tests to see if your module/deliverable/artifact does what the stakeholders want it to do.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Never forget deployment
+Have you written beatiful code only to realize that deploying it is a tangled hairball. Start with the end. Think about the machines on which your code will run first. Then work your way back to the design. Too often teams focus on class diagrams 90% and spend only 10% on component/deployment design.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sat, 01 Mar 2014 00:00:00 +0000
+</pubDate>
+</item>
+<item>
+<guid>
+http://tankthinks.net/posts/2014-03-01-i-wonder.html
+</guid>
+<link>
+http://tankthinks.net/posts/2014-03-01-i-wonder.html
+</link>
+<title>
+I wonder
+</title>
+<description>
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I think my brother is coming into an opportunity. He is working at a new company that has lots of room for improvement. I asked him to bring a notebook to work and note any inefficiencies he comes across.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;It got me thinking that I could free-lance for this company. However, I wonder if I have the skills to architect large solutions. I think I&amp;#8217;m a strong software developer. I must not be an idiot because Yaning thinks I&amp;#8217;m pretty smart. I think Peter thouht I was smart too. However, I did not do well in the HubSpot interview. Though that is really confusing to me.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;What did I not do well on.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;Memoize&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Circular Buffer&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Write SQL to return Twitter feed&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I don&amp;#8217;t think I nailed any of these. I think I did the best on the Circular Buffer - I did OK there. I shot myself in the foot with Memoize because I tried and failed at Clojure before moving on to a bad Java solution. The SQL I did OK, but again, failed to understand B-Trees and some basic SQL stuff.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Memoize in clojure:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;(defn memoize
+  [f]
+  (let [cache (atom {})]
+    (fn [x]
+      (if-let [ret (get @cache x)]
+        (val ret)
+        (let [fx (f x)]
+          (do
+            (swap! cache assoc x fx)
+            fx))))))&lt;/p&gt;
+&lt;/div&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sat, 01 Mar 2014 00:00:00 +0000
+</pubDate>
+</item>
+</channel>
+</rss>

@@ -45,23 +45,22 @@ body {
     font-weight: 400;
     line-height: 28px;
     background: #FFF;
-
     text-rendering: optimizeLegibility;
     vertical-align: baseline;
 }
 
 ::selection {
-    background: #1e9ca7a7;
+    background: #3F96D2;
     color: #FFF;
 }
 
 ::-moz-selection {
-    background: #1e9ca7a7;
+    background: #3F96D2;
     color: #FFF;
 }
 
 a {
-    color: #1e9ca7a7;
+    color: #3F96D2;
     text-decoration: none;
 }
 
@@ -77,6 +76,7 @@ img {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -88,7 +88,7 @@ img.imgfull {
     width: 100%;
     max-width: 1000px;
     margin: 0 0 20px 0;
-    border-top: 5px solid #1e9ca7a7;
+    border-top: 5px solid #3F96D2;
 }
 
 /* ==================================================
@@ -121,7 +121,7 @@ img.imgfull {
     bottom: 0;
     width: 100%;
     max-width: 280px;
-    background: #1e9ca7a7;
+    background: #3F96D2;
     color: #FFF;
     z-index: 3;
     overflow-y: auto;
@@ -134,8 +134,9 @@ img.imgfull {
 }
 
 #left p#logo a {
+    display: flex;
+    flex-direction: column;
     float: left;
-    display: block;
     padding: 30px 20px;
     width: 100%;
     color: #FFF;
@@ -144,12 +145,13 @@ img.imgfull {
 
 #left p#logo a span.fa {
     float: left;
-    display: block;
     padding: 25px;
     background: rgba(0, 0, 0, 0.2);
     font-size: 48px;
     margin: 0 0 10px 0;
-
+    flex-grow: 0;
+    width: auto;
+    align-self: center;
     -webkit-border-radius: 80px;
     -moz-border-radius: 80px;
     border-radius: 80px;
@@ -163,6 +165,7 @@ img.imgfull {
     font-weight: 700;
     font-family: "Montserrat";
     text-transform: uppercase;
+    text-align: center;
 }
 
 #left #socialmedia ul {

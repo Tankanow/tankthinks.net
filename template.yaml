@@ -97,6 +97,18 @@ Resources:
         Enabled: true
         Comment: 'CloudFront Distribution for tankthinks.net'
         DefaultRootObject: index.html
+        CacheBehaviors:
+          - PathPattern: '*'
+            TargetOriginId: WebsiteBucket
+            ViewerProtocolPolicy: redirect-to-https
+            AllowedMethods:
+              - GET
+              - HEAD
+              - OPTIONS
+            CachedMethods:
+              - HEAD
+              - GET
+            CachePolicyId: !GetAtt DefaultCachePolicy.Id
         DefaultCacheBehavior:
           CachePolicyId: !GetAtt DefaultCachePolicy.Id
           AllowedMethods:

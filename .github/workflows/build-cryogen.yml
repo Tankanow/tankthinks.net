@@ -61,4 +61,4 @@ jobs:
 
       - name: Execute clojure code
         working-directory: ./blog
-        run: clj -M:build
+        run: clojure -M:build

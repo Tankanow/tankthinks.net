@@ -47,14 +47,13 @@ jobs:
 
       - name: Cache clojure dependencies
         uses: actions/cache@v3
-        working-directory: ./blog
         with:
           path: |
             ~/.m2/repository
             ~/.gitlibs
             ~/.deps.clj
           # List all files containing dependencies:
-          key: cljdeps-${{ hashFiles('deps.edn') }}
+          key: cljdeps-${{ hashFiles('blog/deps.edn') }}
           # key: cljdeps-${{ hashFiles('deps.edn', 'bb.edn') }}
           # key: cljdeps-${{ hashFiles('project.clj') }}
           # key: cljdeps-${{ hashFiles('build.boot') }}

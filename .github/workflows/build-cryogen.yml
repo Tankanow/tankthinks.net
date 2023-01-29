@@ -37,13 +37,9 @@ jobs:
           zprint: 1.2.5
 
       # Optional step:
-      - name: Check Stuff
-        working-directory: ./blog
+      - name: Install sass
         run: |
-          echo 'Where am I?'
-          pwd
-          echo 'What is here?'
-          ls
+          npm install -g sass
 
       - name: Cache clojure dependencies
         uses: actions/cache@v3
@@ -61,4 +57,5 @@ jobs:
 
       - name: Execute clojure code
         working-directory: ./blog
-        run: clojure -M:build
+        run: |
+          clojure -M:build

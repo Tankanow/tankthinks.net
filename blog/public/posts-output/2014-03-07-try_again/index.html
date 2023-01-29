@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>tankthinks: Happiness and Coding</title>
+        
+<meta name="keywords" content="enterprise,apache,dynamic,static,architecture,interviewing,testing,learning,clojure,aws,complexity,design,3tilt,java,lost,booknote,failure,languages,presentation,fowler,brain,docker,cuwab,scrum,sketchnote,hickey,clojure-conj-2015,research-group,information theory,spring,microservices,oop,arachne">
+
+<meta name="description" content="In the BeginningAm I the only one who feels like this?">
+
+<meta property="og:description" content="In the BeginningAm I the only one who feels like this?">
+
+<meta property="og:url" content="https://tankthinks.net/posts-output/2014-03-07-try_again/" />
+<meta property="og:title" content="Happiness and Coding" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/lotus-highlightjs.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="tankthinks" href="/">
+                    <span class="fa fa-bolt"></span>
+                    <div class="text desktop-and-tablet-only">tankthinks</div>
+                    <div class="text mobile-only">tankthinks</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li ><a title="Home" href="/"><div class="menu-item-text">Home</div></a></li>
+                        <li ><a title="Archives" href="/archives/"><div class="menu-item-text">Archives</div></a></li>
+                        
+                        <li ><a title="Tags" href="/tags/"><div class="menu-item-text">Tags</div></a></li>
+                        
+                        
+                        <li >
+                            <a href="/pages-output/about/"><div class="menu-item-text">About</div></a>
+                        </li>
+                        
+                        <!-- <li><a title="RSS" href="/feed.xml"><div class="menu-item-text">RSS</div></a></li> -->
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia" class="clearfix">
+                    <ul>
+                        <li><a title="GitHub" href="https://github.com/tankanow/" rel="external"><span class="fa fa-github"></span></a></li>
+                        <li><a title="Stack Overflow" href="https://stackoverflow.com/users/5475850/tankthinks" rel="external"><span class="fa fa-stack-overflow"></span></a></li>
+                        <li><a title="LinkedIn" href="https://www.linkedin.com/in/adam-tankanow/" rel="external"><span class="fa fa-linkedin"></span></a></li>
+                        <li><a title="Lichess" href="https://lichess.org/@/tankthinks" rel="external"><span class="fa fa-trophy"></span></a></li>
+                        <!-- <li><a title="Last.fm" href="./" rel="external"><span class="fa fa-lastfm"></span></a></li> -->
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>Happiness and Coding</h1>
+        <div class="byline">
+            <span class="date">March 7, 2014</span>
+            
+        </div>
+    </div>
+</div>
+<div>
+    <ol class="toc"><li><a href="#in-the-beginning">In the Beginning</a></li><li><a href="#lost">Lost</a></li><li><a href="#the-list">The List</a></li><li><a href="#coding-snippet-of-the-day">Coding Snippet of the Day</a></li></ol>
+    <h3 id="in-the-beginning">In the Beginning</h3><p>Am I the only one who feels like this?</p><h3 id="lost">Lost</h3><p>Sometimes I feel so lost: I feel lost in life, love and happiness. Yes: I have first world problems. By most measures I have absolutely nothing to complain about, however most days I feel like I'm doing something wrong. Do you feel like this sometimes too?</p><p>I feel like I'm in a perpetual loop of "Why didn't this go the way I want?".</p><p>Well ... I'm starting to think I don't know what I want. So ... let's make a list.</p><h3 id="the-list">The List</h3><ul><li>I want to be healthy</li><li>I want to be around my family</li><li>I want to be productive at work</li><li>I want to always be learning</li></ul><p>The funny thing is that I <em>do</em> get at least a few of these every day. So maybe the problem is that I'm not in the moment. That is why I love coding so much: I am in the moment when I am coding. I get lost. I could wake up 3 hours later without knowing what happened, as the great philosopher <a href="http://www.imdb.com/character/ch0009005/?ref_=tt_cl_t2">Frank Ricard</a> once did during a debate:</p><iframe width="560" height="315" src="//www.youtube.com/embed/_yYDzLUH1NE" frameborder="0" allowfullscreen="allowfullscreen"></iframe><h3 id="coding-snippet-of-the-day">Coding Snippet of the Day</h3><p>I have been working my through the <a href="http://www.ic.unicamp.br/~meidanis/courses/mc336/2006s2/funcional/L-99_Ninety-Nine_Lisp_Problems.html">99 List Problems</a> since I heard about them from <a href="http://rajugandhi.com/">Raju Gandhi</a>'s great "Learning to Learn" presentation at No Fluff.</p><p>Flattening a list gave me some issues: I kept banging my head against it with:</p><pre><code class="clojure">(defn my-flatten
+  [xs]
+  (when-let [x (first xs)]
+    (cons
+      (if (seq? x)
+          (my-flatten x)
+          [x])
+      (my-flatten (rest xs)))))
+(my-flatten '(1 2 (3) (4 5) 6))
+
+ninetynine-clj-problems.core=&gt; (my-flatten '(1 2 (3) (4 5) 6))
+</code></pre><p>After <em>way</em> too much time, I realized that I was literally 4 characters off (note the cons -&gt; concat) ... so close.</p><pre><code class="clojure">(defn my-flatten
+  [xs]
+  (when-let [x (first xs)]
+    (concat
+      (if (seq? x)
+          (my-flatten x)
+          [x])
+      (my-flatten (rest xs)))))
+(my-flatten '(1 2 (3) (4 5) 6))
+
+ninetynine-clj-problems.core=&gt; (my-flatten '(1 2 (3) (4 5) 6))
+</code></pre>
+</div>
+
+<div id="post-tags">
+    <br/>
+    <b>Tags: </b>
+    
+    <a href="/tags-output/clojure/">clojure</a>
+    
+    <a href="/tags-output/lost/">lost</a>
+    
+</div>
+
+<br/>
+
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/posts-output/2014-03-08-property-based-testing/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">Property Based Testing</div></a>
+    
+    
+    <a class="next" href="/posts-output/2014-03-01-ten-observations-from-scrumbut/"><div class="nav-text"">10 Observations From Scrumbut</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    
+</div>
+
+    
+
+    
+
+
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2023 Adam Tankanow
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        <script src="/js/highlight.pack.js" type="application/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+    </body>
+</html>

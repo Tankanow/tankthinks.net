@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>tankthinks: Dynamic vs Static Languages</title>
+        
+<meta name="keywords" content="enterprise,apache,dynamic,static,architecture,interviewing,testing,learning,clojure,aws,complexity,design,3tilt,java,lost,booknote,failure,languages,presentation,fowler,brain,docker,cuwab,scrum,sketchnote,hickey,clojure-conj-2015,research-group,information theory,spring,microservices,oop,arachne">
+
+<meta name="description" content="Elben Shira&#39;s thoughtprovoking The End of Dynamic Languages inspired many wonderful responses, for example Have Static Languages Won?, What Consitutes Winning, and The Sky Is Not Falling.If Elben is offering odds then I will absolutely put money a new successful dynamic programming language for 3 reasons:">
+
+<meta property="og:description" content="Elben Shira&#39;s thoughtprovoking The End of Dynamic Languages inspired many wonderful responses, for example Have Static Languages Won?, What Consitutes Winning, and The Sky Is Not Falling.If Elben is offering odds then I will absolutely put money a new successful dynamic programming language for 3 reasons:">
+
+<meta property="og:url" content="https://tankthinks.net/posts-output/2015-11-29-dynamic-static-languages/" />
+<meta property="og:title" content="Dynamic vs Static Languages" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/lotus-highlightjs.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="tankthinks" href="/">
+                    <span class="fa fa-bolt"></span>
+                    <div class="text desktop-and-tablet-only">tankthinks</div>
+                    <div class="text mobile-only">tankthinks</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li ><a title="Home" href="/"><div class="menu-item-text">Home</div></a></li>
+                        <li ><a title="Archives" href="/archives/"><div class="menu-item-text">Archives</div></a></li>
+                        
+                        <li ><a title="Tags" href="/tags/"><div class="menu-item-text">Tags</div></a></li>
+                        
+                        
+                        <li >
+                            <a href="/pages-output/about/"><div class="menu-item-text">About</div></a>
+                        </li>
+                        
+                        <!-- <li><a title="RSS" href="/feed.xml"><div class="menu-item-text">RSS</div></a></li> -->
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia" class="clearfix">
+                    <ul>
+                        <li><a title="GitHub" href="https://github.com/tankanow/" rel="external"><span class="fa fa-github"></span></a></li>
+                        <li><a title="Stack Overflow" href="https://stackoverflow.com/users/5475850/tankthinks" rel="external"><span class="fa fa-stack-overflow"></span></a></li>
+                        <li><a title="LinkedIn" href="https://www.linkedin.com/in/adam-tankanow/" rel="external"><span class="fa fa-linkedin"></span></a></li>
+                        <li><a title="Lichess" href="https://lichess.org/@/tankthinks" rel="external"><span class="fa fa-trophy"></span></a></li>
+                        <!-- <li><a title="Last.fm" href="./" rel="external"><span class="fa fa-lastfm"></span></a></li> -->
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>Dynamic vs Static Languages</h1>
+        <div class="byline">
+            <span class="date">November 29, 2015</span>
+            
+        </div>
+    </div>
+</div>
+<div>
+    
+    <p>Elben Shira's thoughtprovoking <a href="http://elbenshira.com/blog/the-end-of-dynamic-languages/">The End of Dynamic Languages</a> inspired many wonderful responses, for example <a href="http://pointersgonewild.com/2015/11/25/have-static-languages-won/">Have Static Languages Won?</a>, <a href="http://exupero.org/hazard/post/what-constitutes-winning/">What Consitutes Winning</a>, and <a href="http://yogthos.net/posts/2015-11-28-TheSkyIsNotFalling.html">The Sky Is Not Falling</a>.</p><p>If Elben is offering odds then I will absolutely put money a new successful dynamic programming language for 3 reasons:</p><ol><li><p>Most programmers don't start in a language with a powerful static type system. Organically these programmers seek the expression and creativity dynamic languages provide. Only after experiencing some malevolent runtime bugs will they seek out the safety of powerful type systems.</p></li><li><p>Not all problems require static typing. To <a href="https://twitter.com/yogthos">@Yoghos's</a> point, we correctly seek out languages that concisely express the solution. We need static typing in shell scripting languages and I'm sure a new one will come along at some point to replace Bash.</p></li><li><p>Even if statically typed languages <em>are</em> the messiah, the discerning bettor must take the side of a single successful dynamic language appearing between now and the end of time.</p></li></ol><p>A more serious question:</p><p><strong>Can we prove program correctness without static typing?</strong></p><p>Yes: we can use a <a href="https://en.wikipedia.org/wiki/Specification_language">Formal Specification Language</a>. Oh boy, but that looks much <em>more</em> complicated than using a powerful static type system ... and there are few tools to help us translate formal specifications to a programming language we can use. Ah. We have a short cut! <a href="https://en.wikipedia.org/wiki/Property_testing">Property Testing</a>! Property Testing allows us to build a formal functional specification of our programs, proving them correct without the need of a Formal Specification Language. Benjamin Pierce's keynote <a href="https://www.youtube.com/watch?v=Y2jQe8DFzUM">A Deep specification for Dropbox</a> from Clojure/Conj 2105 delves deeper into Formal Specification and Property Testing for correctness.</p>
+</div>
+
+<div id="post-tags">
+    <br/>
+    <b>Tags: </b>
+    
+    <a href="/tags-output/dynamic/">dynamic</a>
+    
+    <a href="/tags-output/static/">static</a>
+    
+    <a href="/tags-output/languages/">languages</a>
+    
+    <a href="/tags-output/clojure-conj-2015/">clojure-conj-2015</a>
+    
+</div>
+
+<br/>
+
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/posts-output/2015-11-30-3tilt-kickoff/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">3tilt Kickoff</div></a>
+    
+    
+    <a class="next" href="/posts-output/2014-12-30-lamda-architecture/"><div class="nav-text"">5 Lamda Architecture Resources</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    
+</div>
+
+    
+
+    
+
+
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2023 Adam Tankanow
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        <script src="/js/highlight.pack.js" type="application/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+    </body>
+</html>

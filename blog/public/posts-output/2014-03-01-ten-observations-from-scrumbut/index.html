@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>tankthinks: 10 Observations From Scrumbut</title>
+        
+<meta name="keywords" content="enterprise,apache,dynamic,static,architecture,interviewing,testing,learning,clojure,aws,complexity,design,3tilt,java,lost,booknote,failure,languages,presentation,fowler,brain,docker,cuwab,scrum,sketchnote,hickey,clojure-conj-2015,research-group,information theory,spring,microservices,oop,arachne">
+
+<meta name="description" content="ScrumbutWhat is scrumbut?">
+
+<meta property="og:description" content="ScrumbutWhat is scrumbut?">
+
+<meta property="og:url" content="https://tankthinks.net/posts-output/2014-03-01-ten-observations-from-scrumbut/" />
+<meta property="og:title" content="10 Observations From Scrumbut" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/lotus-highlightjs.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="tankthinks" href="/">
+                    <span class="fa fa-bolt"></span>
+                    <div class="text desktop-and-tablet-only">tankthinks</div>
+                    <div class="text mobile-only">tankthinks</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li ><a title="Home" href="/"><div class="menu-item-text">Home</div></a></li>
+                        <li ><a title="Archives" href="/archives/"><div class="menu-item-text">Archives</div></a></li>
+                        
+                        <li ><a title="Tags" href="/tags/"><div class="menu-item-text">Tags</div></a></li>
+                        
+                        
+                        <li >
+                            <a href="/pages-output/about/"><div class="menu-item-text">About</div></a>
+                        </li>
+                        
+                        <!-- <li><a title="RSS" href="/feed.xml"><div class="menu-item-text">RSS</div></a></li> -->
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia" class="clearfix">
+                    <ul>
+                        <li><a title="GitHub" href="https://github.com/tankanow/" rel="external"><span class="fa fa-github"></span></a></li>
+                        <li><a title="Stack Overflow" href="https://stackoverflow.com/users/5475850/tankthinks" rel="external"><span class="fa fa-stack-overflow"></span></a></li>
+                        <li><a title="LinkedIn" href="https://www.linkedin.com/in/adam-tankanow/" rel="external"><span class="fa fa-linkedin"></span></a></li>
+                        <li><a title="Lichess" href="https://lichess.org/@/tankthinks" rel="external"><span class="fa fa-trophy"></span></a></li>
+                        <!-- <li><a title="Last.fm" href="./" rel="external"><span class="fa fa-lastfm"></span></a></li> -->
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>10 Observations From Scrumbut</h1>
+        <div class="byline">
+            <span class="date">March 1, 2014</span>
+            
+        </div>
+    </div>
+</div>
+<div>
+    
+    <p><strong>Scrumbut</strong></p><p>What is scrumbut?</p><ol><li><p>Scrum has a lot of overhead Between the planning, scrums, review and retrospectives this is a heavy weight process.</p></li><li><p>Scrumbut has <em>MORE</em> overhead Does it? Or is this a nice headline</p></li><li><p>We do the easy but least-effective parts of scrum I think Venkat said this in a presentation: we choose the easy but useless parts of scrum. We choose to do the daily standups but what benefit are they? We kind of do user stories</p></li><li><p>Grooming the backlog is hard Speaking to you as an engineer turned manager: grooming the backlog is not easy. When you are scrumming in a fixed-length project, managing the backlog is essential <em>and</em> difficult.</p></li><li><p>Functionality is everything You must build incremental functionality. Every sprint show something. Demo. Demo. Demo. Prototype if you have to. Just don't disappear down the rabbit hole for 3 weeks with nothing to show for it.</p></li><li><p>Simplicity over All Else Rich Hickey joked about this in the seminal presentation Simple Made Easy; How can you sprint forever? Just fire the starting gun every 40 yards. Teams can't sprint forever. However, teams can build simple software that is easier to maintain and extend.</p></li><li><p>Binary Rules When in doubt, distill a problem to two alternatives ... then choose the one that is more flexible.</p></li><li><p>Baby Steps Take small steps. It doesn't make any sense to refactor your bad design into a perfect SOA in one sprint. As Bob said, "baby steps".</p></li><li><p>Executable Acceptance Tests over Unit Tests Don't get me wrong, I love unit tests. Unit tests are essential if you want to refactor later. However, unit tests don't guarantee functionality. Functional tests gaurantee funcitonality, but we don't know if it is the <em>right</em> functionality. Only acceptance tests, executable use case acceptance tests, are valuable as repeatable tests to see if your module/deliverable/artifact does what the stakeholders want it to do.</p></li><li><p>Never forget deployment Have you written beatiful code only to realize that deploying it is a tangled hairball. Start with the end. Think about the machines on which your code will run first. Then work your way back to the design. Too often teams focus on class diagrams 90% and spend only 10% on component/deployment design.</p></li></ol>
+</div>
+
+<div id="post-tags">
+    <br/>
+    <b>Tags: </b>
+    
+    <a href="/tags-output/scrum/">scrum</a>
+    
+    <a href="/tags-output/hickey/">hickey</a>
+    
+</div>
+
+<br/>
+
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/posts-output/2014-03-07-try_again/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">Happiness and Coding</div></a>
+    
+    
+    <a class="next" href="/posts-output/2014-03-01-i-wonder/"><div class="nav-text"">I wonder</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    
+</div>
+
+    
+
+    
+
+
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2023 Adam Tankanow
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        <script src="/js/highlight.pack.js" type="application/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+    </body>
+</html>

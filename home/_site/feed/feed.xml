@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title></title>
+	<subtitle>The personal and professional website of Adam Tankanow.</subtitle>
+	
+	<link href="https://tankthinks.net/feed/feed.xml" rel="self"/>
+	<link href="https://tankthinks.net/"/>
+	<updated>2023-01-19T00:00:00Z</updated>
+	<id>https://tankthinks.net/</id>
+	<author>
+		<name>tankthinks</name>
+		<email>adam.tankanow@gmail.com</email>
+	</author>
+	
+	<entry>
+		<title>Finally Settled on a New Blog</title>
+		<link href="https://tankthinks.net/posts/2023/01/finally-settled-on-a-new-blog/"/>
+		<updated>2023-01-19T00:00:00Z</updated>
+		<id>https://tankthinks.net/posts/2023/01/finally-settled-on-a-new-blog/</id>
+		<content type="html">&lt;div class=&quot;col-start-3 col-end-9&quot;&gt;
+&lt;h3 id=&quot;what-changed%3F&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://tankthinks.net/posts/2023/01/finally-settled-on-a-new-blog/#what-changed%3F&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;What Changed?&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;foo&lt;/p&gt;
+&lt;h3 id=&quot;static-site-generators&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://tankthinks.net/posts/2023/01/finally-settled-on-a-new-blog/#static-site-generators&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;Static Site Generators&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;bar&lt;/p&gt;
+&lt;p&gt;baz&lt;/p&gt;
+&lt;h4 id=&quot;11ty&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://tankthinks.net/posts/2023/01/finally-settled-on-a-new-blog/#11ty&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;11ty&lt;/a&gt;&lt;/h4&gt;
+&lt;div class=&quot;col-start-3 col-end-9&quot;&gt;
+&lt;p&gt;This site is based on this &lt;a href=&quot;https://github.com/kailoon/kailoon.com&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;11ty &amp;amp; TailwindCSS Template&lt;/a&gt;. It scores the magic 400 on Google Lighthouse.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content>
+	</entry>
+</feed>

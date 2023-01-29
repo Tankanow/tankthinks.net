@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>tankthinks: Run Length Decoding</title>
+        
+<meta name="keywords" content="enterprise,apache,dynamic,static,architecture,interviewing,testing,learning,clojure,aws,complexity,design,3tilt,java,lost,booknote,failure,languages,presentation,fowler,brain,docker,cuwab,scrum,sketchnote,hickey,clojure-conj-2015,research-group,information theory,spring,microservices,oop,arachne">
+
+<meta name="description" content="...an idea is no more an even relatively constant thing than is a feeling or emotion or volitional process. There exist only changing and transient ideational processes; there are no permanent ideas that return again and disappear again.--  Wilhelm Wundt An Introduction to PsychologyComplexity and Likeablity">
+
+<meta property="og:description" content="...an idea is no more an even relatively constant thing than is a feeling or emotion or volitional process. There exist only changing and transient ideational processes; there are no permanent ideas that return again and disappear again.--  Wilhelm Wundt An Introduction to PsychologyComplexity and Likeablity">
+
+<meta property="og:url" content="https://tankthinks.net/posts-output/2014-03-17-run-length-decoding/" />
+<meta property="og:title" content="Run Length Decoding" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/lotus-highlightjs.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="tankthinks" href="/">
+                    <span class="fa fa-bolt"></span>
+                    <div class="text desktop-and-tablet-only">tankthinks</div>
+                    <div class="text mobile-only">tankthinks</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li ><a title="Home" href="/"><div class="menu-item-text">Home</div></a></li>
+                        <li ><a title="Archives" href="/archives/"><div class="menu-item-text">Archives</div></a></li>
+                        
+                        <li ><a title="Tags" href="/tags/"><div class="menu-item-text">Tags</div></a></li>
+                        
+                        
+                        <li >
+                            <a href="/pages-output/about/"><div class="menu-item-text">About</div></a>
+                        </li>
+                        
+                        <!-- <li><a title="RSS" href="/feed.xml"><div class="menu-item-text">RSS</div></a></li> -->
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia" class="clearfix">
+                    <ul>
+                        <li><a title="GitHub" href="https://github.com/tankanow/" rel="external"><span class="fa fa-github"></span></a></li>
+                        <li><a title="Stack Overflow" href="https://stackoverflow.com/users/5475850/tankthinks" rel="external"><span class="fa fa-stack-overflow"></span></a></li>
+                        <li><a title="LinkedIn" href="https://www.linkedin.com/in/adam-tankanow/" rel="external"><span class="fa fa-linkedin"></span></a></li>
+                        <li><a title="Lichess" href="https://lichess.org/@/tankthinks" rel="external"><span class="fa fa-trophy"></span></a></li>
+                        <!-- <li><a title="Last.fm" href="./" rel="external"><span class="fa fa-lastfm"></span></a></li> -->
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>Run Length Decoding</h1>
+        <div class="byline">
+            <span class="date">March 17, 2014</span>
+            
+        </div>
+    </div>
+</div>
+<div>
+    
+    <blockquote><p>...an idea is no more an even relatively constant thing than is a feeling or emotion or volitional process. There exist only changing and transient ideational processes; there are no permanent ideas that return again and disappear again.</p><p>--  Wilhelm Wundt An Introduction to Psychology</p></blockquote><p><strong>Complexity and Likeablity</strong></p><p>Wilhelm Wundt is famous for his many contributions to psychology. I have been interested in one particular contribution of his for many years now: the Wundt Curve. The Wundt Curve is a Bell-like curve laying on the x and y axes of Complexity and Likeability. The Wundt Curve shows how we like things to be more complex to a point (the apex of the curve) at which point any more complexity results in a decrease in likeability. The Wundt Curve plays nicely both into Clojure and the Run-Length encoding problem - <a href="http://www.ic.unicamp.br/~meidanis/courses/mc336/2006s2/funcional/L-99_Ninety-Nine_Lisp_Problems.html"># 12 in 99 Lisp Problems</a>.</p><p><strong>Clojure</strong></p><p>First, since I would prefer not to incure the wrath of Rich Hickey, I must clearly state that the complexity I spoke of in the previous paragraph is not the complexity Rich spoke of in his seminal presentation <a href="http://www.infoq.com/presentations/Simple-Made-Easy">Simple Made Easy</a>. In fact, just to make things clear I won't use the word complexity anymore - suffice to say that we are talking about novelty here and not something consisting of interwoven parts.</p><p>I love Clojure. It is simply beautiful. For the other Comp Sci students like me that learned assembly and C rather than Lisp, it certainly has novelty in syntax, but over time, the Clojure student realizes that this novelty sits nicely in a spot that is very likeable. Beyond the syntax, the budding Clojurist realizes that the language is filled with beautiful data structures, ubiquitous interfaces (protocols) and a simple power that is <em>both</em> novel and very likeable indeed.</p><p><strong>Information Theory</strong></p><p>The Wundt curve always makes me think of Information Theory, of entropy and bits and data compression. Run length encoding is a simple form of lossless compression where the encoder reduces the size of an input sequence by representing repeating input elements as a tuple of the element and the count of the "run", for example we can encode the following input sequence <code>[:a :a :a :a :b :b :b :c :c]</code> as <code>[(4 :a) (3 :b) (2 :c)]</code> reducing our input by 33%.</p><p>Problem 12 in the 99 Lisp Problems concerns writing a run-length <em>decoder</em>. A very simple way to write this in Clojure is:</p><p>(defn rl-decode [xs] (-&gt;&gt; xs (map #(if (coll? %) (let [n (first %) x (second %)] (repeat n x)) %)) flatten))</p><p>First we thread our input collection <code>xs</code> into <code>map</code> with an anonymous function that either (a) returns the element unchanged or if the element is itself a collection (b) takes the first element as the count and the second element as the item to be repeated and does just that. Finally, thread that output to <code>flatten</code>, which could probably be replaced with better use of <code>mapcat</code>.</p><p>In any case, this is an elegent simple concise solution to an elegant simple concise problem. Huzzah.</p>
+</div>
+
+<div id="post-tags">
+    <br/>
+    <b>Tags: </b>
+    
+    <a href="/tags-output/clojure/">clojure</a>
+    
+    <a href="/tags-output/complexity/">complexity</a>
+    
+    <a href="/tags-output/information%20theory/">information theory</a>
+    
+</div>
+
+<br/>
+
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/posts-output/2014-03-30-microservices-1/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">Microservices 1</div></a>
+    
+    
+    <a class="next" href="/posts-output/2014-03-12-just-enough-design/"><div class="nav-text"">Just Enough Design</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    
+</div>
+
+    
+
+    
+
+
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2023 Adam Tankanow
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        <script src="/js/highlight.pack.js" type="application/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+    </body>
+</html>

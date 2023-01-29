@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>tankthinks: Property Based Testing</title>
+        
+<meta name="keywords" content="enterprise,apache,dynamic,static,architecture,interviewing,testing,learning,clojure,aws,complexity,design,3tilt,java,lost,booknote,failure,languages,presentation,fowler,brain,docker,cuwab,scrum,sketchnote,hickey,clojure-conj-2015,research-group,information theory,spring,microservices,oop,arachne">
+
+<meta name="description" content="Found, but not proven.-- DemocritusPart of my learning Clojure journey is to question my beliefs regarding testing. For the past few years I&#39;ve lived the Clean Code TDD style of development: let the rails of unit tests guide you. However, the Clojure brain trust - Rich, Stu and the rest of the brilliant minds at Cognitect have made a compelling argument that unit tests, or at least expectation-based tests are old hat.">
+
+<meta property="og:description" content="Found, but not proven.-- DemocritusPart of my learning Clojure journey is to question my beliefs regarding testing. For the past few years I&#39;ve lived the Clean Code TDD style of development: let the rails of unit tests guide you. However, the Clojure brain trust - Rich, Stu and the rest of the brilliant minds at Cognitect have made a compelling argument that unit tests, or at least expectation-based tests are old hat.">
+
+<meta property="og:url" content="https://tankthinks.net/posts-output/2014-03-08-property-based-testing/" />
+<meta property="og:title" content="Property Based Testing" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/lotus-highlightjs.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="tankthinks" href="/">
+                    <span class="fa fa-bolt"></span>
+                    <div class="text desktop-and-tablet-only">tankthinks</div>
+                    <div class="text mobile-only">tankthinks</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li ><a title="Home" href="/"><div class="menu-item-text">Home</div></a></li>
+                        <li ><a title="Archives" href="/archives/"><div class="menu-item-text">Archives</div></a></li>
+                        
+                        <li ><a title="Tags" href="/tags/"><div class="menu-item-text">Tags</div></a></li>
+                        
+                        
+                        <li >
+                            <a href="/pages-output/about/"><div class="menu-item-text">About</div></a>
+                        </li>
+                        
+                        <!-- <li><a title="RSS" href="/feed.xml"><div class="menu-item-text">RSS</div></a></li> -->
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia" class="clearfix">
+                    <ul>
+                        <li><a title="GitHub" href="https://github.com/tankanow/" rel="external"><span class="fa fa-github"></span></a></li>
+                        <li><a title="Stack Overflow" href="https://stackoverflow.com/users/5475850/tankthinks" rel="external"><span class="fa fa-stack-overflow"></span></a></li>
+                        <li><a title="LinkedIn" href="https://www.linkedin.com/in/adam-tankanow/" rel="external"><span class="fa fa-linkedin"></span></a></li>
+                        <li><a title="Lichess" href="https://lichess.org/@/tankthinks" rel="external"><span class="fa fa-trophy"></span></a></li>
+                        <!-- <li><a title="Last.fm" href="./" rel="external"><span class="fa fa-lastfm"></span></a></li> -->
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>Property Based Testing</h1>
+        <div class="byline">
+            <span class="date">March 8, 2014</span>
+            
+        </div>
+    </div>
+</div>
+<div>
+    <ol class="toc"><li><a href="#expectation-based-testing">Expectation-Based Testing</a></li><li><a href="#pros">Pros</a></li><li><a href="#on-intention">On Intention</a></li><li><a href="#cons">Cons</a></li><li><a href="#property-based-testing">Property-Based Testing</a></li></ol>
+    <blockquote><p>Found, but not proven.</p><p>-- Democritus</p></blockquote><p>Part of my learning Clojure journey is to question my beliefs regarding testing. For the past few years I've lived the <a href="http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_1/181-8179541-6211637?ie=UTF8&amp;qid=1394325126&amp;sr=8-1&amp;keywords=clean+code">Clean Code</a> <a href="http://www.amazon.com/Test-Driven-Development-By-Example/dp/0321146530/ref=sr_1_1?ie=UTF8&amp;qid=1394325145&amp;sr=8-1&amp;keywords=test+driven+development">TDD</a> style of development: let the rails of unit tests guide you. However, the Clojure brain trust - Rich, Stu and the rest of the brilliant minds at <a href="http://cognitect.com/">Cognitect</a> have made a compelling argument that unit tests, or at least expectation-based tests are old hat.</p><h3 id="expectation-based-testing">Expectation-Based Testing</h3><p>What is <em>Expectation-Based Testing</em>? This is, simply, what most of us have been doing ad nauseum. If you're like me, the following <code>given</code>-<code>when</code>-<code>then</code> structure will look familiar:</p><pre><code class="java">@Test
+public void testMethodExpectationStyle(){
+	// given
+	// here is where you would set up some mocks, or if you're working with bad/legacy
+	// code, curse loudly as you foolishly try to mock static methods in between reading
+	// the Mockito/Powermock docs
+
+	// when
+	Object actual = objectUnderTest.methodUnderTest(someKnownInput);
+
+	// then
+	assertThat(actual, equalTo(expected));
+}
+</code></pre><p>So what are the pros and cons of this approach?</p><h3 id="pros">Pros</h3><ul><li>simple set up the state, run the method, check the output</li><li>readability well, sometimes, when the mocking doesn't get out of hand</li><li>intention you know up front what the method should do</li></ul><h3 id="on-intention">On Intention</h3><p>Allow me a brief diversion on <em>Intention</em>. It turns out <em>Intention</em> is a blessing and a curse. The developer writing expection-based intends to test the functionality of a method by <em>knowing</em> what it is supposed to do given a <em>known</em> input. This is good, for example we know that the reverse of "ball" is "llab", as such we can test our reverse method is way. However, what if our understanding of the method is wrong? What if it functions differently under different conditions?</p><h3 id="cons">Cons</h3><ul><li>scale since we explicitly define the inputs and outputs, we are limited by the number of tests we are willing to write; we mitigate this by testing known boundary conditions, however, it is impractical to try to test &gt; a handful of inputs for each method</li></ul><h3 id="property-based-testing">Property-Based Testing</h3><p>Property-Based testing on the other hand is testing such that the developer defines properties of the method under test and uses a generator function to create large input sets. For example, in Clojure this might look like:</p><pre><code class="clojure">;; my naive reverse a list implementation
+(defn myreverse
+  [xs]
+  (loop [n 0
+         ys []]
+    (if (&lt; n (count xs))
+      (recur (inc n) (cons (nth xs n) ys))
+      ys)))
+
+;; define a property about that
+;; in this case, simply that for all inputs, myreverse does the same thing as Clojure's reverse
+(def prop-myreverse-equalto-cljreverse
+  (prop/for-all [v (gen/vector gen/int)]
+    (= (reverse v) (myreverse v))))
+;; this is definitely cheating, because for any useful function, you won't have an existing one in the Clojure toolkit, so let's try again - how about that if a reverse twice I should get back the original list:
+(def prop-reverse-reverse
+  (prop/for-all [v (gen/vector gen/int)]
+    (= v (myreverse (myreverse v)))))
+
+;; then i can check these properties, N number of times (in this case N is 1000)
+(c/quick-check 1000 prop-myreverse-equalto-cljreverse)
+(c/quick-check 1000 prop-reverse-reverse)
+</code></pre><p>So the <code>test.check</code> library I'm using in this case will generate 1000 lists of different sizes of random integers and then check each list again the properties i defined.</p><p>The power of this is huge. Instead of explicitly enumerating all of the inputs for a given function under test, I can simply define some properties that should be true for all inputs and then let someone else schlep up and down a mountain generating lots of input for me!</p><p>The difficult part here is that you will never have the contrived first property example I gvae above: where you will have another function to test against. Instead, almost certainly, one property won't do it for any of your functions ... instead you will have to tease out all of the salient properties to ensure the functionality of your method.</p><p>We have swapped "generate all of the import inputs and know what the outputs are supposed to be" for "generate all of the important properties".</p><p>Which do you prefer?</p>
+</div>
+
+<div id="post-tags">
+    <br/>
+    <b>Tags: </b>
+    
+    <a href="/tags-output/testing/">testing</a>
+    
+    <a href="/tags-output/clojure/">clojure</a>
+    
+    <a href="/tags-output/java/">java</a>
+    
+</div>
+
+<br/>
+
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/posts-output/2014-03-10-where-is-the-oop-in-my-layers/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">Where is the OOP in my Layers?</div></a>
+    
+    
+    <a class="next" href="/posts-output/2014-03-07-try_again/"><div class="nav-text"">Happiness and Coding</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    
+</div>
+
+    
+
+    
+
+
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2023 Adam Tankanow
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        <script src="/js/highlight.pack.js" type="application/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+    </body>
+</html>

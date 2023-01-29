@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>tankthinks: Just Enough Design</title>
+        
+<meta name="keywords" content="enterprise,apache,dynamic,static,architecture,interviewing,testing,learning,clojure,aws,complexity,design,3tilt,java,lost,booknote,failure,languages,presentation,fowler,brain,docker,cuwab,scrum,sketchnote,hickey,clojure-conj-2015,research-group,information theory,spring,microservices,oop,arachne">
+
+<meta name="description" content="Ticking away the moments that make up a dull day ...--  Pink Floyd TimeTick tick tick ...">
+
+<meta property="og:description" content="Ticking away the moments that make up a dull day ...--  Pink Floyd TimeTick tick tick ...">
+
+<meta property="og:url" content="https://tankthinks.net/posts-output/2014-03-12-just-enough-design/" />
+<meta property="og:title" content="Just Enough Design" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/lotus-highlightjs.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="tankthinks" href="/">
+                    <span class="fa fa-bolt"></span>
+                    <div class="text desktop-and-tablet-only">tankthinks</div>
+                    <div class="text mobile-only">tankthinks</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li ><a title="Home" href="/"><div class="menu-item-text">Home</div></a></li>
+                        <li ><a title="Archives" href="/archives/"><div class="menu-item-text">Archives</div></a></li>
+                        
+                        <li ><a title="Tags" href="/tags/"><div class="menu-item-text">Tags</div></a></li>
+                        
+                        
+                        <li >
+                            <a href="/pages-output/about/"><div class="menu-item-text">About</div></a>
+                        </li>
+                        
+                        <!-- <li><a title="RSS" href="/feed.xml"><div class="menu-item-text">RSS</div></a></li> -->
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia" class="clearfix">
+                    <ul>
+                        <li><a title="GitHub" href="https://github.com/tankanow/" rel="external"><span class="fa fa-github"></span></a></li>
+                        <li><a title="Stack Overflow" href="https://stackoverflow.com/users/5475850/tankthinks" rel="external"><span class="fa fa-stack-overflow"></span></a></li>
+                        <li><a title="LinkedIn" href="https://www.linkedin.com/in/adam-tankanow/" rel="external"><span class="fa fa-linkedin"></span></a></li>
+                        <li><a title="Lichess" href="https://lichess.org/@/tankthinks" rel="external"><span class="fa fa-trophy"></span></a></li>
+                        <!-- <li><a title="Last.fm" href="./" rel="external"><span class="fa fa-lastfm"></span></a></li> -->
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>Just Enough Design</h1>
+        <div class="byline">
+            <span class="date">March 12, 2014</span>
+            
+        </div>
+    </div>
+</div>
+<div>
+    
+    <blockquote><p>Ticking away the moments that make up a dull day ...</p><p>--  Pink Floyd Time</p></blockquote><p><strong>Tick tick tick ...</strong></p><p>You were recently going through a codebase that was written no more than two years ago because a colleague asked you a domain question that was not answered in any spec. Despite a rigorous design and review process, the code is nigh unmaintainable. So you tick away a few hours trying to answer a simple question.</p><p><strong>Over or Under</strong></p><p>Sometimes we find that we <strong>over</strong>-design software. In these cases we are most often left with <code>Strategy</code>s and <code>Abstract*Factory</code>s littered throughout the code without mention of a core domain Entity in site. This kind of software is difficult to maintain because it is difficult to understand.</p><p>Sometimes we find that we <strong>under</strong>-design software. In these cases we are most often left with tightly coupled Class Hierarchies and broken dependencies in our wake. This kind of software is difficult to maintain because it is difficult to understand ... why we didn't think a little harder about what we were doing in the first place.</p><p><strong>Just in Time! Design!</strong></p><p>The truth is that it is quite difficult to design complex components. One nice guideline comes from Neal Ford</p><blockquote><p>Simplify Essential Complexity; Diminish Accidental Complexity</p><p>--  Neal Ford 97 Things Every Software Architect Should Know</p></blockquote><p>What does this mean? Distill, as much as possible, your core domain problem - the essential complexity - into its simplest form; remove the trappings you think you need to build - the accidental complexity - that don't solve the core domain problem.</p><p>So what kind of process might help us do this? One possible solution is <code>Just in Time Design</code>. In JIT Design we put off rigorous design until just before we are about to implement a smallish component. We can and should still have well though out High-Level <span class="line-though">Architecture</span> Shared Understanding that guides our smaller designs in the big picture, but put off the arguments about Class and Sequence diagrams until you are about to implement the goo.</p>
+</div>
+
+<div id="post-tags">
+    <br/>
+    <b>Tags: </b>
+    
+    <a href="/tags-output/complexity/">complexity</a>
+    
+    <a href="/tags-output/design/">design</a>
+    
+</div>
+
+<br/>
+
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/posts-output/2014-03-17-run-length-decoding/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">Run Length Decoding</div></a>
+    
+    
+    <a class="next" href="/posts-output/2014-03-10-where-is-the-oop-in-my-layers/"><div class="nav-text"">Where is the OOP in my Layers?</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    
+</div>
+
+    
+
+    
+
+
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2023 Adam Tankanow
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        <script src="/js/highlight.pack.js" type="application/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+    </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>tankthinks: 4 Ways Your Enterprise is Already Doing Functional Programming</title>
+        
+<meta name="keywords" content="enterprise,apache,dynamic,static,architecture,interviewing,testing,learning,clojure,aws,complexity,design,3tilt,java,lost,booknote,failure,languages,presentation,fowler,brain,docker,cuwab,scrum,sketchnote,hickey,clojure-conj-2015,research-group,information theory,spring,microservices,oop,arachne">
+
+<meta name="description" content="Can&#39;t see the forest for the trees.--  idiom humansMost enterprise architectures are scared of functional programming. The funny thing is that they&#39;re probably already doing &quot;functional&quot; programming in Java, just poorly.">
+
+<meta property="og:description" content="Can&#39;t see the forest for the trees.--  idiom humansMost enterprise architectures are scared of functional programming. The funny thing is that they&#39;re probably already doing &quot;functional&quot; programming in Java, just poorly.">
+
+<meta property="og:url" content="https://tankthinks.net/posts-output/2014-04-02-four-ways-your-already-functional/" />
+<meta property="og:title" content="4 Ways Your Enterprise is Already Doing Functional Programming" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:300,400,700|Inconsolata" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/css/lotus-highlightjs.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="tankthinks" href="/">
+                    <span class="fa fa-bolt"></span>
+                    <div class="text desktop-and-tablet-only">tankthinks</div>
+                    <div class="text mobile-only">tankthinks</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li ><a title="Home" href="/"><div class="menu-item-text">Home</div></a></li>
+                        <li ><a title="Archives" href="/archives/"><div class="menu-item-text">Archives</div></a></li>
+                        
+                        <li ><a title="Tags" href="/tags/"><div class="menu-item-text">Tags</div></a></li>
+                        
+                        
+                        <li >
+                            <a href="/pages-output/about/"><div class="menu-item-text">About</div></a>
+                        </li>
+                        
+                        <!-- <li><a title="RSS" href="/feed.xml"><div class="menu-item-text">RSS</div></a></li> -->
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia" class="clearfix">
+                    <ul>
+                        <li><a title="GitHub" href="https://github.com/tankanow/" rel="external"><span class="fa fa-github"></span></a></li>
+                        <li><a title="Stack Overflow" href="https://stackoverflow.com/users/5475850/tankthinks" rel="external"><span class="fa fa-stack-overflow"></span></a></li>
+                        <li><a title="LinkedIn" href="https://www.linkedin.com/in/adam-tankanow/" rel="external"><span class="fa fa-linkedin"></span></a></li>
+                        <li><a title="Lichess" href="https://lichess.org/@/tankthinks" rel="external"><span class="fa fa-trophy"></span></a></li>
+                        <!-- <li><a title="Last.fm" href="./" rel="external"><span class="fa fa-lastfm"></span></a></li> -->
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>4 Ways Your Enterprise is Already Doing Functional Programming</h1>
+        <div class="byline">
+            <span class="date">April 2, 2014</span>
+            
+        </div>
+    </div>
+</div>
+<div>
+    
+    <blockquote><p>Can't see the forest for the trees.</p><p>--  idiom humans</p></blockquote><p>Most enterprise architectures are <em>scared</em> of functional programming. The funny thing is that they're probably already doing "functional" programming in Java, just poorly.</p><ol><li><p>The standard tiered architecture is more functional than OOP. Tiered architectures pushes everything into services. Services are just groups of functions, not unlike Clojure namespaces, with no data. This is mostly procedural code, but it is definitely closer to Functional than OOP.</p></li><li><p>Lots of Value Objects with no behavior. This goes hand in hand with the tiered architecture. The truth here is that we just have lots of data separate from the methods that operate on that data. The fact that we create so many different containers for the data rather than just using maps is a non-functional thing we do, but the basic idea of "data" and separate "functions" is the same.</p></li><li><p>Immutable Classes. If you follow Joshua Bloch, as most enterprise java developers do, then they are almost certainly trying for immutability. We know it's a good idea. We just impose it ourselves with boilerplate code rather than allowing the language, e.g. Clojure, to ensure we are doing the right thing.</p></li><li><p>Lots of anonymous classes. We create these all the time when we want to create executables or reify interfaces with one method. Often times we create anonymous classes solely for the purpose of passing them to as a parameter to a method. Where else have I seen that. Oh yeah. First class functions - the foundation of "functional" languages.</p></li></ol><p>If your architect pushes back on you using a functional programming language because it is new, trendy and unproven - just point her to your enterprise standard tiered architecture and say we're doing this in the wrong tool.</p>
+</div>
+
+<div id="post-tags">
+    <br/>
+    <b>Tags: </b>
+    
+    <a href="/tags-output/architecture/">architecture</a>
+    
+    <a href="/tags-output/clojure/">clojure</a>
+    
+</div>
+
+<br/>
+
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/posts-output/2014-04-04-refocus-simplify-1/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">Simplify and Focus Learning</div></a>
+    
+    
+    <a class="next" href="/posts-output/2014-03-30-microservices-1/"><div class="nav-text"">Microservices 1</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    
+</div>
+
+    
+
+    
+
+
+</div>
+
+            <hr/>
+            <div id="footercont">
+                Copyright &copy; 2023 Adam Tankanow
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+                <br>Theme by <a href="http://github.com/KingMob">KingMob</a>
+            </div>
+        </article>
+
+        <script src="/js/highlight.pack.js" type="application/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+    </body>
+</html>

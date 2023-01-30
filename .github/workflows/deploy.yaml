@@ -19,30 +19,30 @@ permissions:
  contents: read  # This is required for actions/checkout@v2
 
 jobs:
- aws:
-   environment: production
-   runs-on: ubuntu-latest
+  aws:
+    environment: production
+    runs-on: ubuntu-latest
 
-   env:
-     AWS_DEFAULT_REGION: us-east-1
+    env:
+      AWS_DEFAULT_REGION: us-east-1
 
-   steps:
-   - name: configureawscredentials
-     uses: aws-actions/configure-aws-credentials@v1
-     with:
-       role-to-assume: ${{secrets.ROLE_ARN}}
-       role-session-name: github-tanthinks.net-deploy-blog-to-prod
-       aws-region: us-east-1
+    steps:
+    - name: configureawscredentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: ${{secrets.ROLE_ARN}}
+        role-session-name: github-tanthinks.net-deploy-blog-to-prod
+        aws-region: us-east-1
 
-   - name: Checkout
-     uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
 
-  - name: Download public-blog
-    uses: actions/download-artifact@v3
-    with:
-      name: public-blog
+    - name: Download public-blog
+      uses: actions/download-artifact@v3
+      with:
+        name: public-blog
 
-   - name: Some AWS commands
-     run: |
+    - name: Some AWS commands
+      run: |
        echo ${{secrets.HOSTED_ZONE_ID}}
        aws sts get-caller-identity

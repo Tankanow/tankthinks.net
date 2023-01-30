@@ -50,6 +50,8 @@ jobs:
        while read file ; do
          source_key=${file#./}
          destination_key=${source_key%index.html}
+         safe_destination_key=${destination_key:-/}
          source=${{inputs.bucket_name}}/${source_key}
-         aws s3api copy-object --copy-source "${source}" --bucket ${{inputs.bucket_name}} --key "${destination_key}"
+         echo Copying "${source}" to ${{inputs.bucket_name}} --key "${safe_destination_key:-/}"
+         aws s3api copy-object --copy-source "${source}" --bucket ${{inputs.bucket_name}} --key "${safe_destination_key}"
        done < <(find . -name "index.html" )

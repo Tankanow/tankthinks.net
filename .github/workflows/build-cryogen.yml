@@ -61,12 +61,11 @@ jobs:
           clojure -M:build
 
       - name: Upload Site
-        working-directory: ./blog
         uses: actions/upload-artifact@v3
         with:
           name: public-blog
           path: |
-            public
+            ./blog/public
           retention-days: 5
 
   deploy:

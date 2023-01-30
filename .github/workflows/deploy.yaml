@@ -39,8 +39,8 @@ jobs:
       with:
         name: public-blog
 
-    - name: Some AWS commands
+    - name: AWS S3 Copy
       working-directory: ./blog/public
       run: |
-       aws s3 cp -v ./* s3://${{inputs.bucket_name}}/
-       while read file ; do aws s3 cp -v ${file} ${file%index.html} ; done < <(find . -name "index.html" )
+       aws s3 cp --recursive ./* s3://${{inputs.bucket_name}}/
+       while read file ; do aws s3 cp ${file} ${file%index.html} ; done < <(find . -name "index.html" )

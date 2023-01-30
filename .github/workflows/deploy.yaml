@@ -43,4 +43,13 @@ jobs:
       working-directory: ./blog/public
       run: |
        aws s3 cp --recursive ./ s3://${{inputs.bucket_name}}/
-       while read file ; do file_no_dir=${file#./} ; aws s3 cp "${file}" "s3://${{inputs.bucket_name}}/${file_no_dir%index.html}" ; done < <(find . -name "index.html" )
+
+    - name: AWS S3 Copy index.html to / for CloudFront
+      working-directory: ./blog/public
+      run: |
+       while read file ; do
+         file_no_dir=${file#./}
+         file_no_index=${file_no_dir%index.html}
+         target=s3://${{inputs.bucket_name}}/${file_no_index}
+         aws s3 cp "${file}" "${target}"
+       done < <(find . -name "index.html" )

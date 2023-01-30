@@ -48,9 +48,8 @@ jobs:
       working-directory: ./blog/public
       run: |
        while read file ; do
-         file_no_dir=${file#./}
-         file_no_index=${file_no_dir%index.html}
-         source=s3://${{inputs.bucket_name}}/${file_no_dir}
-         target=s3://${{inputs.bucket_name}}/${file_no_index}
-         aws s3 cp "${source}" "${target}"
+         source_key=${file#./}
+         destination_key=${source_key%index.html}
+         source=${{inputs.bucket_name}}/${source_key}
+         aws s3api copy-object --copy-source "${source}" --bucket ${{inputs.bucket_name}} --key "${destination_key}"
        done < <(find . -name "index.html" )

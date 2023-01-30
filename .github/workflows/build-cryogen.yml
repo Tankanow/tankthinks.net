@@ -74,4 +74,4 @@ jobs:
     secrets: inherit
     with:
       stack_name: tankthinks-net
-      domain_name: blog.tankthinks.net
+      domain: blog.tankthinks.net

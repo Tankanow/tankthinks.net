@@ -50,6 +50,7 @@ jobs:
        while read file ; do
          file_no_dir=${file#./}
          file_no_index=${file_no_dir%index.html}
+         source=s3://${{inputs.bucket_name}}/${file_no_dir}
          target=s3://${{inputs.bucket_name}}/${file_no_index}
-         aws s3 cp "${file}" "${target}"
+         aws s3 cp "${source}" "${target}"
        done < <(find . -name "index.html" )

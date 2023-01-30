@@ -1,7 +1,18 @@
 
 name: deploy
 
-on: [push]
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      stack_name:
+        required: true
+        type: string
+      domain:
+        required: true
+        type: string
+
 
 permissions:
  id-token: write
@@ -9,6 +20,7 @@ permissions:
 
 jobs:
  aws:
+   environment: production
    runs-on: ubuntu-latest
 
    env:
@@ -18,13 +30,19 @@ jobs:
    - name: configureawscredentials
      uses: aws-actions/configure-aws-credentials@v1
      with:
-       role-to-assume: arn:aws:iam::540063184503:role/tankthinks-core-infrastructure-GithubActionsRole-104U5GSUL1J5A
-       role-session-name: github-role-session
+       role-to-assume: ${{secrets.ROLE_ARN}}
+       role-session-name: github-tanthinks.net-deploy-blog-to-prod
        aws-region: us-east-1
 
    - name: Checkout
      uses: actions/checkout@v2
 
+  - name: Download public-blog
+    uses: actions/download-artifact@v3
+    with:
+      name: public-blog
+
    - name: Some AWS commands
      run: |
+       echo ${{secrets.HOSTED_ZONE_ID}}
        aws sts get-caller-identity

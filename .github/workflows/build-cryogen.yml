@@ -59,3 +59,20 @@ jobs:
         working-directory: ./blog
         run: |
           clojure -M:build
+
+      - name: Upload Site
+        working-directory: ./blog
+        uses: actions/upload-artifact@v3
+        with:
+          name: public-blog
+          path: |
+            public
+          retention-days: 5
+
+  deploy:
+    needs: [clj-build]
+    uses: ./.github/workflows/deploy.yaml
+    secrets: inherit
+    with:
+      stack_name: tankthinks-net
+      domain_name: blog.tankthinks.net

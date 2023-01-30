@@ -73,5 +73,4 @@ jobs:
     uses: ./.github/workflows/deploy.yaml
     secrets: inherit
     with:
-      stack_name: tankthinks-net
-      domain: blog.tankthinks.net
+      bucket_name: new.tankthinks.net

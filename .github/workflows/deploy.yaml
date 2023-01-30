@@ -40,7 +40,7 @@ jobs:
         name: public-blog
 
     - name: Some AWS commands
+      working-directory: ./blog/public
       run: |
-       ls -l ./blog/public
-       aws s3 ls s3://${{inputs.bucket_name}}
-       aws sts get-caller-identity
+       aws s3 cp -v ./* s3://${{inputs.bucket_name}}/
+       while read file ; do aws s3 cp -v ${file} ${file%index.html} ; done < <(find . -name "index.html" )

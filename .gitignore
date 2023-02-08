@@ -14,3 +14,7 @@ pom.xml.asc
 /public/
 /.clj-kondo/
 /.lsp/
+**/node_modules/
+/blog/.cpcache
+/blog/public
+/home/_site

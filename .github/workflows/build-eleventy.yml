@@ -15,8 +15,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
-      - run: npm install
-      - run: npm run build:prod
+      - name: npm install
+        working-directory: ./home
+        run: |
+          npm install
+
+      - name: npm run build:prod
+        working-directory: ./home
+        run: |
+          npm run build:prod
 
   # deploy:
   #   needs: [clj-build]

@@ -25,6 +25,14 @@ jobs:
         run: |
           npm run build:prod
 
+      - name: Upload Site
+        uses: actions/upload-artifact@v3
+        with:
+          name: public-home
+          path: |
+            ./home/_site
+          retention-days: 5
+
   # deploy:
   #   needs: [clj-build]
   #   uses: ./.github/workflows/deploy.yaml

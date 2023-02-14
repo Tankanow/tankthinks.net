@@ -33,9 +33,11 @@ jobs:
             ./home/_site
           retention-days: 5
 
-  # deploy:
-  #   needs: [clj-build]
-  #   uses: ./.github/workflows/deploy.yaml
-  #   secrets: inherit
-  #   with:
-  #     bucket_name: new.tankthinks.net
+  deploy:
+    needs: [build]
+    uses: ./.github/workflows/deploy.yaml
+    secrets: inherit
+    with:
+      bucket_name: home.tankthinks.net
+      working_directory: ./home/_site
+      artifact_name: public-home

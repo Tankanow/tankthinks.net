@@ -2,7 +2,5 @@ version=0.1
 [default.global.parameters]
 
 [default.deploy.parameters]
-parameter_overrides = "ParameterKey=Domain,ParameterValue=blog.tankthinks.net ParameterKey=HostedZoneId,ParameterValue=ZAF04WX8708DA"
 capabilities = "CAPABILITY_IAM"
-stack_name = "tankthinks-net"
 tags = "feature=\"tankthinks.net\" owner=\"adam.tankanow@gmail.com\""

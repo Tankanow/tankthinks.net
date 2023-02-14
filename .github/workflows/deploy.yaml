@@ -7,7 +7,12 @@ on:
       bucket_name:
         required: true
         type: string
-
+      working_directory:
+        required: true
+        type: string
+      artifact_name:
+        required: true
+        type: string
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -34,18 +39,18 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Download public-blog
+    - name: Download ${{inputs.artifact_name}}
       uses: actions/download-artifact@v3
       with:
-        name: public-blog
+        name: ${{inputs.artifact_name}}
 
     - name: AWS S3 Copy
-      working-directory: ./blog/public
+      working-directory: ${{inputs.working_directory}}
       run: |
        aws s3 cp --recursive ./ s3://${{inputs.bucket_name}}/
 
     - name: AWS S3 Copy index.html to / for CloudFront
-      working-directory: ./blog/public
+      working-directory: ${{inputs.working_directory}}
       run: |
        while read file ; do
          source_key=${file#./}

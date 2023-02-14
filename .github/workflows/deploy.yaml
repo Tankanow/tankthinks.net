@@ -7,9 +7,6 @@ on:
       bucket_name:
         required: true
         type: string
-      working_directory:
-        required: true
-        type: string
       artifact_name:
         required: true
         type: string
@@ -45,12 +42,12 @@ jobs:
         name: ${{inputs.artifact_name}}
 
     - name: AWS S3 Copy
-      working-directory: ${{inputs.working_directory}}
+      working-directory: ${{inputs.artifact_name}}
       run: |
        aws s3 cp --recursive ./ s3://${{inputs.bucket_name}}/
 
     - name: AWS S3 Copy index.html to / for CloudFront
-      working-directory: ${{inputs.working_directory}}
+      working-directory: ${{inputs.artifact_name}}
       run: |
        while read file ; do
          source_key=${file#./}

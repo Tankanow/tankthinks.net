@@ -70,5 +70,4 @@ jobs:
     secrets: inherit
     with:
       bucket_name: new.tankthinks.net
-      working_directory: ./blog/public
       artifact_name: public-blog

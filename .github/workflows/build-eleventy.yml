@@ -39,5 +39,4 @@ jobs:
     secrets: inherit
     with:
       bucket_name: home.tankthinks.net
-      working_directory: ./home/_site
       artifact_name: public-home

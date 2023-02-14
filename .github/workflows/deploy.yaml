@@ -40,14 +40,15 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: ${{inputs.artifact_name}}
+        path: public
 
     - name: AWS S3 Copy
-      working-directory: ${{inputs.artifact_name}}
+      working-directory: public
       run: |
        aws s3 cp --recursive ./ s3://${{inputs.bucket_name}}/
 
     - name: AWS S3 Copy index.html to / for CloudFront
-      working-directory: ${{inputs.artifact_name}}
+      working-directory: public
       run: |
        while read file ; do
          source_key=${file#./}

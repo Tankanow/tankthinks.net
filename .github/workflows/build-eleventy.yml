@@ -40,3 +40,11 @@ jobs:
     with:
       bucket_name: home.tankthinks.net
       artifact_name: public-home
+
+  deploy-apex:
+    needs: [build]
+    uses: ./.github/workflows/deploy.yaml
+    secrets: inherit
+    with:
+      bucket_name: tankthinks.net
+      artifact_name: public-home

@@ -6,7 +6,7 @@ description:
 testimonial:
 clientName:
 clientPos:
-projectUrl: https://cloudzero.com
+projectUrl:
 dribbble:
 featuredImg: the-proud-onion
 bgColor: D5E7F3

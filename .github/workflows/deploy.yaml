@@ -1,0 +1,67 @@
+
+name: deploy
+
+on:
+  workflow_call:
+    inputs:
+      bucket_name:
+        required: true
+        type: string
+      artifact_name:
+        required: true
+        type: string
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      bucket_name:
+        required: true
+        type: string
+      artifact_name:
+        required: true
+        type: string
+
+permissions:
+ id-token: write
+ contents: read  # This is required for actions/checkout@v2
+
+jobs:
+  aws:
+    environment: production
+    runs-on: ubuntu-latest
+
+    env:
+      AWS_DEFAULT_REGION: us-east-1
+
+    steps:
+    - name: configureawscredentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: ${{secrets.ROLE_ARN}}
+        role-session-name: github-tanthinks.net-deploy-blog-to-prod
+        aws-region: us-east-1
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Download ${{inputs.artifact_name}}
+      uses: actions/download-artifact@v3
+      with:
+        name: ${{inputs.artifact_name}}
+        path: public
+
+    - name: AWS S3 Copy
+      working-directory: public
+      run: |
+       aws s3 cp --recursive ./ s3://${{inputs.bucket_name}}/
+
+    - name: AWS S3 Copy index.html to / for CloudFront
+      working-directory: public
+      run: |
+       while read file ; do
+         source_key=${file#./}
+         destination_key=${source_key%index.html}
+         safe_destination_key=${destination_key:-/}
+         source=${{inputs.bucket_name}}/${source_key}
+         echo Copying "${source}" to ${{inputs.bucket_name}} --key "${safe_destination_key:-/}"
+         aws s3api copy-object --copy-source "${source}" --bucket ${{inputs.bucket_name}} --key "${safe_destination_key}"
+       done < <(find . -name "index.html" )

@@ -1,0 +1,51 @@
+
+name: build-eleventy
+
+on: ["push"]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: npm install
+        working-directory: ./home
+        run: |
+          npm install
+
+      - name: npm run build:prod
+        working-directory: ./home
+        run: |
+          npm run build:prod
+
+      - name: Upload Site
+        uses: actions/upload-artifact@v3
+        with:
+          name: public-home
+          path: |
+            ./home/_site
+          retention-days: 5
+
+  deploy:
+    needs: [build]
+    uses: ./.github/workflows/deploy.yaml
+    secrets: inherit
+    with:
+      bucket_name: home.tankthinks.net
+      artifact_name: public-home
+
+  deploy-apex:
+    needs: [build]
+    uses: ./.github/workflows/deploy.yaml
+    secrets: inherit
+    if: github.ref == 'refs/heads/main'
+    with:
+      bucket_name: tankthinks.net
+      artifact_name: public-home

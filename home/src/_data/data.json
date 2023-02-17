@@ -1,0 +1,36 @@
+{
+	"services": [
+		{
+			"name": "01. Culture",
+			"description": "People are the most important part of any organization. I build cultures for delivering effective long-term business value.",
+			"tags": ["flow", "communication", "collaboration"]
+		},
+		{
+			"name": "02. Business Value",
+			"description": "Code is liability. I provide Business Value through code that highlights intrinsic complexity and hides incidental complexity.",
+			"tags": [
+				"domain-driven-design",
+				"serverless",
+				"AWS"
+			]
+		},
+		{
+			"name": "03. Turtles",
+			"description": "The best architectures are discoverable and extendable.",
+			"tags": [
+				"cloud-scale",
+				"event-driven",
+				"data-driven"
+			]
+		}
+	],
+	"featuredWorkTitle": "Featured Thoughts",
+	"featuredWorkDescription": "Over the years, I've held some opinions stronger than others.",
+	"browseFullPortfolio": "Browse full portfolio",
+	"footerCreditLine1": "2022 © Adam Tankanow.",
+	"footerCreditLine2": "This site was designed in ",
+	"builtTools": {
+		"11ty": "https://www.11ty.dev/",
+		"tailwindcss": "https://tailwindcss.com/"
+	}
+}

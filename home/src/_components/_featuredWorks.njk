@@ -3,7 +3,7 @@
     <div class="py-10 grid gap-x-2 gap-y-5 sm:gap-y-2 grid-cols-1 md:grid-cols-3 md:grid-flow-row-dense">
 
       <div class="md:col-span-3">
-        {# <h3 class="text-rose-700 mb-10 text-sm font-bold tracking-widest uppercase dark:text-gray-400">{{ data.featuredWorkTitle }}</h3> #}
+        <h3 class="text-rose-700 mb-10 text-sm font-bold tracking-widest uppercase dark:text-gray-400">{{ data.featuredWorkTitle }}</h3>
         <span class="block text-xl tracking-tight text-gray-700 dark:text-gray-300 mb-10 md:w-2/3">
         {{ data.featuredWorkDescription }}
         </span>
@@ -14,14 +14,14 @@
           <a
           href="{{item.url}}"
           title="view {{item.data.title}}"
-          class="flex flex-col justify-between post bg-gray-800 relative md:transform md:hover:-translate-y-2 md:transition-transform"
+          class="flex flex-row justify-end post bg-gray-800 relative md:transform md:hover:-translate-y-2 md:transition-transform"
           >
-            <article style="background-color: #{{item.data.bgColor}}" class="flex flex-col justify-between">
-              <header class="p-5 lg:p-8 h-16 md:h-48">
+            <article style="background-color: #{{item.data.bgColor}}" class="flex flex-col justify-end">
+              <header class="p-5 lg:p-8 h-8 md:h-16">
                 <span class="text-gray-800 text-3xl tracking-tighter font-bold block">{{ item.data.title }}</span>
                 <span class="text-gray-600 text-base font-normal">{{ item.data.tasks }}</span>
               </header>
-              <picture class="block absolute inset-x-0 bottom-0">
+              <picture class="p-5 block absolute inset-x-0 bottom-0">
               {% respimg item.data.featuredImg, item.data.title %}
               </picture>
             </article>

@@ -4,8 +4,8 @@ metaTitle: Surely You're Joking Mr. Feynman
 metaDescription: Surely You're Joking Mr. Feynman
 title: Surely You're Joking Mr. Feynman
 description: Surely You're Joking Mr. Feynman
-featuredImg: 
-subHeading: 
+featuredImg:
+subHeading:
 tags: ['cuwab','booknote']
 date: 2016-01-10
 updated: 2016-01-10

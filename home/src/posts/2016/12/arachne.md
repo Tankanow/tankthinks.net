@@ -1,0 +1,58 @@
+---
+templateEngineOverride: njk,md
+metaTitle: Arachne
+metaDescription: Arachne
+title: Arachne
+description: Arachne
+featuredImg:
+subHeading:
+tags: ['clojure','arachne']
+date: 2016-12-23
+updated: 2016-12-23
+published: true
+---
+
+<div class="col-start-3 col-end-9">
+
+
+
+
+# Sketchnote
+
+![Research Group Introduction](/img/20161223_sketchnotes_arachne.jpeg)
+
+# Ideas
+
+I watched Luke VanderHart's [Building a Framework in Clojure](https://skillsmatter.com/skillscasts/8717-arachne-building-a-framework-in-clojure) this morning.
+
+# Takeaways
+
+-   **Structural Frameworks** have benefits, which may be worth the costs if you buy in to the conceit.
+
+-   Arachne's goals are:
+
+    -   clojure
+
+    -   rapid development
+
+    -   shallow learning curve
+
+    -   modular
+
+-   Arachne answers the questions:
+
+    -   What if my application was described in **data**?
+
+    -   What if that data were stored in a **database**?
+
+    -   What if that database had a **schema**?
+
+-   Arachne introduces 2 ideas:
+
+    -   application **concepts** *as* **configuration**
+
+    -   applicaiton is a composition of 2 individually executable programs
+
+        1.  configuration
+
+        2.  runtime

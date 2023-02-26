@@ -53,6 +53,7 @@ jobs:
       working-directory: public
       run: |
        aws s3 cp --recursive ./ s3://${{inputs.bucket_name}}/
+       echo '### Copy Static Site to S3: ✅' >> $GITHUB_STEP_SUMMARY
 
     - name: AWS S3 Copy index.html to / for CloudFront
       working-directory: public
@@ -65,3 +66,19 @@ jobs:
          echo Copying "${source}" to ${{inputs.bucket_name}} --key "${safe_destination_key:-/}"
          aws s3api copy-object --copy-source "${source}" --bucket ${{inputs.bucket_name}} --key "${safe_destination_key}"
        done < <(find . -name "index.html" )
+       echo '### Copy index.html files to / for CloudFront: ✅' >> $GITHUB_STEP_SUMMARY
+
+    - name: AWS Create CloudFront Invalidation if there are changed files
+      run: |
+       if git diff --name-status -r HEAD^1 HEAD | grep -q -e '^M' ; then
+         echo '### Creating CloudFront Invalidation: ✅' >> $GITHUB_STEP_SUMMARY
+         echo '```json' >> $GITHUB_STEP_SUMMARY
+         aws cloudfront create-invalidation --distribution-id ${{secrets.DISTRIBUTION_ID}} --paths "/*" 2>&1 | tee -a $GITHUB_STEP_SUMMARY
+         echo '```' >> $GITHUB_STEP_SUMMARY
+       else
+         echo '### Skipping CloudFront Invalidation: ⏭️' >> $GITHUB_STEP_SUMMARY
+       fi
+
+    - name: Complete Summary
+      run: |
+       echo '### All Done! 🧐' >> $GITHUB_STEP_SUMMARY

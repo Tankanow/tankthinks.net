@@ -6,7 +6,7 @@ title: Finally Settled on a New Blog
 description: Move to 11ty, Tailwind, etc.
 featuredImg: finally-settled-on-a-new-blog
 subHeading: I have been failind to blog since 2014. I have some archives in an old static site generator. This year I want to get to know CSS, specifically TailwindCSS, and some other Web Stack Tools.
-tags: ['Web Development']
+tags: ['web-development']
 date: 2023-02-25
 updated:
 published: true

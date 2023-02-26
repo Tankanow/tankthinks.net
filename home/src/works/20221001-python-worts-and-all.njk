@@ -1,0 +1,50 @@
+---
+metaTitle: Python Warts and All
+metaDescription: Python Warts and All
+title: Python Warts and All
+description:
+testimonial:
+clientName:
+clientPos:
+projectUrl:
+dribbble:
+featuredImg: pyfaaster_logo
+bgColor: D5E7F3
+featured: true
+span: true
+tasks: Author
+year: 2018
+date: 2018-07-23
+---
+
+<div class="col-start-3 col-end-9">
+
+<h3>Introduction</h3>
+
+In Python: Warts and All, I share a lot of what I like and some of what I don't like about Python. The goal here is not to be inflammatory, well ... maybe a little,
+but rather to create constructive discussions around the Python Programming Language.
+
+<h3>Contents</h3>
+
+{% set tag = 'python-warts-and-all' %}
+{% set postslist = collections[ tag ] %}
+<ol class="md:grid md:grid-cols-1 md:gap-3 list-inside list-disc">
+    {% for post in postslist  %}
+    {% if post.data.published %}
+    <li class="mb-5 md:mb-2">
+        <article class="inline-block">
+        <h3 class="mb-2 inline">
+            <a
+            href="{{ post.url | url }}"
+            title="read {{ post.data.title }}"
+            class="font-semibold transition text-base border-b hover:text-purple-800 border-gray-200 hover:border-purple-300 dark:text-yellow-200 dark:border-gray-800 dark:hover:text-yellow-400 dark:hover:border-yellow-100 dark:visited:text-gray-300"
+            >
+            {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
+            </a>
+        </h3>
+        <time datetime="{{ post.date | htmlDateString }}" class="font-serif text-gray-600 text-sm dark:text-gray-300">&mdash; {{ post.date | readableDate }}</time>
+        </article>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ol>

@@ -1,0 +1,114 @@
+---
+metaTitle: Know Notes
+metaDescription: Notes on Podcasts
+title: Know Notes
+featuredImg: know-notes
+bgColor: D5E7F3
+featured: true
+span: true
+tasks: Thinker
+year: 2023
+date: 2023-02-12
+---
+
+<div class="col-start-3 col-end-9">
+
+<h3>Introduction</h3>
+
+I listen to too many podcasts. Though my podcast addiction has waxed and waned over the past 10 years, I maintain at least a few hours of listening a day.
+
+The goal of this project is to share any connections I make while listening. Think of these like my personal show notes for each of these podcasts.
+
+I guess these are what I Know Notes.
+
+<h3>Podcasts</h3>
+
+<h4>
+    <a
+    href="https://changelog.com/master"
+    title="The Changelog"
+    class="font-semibold transition text-xl border-b hover:text-purple-800 border-gray-200 hover:border-purple-300 dark:text-yellow-200 dark:border-gray-800 dark:hover:text-yellow-400 dark:hover:border-yellow-100 dark:visited:text-gray-300"
+    >The Changelog</a>
+</h4>
+{% set tag = 'the-changelog' %}
+{% set postslist = collections[ tag ] %}
+<ol class="md:grid md:grid-cols-1 md:gap-3 list-inside list-disc">
+    {% for post in postslist  %}
+    {% if post.data.published %}
+    <li class="mb-5 md:mb-2">
+        <article class="inline-block">
+        <h3 class="mb-2 inline">
+            <a
+            href="{{ post.url | url }}"
+            title="read {{ post.data.title }}"
+            class="font-semibold transition text-base border-b hover:text-purple-800 border-gray-200 hover:border-purple-300 dark:text-yellow-200 dark:border-gray-800 dark:hover:text-yellow-400 dark:hover:border-yellow-100 dark:visited:text-gray-300"
+            >
+            {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
+            </a>
+        </h3>
+        <time datetime="{{ post.date | htmlDateString }}" class="font-serif text-gray-600 text-sm dark:text-gray-300">&mdash; {{ post.date | readableDate }}</time>
+        </article>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ol>
+
+<h4>
+    <a
+    href="https://pythonbytes.fm"
+    title="Python Bytes"
+    class="font-semibold transition text-xl border-b hover:text-purple-800 border-gray-200 hover:border-purple-300 dark:text-yellow-200 dark:border-gray-800 dark:hover:text-yellow-400 dark:hover:border-yellow-100 dark:visited:text-gray-300"
+    >Python Bytes</a>
+</h4>
+{% set tag = 'python-bytes' %}
+{% set postslist = collections[ tag ] %}
+<ol class="md:grid md:grid-cols-1 md:gap-3 list-inside list-disc">
+    {% for post in postslist  %}
+    {% if post.data.published %}
+    <li class="mb-5 md:mb-2">
+        <article class="inline-block">
+        <h3 class="mb-2 inline">
+            <a
+            href="{{ post.url | url }}"
+            title="read {{ post.data.title }}"
+            class="font-semibold transition text-base border-b hover:text-purple-800 border-gray-200 hover:border-purple-300 dark:text-yellow-200 dark:border-gray-800 dark:hover:text-yellow-400 dark:hover:border-yellow-100 dark:visited:text-gray-300"
+            >
+            {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
+            </a>
+        </h3>
+        <time datetime="{{ post.date | htmlDateString }}" class="font-serif text-gray-600 text-sm dark:text-gray-300">&mdash; {{ post.date | readableDate }}</time>
+        </article>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ol>
+
+<h4>
+    <a
+    href="https://talkpython.fm"
+    title="Talk Python to Me"
+    class="font-semibold transition text-xl border-b hover:text-purple-800 border-gray-200 hover:border-purple-300 dark:text-yellow-200 dark:border-gray-800 dark:hover:text-yellow-400 dark:hover:border-yellow-100 dark:visited:text-gray-300"
+    >Talk Python to Me</a>
+</h4>
+{% set tag = 'talk-python-to-me' %}
+{% set postslist = collections[ tag ] %}
+<ol class="md:grid md:grid-cols-1 md:gap-3 list-inside list-disc">
+    {% for post in postslist  %}
+    {% if post.data.published %}
+    <li class="mb-5 md:mb-2">
+        <article class="inline-block">
+        <h3 class="mb-2 inline">
+            <a
+            href="{{ post.url | url }}"
+            title="read {{ post.data.title }}"
+            class="font-semibold transition text-base border-b hover:text-purple-800 border-gray-200 hover:border-purple-300 dark:text-yellow-200 dark:border-gray-800 dark:hover:text-yellow-400 dark:hover:border-yellow-100 dark:visited:text-gray-300"
+            >
+            {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
+            </a>
+        </h3>
+        <time datetime="{{ post.date | htmlDateString }}" class="font-serif text-gray-600 text-sm dark:text-gray-300">&mdash; {{ post.date | readableDate }}</time>
+        </article>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ol>

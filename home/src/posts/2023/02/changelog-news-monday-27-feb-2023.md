@@ -22,23 +22,20 @@ published: true
 
 Interesting that this is a vertically scaled on-prem app. Amazing!
 
-```text
-Clip: Simpsons Professor Frink and Comic Book Guy.
-```
+> Clip: Simpsons Professor Frink and Comic Book Guy.
 
 ## Killer Lobsters
 
-```text
-Clip: Futurama
-```
+
+> Clip: Futurama
+
 
 I poked through this thread. I didn't take a lot away from it. A good standard library is nice. I prefer Clojure's.
 
 ## Linux 6.2
 
-```text
-Clip: Young Frankenstein (twice)
-```
+> Clip: Young Frankenstein (twice)
+
 
 Good to know. I haven't used Linux as my primary OS in some time. I use Mac at work and Windows at home for gaming.
 
@@ -50,9 +47,8 @@ I agree with most of the author's points. Like anything though, there is no pana
 
 Though I prefer the library approach, b/c you can always compose libraries into something bigger, I often yearn for a framework that will make the "easy things simple and the hard things possible".
 
-```text
-Clip: Dumb and Dumber
-```
+
+> Clip: Dumb and Dumber
 
 ## GoatCounter
 

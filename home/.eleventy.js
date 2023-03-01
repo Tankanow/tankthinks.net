@@ -9,6 +9,7 @@ const markdownItAnchor = require('markdown-it-anchor')
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('./src/css/styles.css')
+	eleventyConfig.addPassthroughCopy('./src/css/extras.css')
 	eleventyConfig.addPassthroughCopy('./src/browserconfig.xml')
 	eleventyConfig.addPassthroughCopy('./src/site.webmanifest')
 	eleventyConfig.addPassthroughCopy('./src/admin/config.yml')

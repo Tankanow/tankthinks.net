@@ -33,7 +33,7 @@ I guess these are what I Know Notes.
 {% set tag = 'the-changelog' %}
 {% set postslist = collections[ tag ] %}
 <ol class="md:grid md:grid-cols-1 md:gap-3 list-inside list-disc">
-    {% for post in postslist  %}
+    {% for post in postslist | sort(true, false, 'date')  %}
     {% if post.data.published %}
     <li class="mb-5 md:mb-2">
         <article class="inline-block">
@@ -63,7 +63,7 @@ I guess these are what I Know Notes.
 {% set tag = 'python-bytes' %}
 {% set postslist = collections[ tag ] %}
 <ol class="md:grid md:grid-cols-1 md:gap-3 list-inside list-disc">
-    {% for post in postslist  %}
+    {% for post in postslist | sort(true, false, 'date') %}
     {% if post.data.published %}
     <li class="mb-5 md:mb-2">
         <article class="inline-block">
@@ -93,7 +93,7 @@ I guess these are what I Know Notes.
 {% set tag = 'talk-python-to-me' %}
 {% set postslist = collections[ tag ] %}
 <ol class="md:grid md:grid-cols-1 md:gap-3 list-inside list-disc">
-    {% for post in postslist  %}
+    {% for post in postslist | sort(true, false, 'date') %}
     {% if post.data.published %}
     <li class="mb-5 md:mb-2">
         <article class="inline-block">

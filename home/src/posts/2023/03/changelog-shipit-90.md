@@ -36,7 +36,7 @@ I find that the opposite is true, that is [data is almost always better than cod
 - Code is liability. Data is value.
 - Data is declarative, portable, and transformable. Most code is not.
 
-I'll stop here. I'll write a new post on all the reasons why I prefer Code to Data.
+I'll stop here. I'll write a new post on all the reasons why I prefer Data to Code.
 
 ### Portability Fallacy
 

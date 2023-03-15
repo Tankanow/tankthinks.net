@@ -6,7 +6,7 @@ title: Talk Python to Me 406
 description: Talk Python to Me 406
 featuredImg:
 subHeading: Talk Python to Me 406
-tags: ['know-notes', 'talk-python-to-me']
+tags: ['know-notes', 'talk-python-to-me', 'python']
 date: 2023-03-14
 updated:
 published: true

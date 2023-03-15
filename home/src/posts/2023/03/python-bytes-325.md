@@ -6,7 +6,7 @@ title: Python Bytes 325
 description: Python Bytes 325
 featuredImg:
 subHeading: Python Bytes 325
-tags: ['know-notes', 'python-bytes']
+tags: ['know-notes', 'python-bytes', 'python']
 date: 2023-03-01
 updated:
 published: true

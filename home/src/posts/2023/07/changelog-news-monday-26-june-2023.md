@@ -33,8 +33,9 @@ A table of useful, tiny libs. Don't forget to scroll right.
 
 ## [We need more Richard Stallman](https://ploum.net/2023-06-19-more-rms.html)
 
-Interesting article. I'll come back to it later. The author is onto some things here. Though I still can't get the 
-video of Stallman picking his toes during a presentation out of my head.
+Interesting article. I'll come back to it later. The author is onto some things here.
+
+Though I still can't get the video of Stallman picking his toes during a presentation out of my head.
 
 ### The 4 Freedoms of Software
 - *Use*
@@ -50,6 +51,5 @@ This is why I don't worry much about "AI taking my job" (at least for now) becau
 
 Here is an example where I asked ChatGPT to calculate the volume of a cylinder. I asked multiple times in different ways. It got the formulate right, but the arithmetic wrong.
 
-image:/img/20230705_volume_of_a_cylinder.png[Cylinder Math Gone Wrong,
-width=75%, link="/img/20230705_volume_of_a_cylinder.png"]
 
+![Cylinder Volume Gone Wrong](/img/20230705_volume_of_a_cylinder.png)

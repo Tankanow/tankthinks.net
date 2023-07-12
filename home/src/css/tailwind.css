@@ -23,13 +23,20 @@ h6 {
 	@apply text-purple-800 font-medium underline hover:text-purple-900 active:bg-yellow-200 dark:text-yellow-200 dark:hover:text-yellow-400;
 }
 
-.post h3,
-.post h4 {
+.post h1 {
 	@apply font-bold text-3xl tracking-tighter mb-2 text-gray-800 dark:text-white mt-14;
 }
 
+.post h2 {
+	@apply text-2xl tracking-tighter mb-2 text-gray-800 dark:text-white mt-14;
+}
+
+.post h3 {
+	@apply text-xl tracking-tighter mb-2 text-gray-800 dark:text-white mt-14;
+}
+
 .post h4 {
-	@apply text-2xl tracking-tighter;
+	@apply text-lg tracking-tighter mb-2 text-gray-800 dark:text-white mt-14;
 }
 
 .post img {

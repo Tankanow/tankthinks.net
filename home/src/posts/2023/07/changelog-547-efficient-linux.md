@@ -53,4 +53,20 @@ while read dir ; do
 done < <(find . -maxdepth 1 -type d | sort | grep -v -e '^\.$')
 ```
 
-> NOTA BENE: Some may be wondering why not just pipe the output of the command directly into the `while`. You can do that in many cases, though I try to limit pipes interacting with loops because you can run into some pretty nefarious and hard to track down bugs, e.g. when _one_ iteration of a loop fails in its [piped subshell](https://www.gnu.org/software/bash/manual/bash.html#Pipelines).
+> NOTA BENE: Some may be wondering why not just pipe the output of the command directly into the `while`. You can do that in many cases, though I try to limit pipes interacting with loops because you can run into some nefarious bugs that way, e.g. when _one_ iteration of a loop fails in its [piped subshell](https://www.gnu.org/software/bash/manual/bash.html#Pipelines) but the rest of the script keeps on chugging.
+
+## On Job Control
+
+You actually _can_ use the [Job Control built-ins](https://www.gnu.org/software/bash/manual/bash.html#Job-Control-Builtins) to keep something running on a remote box a la Screen/tmux with a combination of `^Z` (Control-Z), `bg`, `jobs`, and `disown`:
+
+```bash
+./long-running-script.sh
+^Z               # Control-Z
+jobs -l          # get job id AND pid
+bg               # start job in background
+disown -h <pid>  # disown it from the current user and prevent SIGHUP from killing it (-h)
+```
+
+Here's a video of it in action:
+
+![bash-job-control-disown](/img/bash-job-control-disown.gif)

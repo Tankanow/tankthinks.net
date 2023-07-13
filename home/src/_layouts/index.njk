@@ -1,9 +1,19 @@
 ---
 layout: base.njk
+pagination:
+  data: collections.works
+  size: 10
+  reverse: true
+  filter:
+    - works
+    - posts
+
 ---
-{% block featuredWorks %}
-  {% include '../_components/_featuredWorks.njk' %}
-{% endblock featuredWorks %}
+<section id="works" class="mb-20">
+  {% block workslist %}
+    {% include '../_components/_workslist.njk' %}
+  {% endblock workslist %}
+</section>
 
 {% block services %}
   {% include '../_components/_services.njk' %}

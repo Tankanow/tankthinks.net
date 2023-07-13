@@ -6,8 +6,7 @@
 		"serve": "ELEVENTY_ENV=dev npx eleventy --serve",
 		"start": "npm run serve",
 		"build": "ELEVENTY_ENV=dev npx eleventy",
-		"build:prod": "ELEVENTY_ENV=prod npx eleventy",
-		"css": "./node_modules/.bin/postcss src/css/tailwind.css > _site/css/styles.css && ./node_modules/.bin/postcss src/css/tailwind.css > src/css/styles.css"
+		"build:prod": "ELEVENTY_ENV=prod npx eleventy"
 	},
 	"keywords": [
 		"11ty",

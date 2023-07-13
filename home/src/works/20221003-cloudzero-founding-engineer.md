@@ -25,8 +25,8 @@ In early July 2017, through a series of serendipitous events, I found out about 
 
 # First Principles
 
-1. [Write Stuff Down](../../posts/2023/07/first-principles-1-write-stuff-down)
-2. [Respect Lindy](../../posts/2023/07/first-principles-2-lindy)
+1. [Write Stuff Down](../../posts/2023/07/first-principles-1-write-stuff-down/)
+2. [Respect Lindy](../../posts/2023/07/first-principles-2-lindy/)
 3. Understand the Domain
 4. Code is Liability
 5. Don't Break Your Consumers

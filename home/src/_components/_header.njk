@@ -22,6 +22,11 @@
           </li>
         {%- endfor %}
           <li class="inline-block">
+            <a href="{{ metadata.feed.path }}">
+              <i class="fa-solid fa-rss px-5"></i>
+            </a>
+          </li>
+          <li class="inline-block">
             <a
               href="{{ metadata.author.mailtolink }}"
               title="get in touch"

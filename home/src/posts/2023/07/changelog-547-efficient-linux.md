@@ -19,7 +19,7 @@ published: true
 
 I was first schooled at the bash terminal in 2001. I was home from college and I had a summer gig at NMS Communications in Framingham, MA. Back in those days we barely had datacenters, I think we still called them computer labs: a room in the office with 10-50 racked computers, about 5-10 monitors that could be switched between the different servers, and you needed a parka because the max temperature seemed around 45℉.
 
-We were using a few different flavors of Linux there. I remember RHEL and something like CentOS (though CentOS didn't exist yet). I foundered around at the terminal, barely finding my way from point A to B. But I had a wonderful manager, whose name I can't remember unfortunately, who was a wizard at the terminal. It was mindblowing to watch him work. He taught me many tricks I still use today, for example these aliases:
+We were using a few different flavors of Linux there. I remember RHEL and something like CentOS (though CentOS didn't exist yet). I floundered around at the terminal, barely finding my way from point A to B. But I had a wonderful manager, whose name I can't remember unfortunately, who was a wizard at the terminal. It was mindblowing to watch him work. He taught me many tricks I still use today, for example these aliases:
 
 ```bash
 alias u='cd ..'

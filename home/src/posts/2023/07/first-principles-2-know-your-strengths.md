@@ -46,7 +46,7 @@ In a startup, **Skills** enable you to scaffold the product quickly by following
 
 You may find that skills you've mastered in the past don't apply in the same way. **Knowledge**, e.g. as a SME in Marketing, Application Development, Security, etc., enables you to apply your expertise in novel ways as the organization swerves towards product-market fit.
 
-However, *leverage* is what startups crave most: the ability to do more with less. Here, your **Talents** are your guide. Behind every famous startup story of a hacker building an operating system in a garage, a product visionary applying art to design, or a leader building a culture of Joy are the **Talents** of those founders.
+However, *leverage* is what startups crave most: the ability to do more with less. Here, your **Talents** are your guide. Behind every famous startup story - a hacker building an operating system in a few days, a product visionary applying art to design, or a leader building a culture of Joy - are the **Talents** of those founders, because talents are a gateway to *Flow State* (more on this in a coming chapter).
 
 ## A Story
 

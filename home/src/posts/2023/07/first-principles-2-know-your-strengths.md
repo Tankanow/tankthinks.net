@@ -14,6 +14,7 @@ published: true
 
 <div class="col-start-3 col-end-9">
 
+![Know Your Strengths](/img/founding-engineer-know-your-strengths_edited.jpg)
 
 # First Principle - Know Your Strengths
 

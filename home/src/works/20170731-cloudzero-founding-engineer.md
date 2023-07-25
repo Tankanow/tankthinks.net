@@ -26,11 +26,12 @@ In early July 2017, through a series of serendipitous events, I found out about 
 # First Principles
 
 1. [Write Stuff Down](../../posts/2023/07/first-principles-1-write-stuff-down/)
-2. [Respect Lindy](../../posts/2023/07/first-principles-2-lindy/)
-3. Understand the Domain
-4. Code is Liability
-5. Don't Break Your Consumers
-6. Focus on Flow
+2. [Know Yourself](../../posts/2023/07/first-principles-2-know-your-strengths/)
+3. [Respect Lindy](../../posts/2023/07/first-principles-3-lindy/)
+4. Understand the Domain
+5. Code is Liability
+6. Don't Break Your Consumers
+7. Focus on Flow
 
 > NOTA BENE: The rest of this page is a WIP, here is the outline of the sections to come.
 

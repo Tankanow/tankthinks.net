@@ -28,7 +28,7 @@ In early July 2017, through a series of serendipitous events, I found out about 
 1. [Write Stuff Down](../../posts/2023/07/first-principles-1-write-stuff-down/)
 2. [Know Yourself](../../posts/2023/07/first-principles-2-know-your-strengths/)
 3. [Respect Lindy](../../posts/2023/08/first-principles-3-lindy/)
-4. Understand the Domain
+4. [Understand the Domain](../../posts/2023/08/first-principles-4-domain/)
 5. Code is Liability
 6. Don't Break Your Consumers
 7. Focus on Flow

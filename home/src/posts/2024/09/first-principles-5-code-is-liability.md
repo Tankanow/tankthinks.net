@@ -14,8 +14,6 @@ published: true
 
 <div class="col-start-3 col-end-9">
 
-<img src="/img/20230818_building_composable_abstractions.jpg" alt="Composable Abstractions" style="width:400px;margin-left:auto;margin-right:auto;"/>
-
 # Code is Liability
 
 ## Debts and Liabilities

@@ -34,19 +34,19 @@ jobs:
 
     steps:
     - name: configureawscredentials
-      uses: aws-actions/configure-aws-credentials@v1
+      uses: aws-actions/configure-aws-credentials@v4
       with:
         role-to-assume: ${{secrets.ROLE_ARN}}
         role-session-name: github-tanthinks.net-deploy-blog-to-prod
         aws-region: us-east-1
 
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         fetch-depth: 2
 
     - name: Download ${{inputs.artifact_name}}
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: ${{inputs.artifact_name}}
         path: public

@@ -7,7 +7,7 @@ description: Why the Three Ways of DevOps become even more critical when your ne
 featuredImg:
 subHeading: From Release Engineer to AI Wrangler
 tags: ['ai', 'devops', 'founding-engineer', 'systems-thinking']
-date: 2025-01-17
+date: 2025-07-21
 updated:
 published: true
 ---

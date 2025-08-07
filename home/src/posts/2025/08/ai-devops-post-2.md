@@ -7,7 +7,7 @@ description: How AI transforms traditional software bottlenecks into expensive n
 featuredImg:
 subHeading: When Physics Meets AI Hype
 tags: ['ai', 'devops', 'founding-engineer', 'theory-of-constraints']
-date: 2025-01-16
+date: 2025-07-14
 updated:
 published: true
 ---

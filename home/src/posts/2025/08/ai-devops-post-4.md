@@ -7,7 +7,7 @@ description: Why we need to stop the AI hype insanity and build real systems
 featuredImg:
 subHeading: Stop the Insanity, Start Building Systems
 tags: ['ai', 'devops', 'founding-engineer', 'devaiops']
-date: 2025-01-18
+date: 2025-07-28
 updated:
 published: true
 ---

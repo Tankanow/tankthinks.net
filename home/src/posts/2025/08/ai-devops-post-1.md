@@ -7,7 +7,7 @@ description: Why AI adoption follows the same patterns as every other transforma
 featuredImg:
 subHeading: Lessons from a Founding Engineer
 tags: ['ai', 'devops', 'founding-engineer']
-date: 2025-01-15
+date: 2025-07-07
 updated:
 published: true
 ---
@@ -33,7 +33,7 @@ This isn't pessimism – it's pattern recognition.
 The speed of change with AI is staggering. We're not just dealing with code completion anymore. We're managing:
 
 - Custom LLMs for every team
-- Agent fleets that can spin up infrastructure autonomously  
+- Agent fleets that can spin up infrastructure autonomously
 - AI-powered testing that generates more cases than humans can review
 - Embedded agents making runtime decisions
 
@@ -74,6 +74,3 @@ We've solved harder problems than this. We turned early cloud chaos into refined
 After all, we have about seven years until the singularity. Might as well build some good systems while we wait.
 
 *[Read the full post on CloudZero →](https://www.cloudzero.com/blog/ai-wont-be-productive-by-default)*
-
-</document_content>
-</invoke>

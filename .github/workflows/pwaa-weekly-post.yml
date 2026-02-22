@@ -1,0 +1,43 @@
+name: PWAA Weekly Post
+
+# Runs every Monday at 10:00 AM UTC (6 AM Eastern)
+# Can also be triggered manually from the Actions tab
+on:
+  schedule:
+    - cron: '0 10 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  write-post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          # Use a PAT so that the push triggers the build workflow downstream
+          token: ${{ secrets.PWAA_GH_PAT }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Configure git
+        run: |
+          git config user.name  "pwaa-bot[bot]"
+          git config user.email "pwaa-bot@tankthinks.net"
+
+      - name: Write next PWAA chapter
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_TOKEN: ${{ secrets.PWAA_GH_PAT }}
+        run: python home/scripts/write-pwaa-post.py

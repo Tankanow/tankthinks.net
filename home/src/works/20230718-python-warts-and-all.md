@@ -25,15 +25,17 @@ date: 2023-07-18
 In Python: Warts and All, I share a lot of what I like and some of what I don't like about Python. The goal here is not to be inflammatory, well ... maybe a little,
 but rather to create constructive discussions around the Python Programming Language.
 
+This series is structured as a mini-book — each post is a chapter, and each chapter links to the next. Start at the beginning or jump to any topic.
+
 # Chapters
 
-1. Literal Data Structures
-2. The Python Data Model
-3. Comprehensions
-4. Generators
-5. REPL
-6. Typing
-7. Asynchronous
-8. Packaging
-9. Maintenance
-10. Scripting/Building CLIs
+1. [Literal Data Structures](../../posts/2023/07/pwaa-1-literal-data-structures/)
+2. [The Python Data Model](../../posts/2023/07/pwaa-2-data-model/)
+3. Comprehensions *(coming soon)*
+4. Generators *(coming soon)*
+5. REPL *(coming soon)*
+6. Typing *(coming soon)*
+7. Asynchronous *(coming soon)*
+8. Packaging *(coming soon)*
+9. Maintenance *(coming soon)*
+10. Scripting / Building CLIs *(coming soon)*

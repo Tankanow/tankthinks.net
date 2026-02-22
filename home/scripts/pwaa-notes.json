@@ -1,0 +1,297 @@
+{
+  "series": {
+    "title": "Python Warts and All",
+    "slug_prefix": "pwaa",
+    "tag": "python-warts-and-all",
+    "works_url": "../../works/20230718-python-warts-and-all/",
+    "description": "A mini-book series exploring what's great and what's frustrating about Python. Not inflammatory, well ... maybe a little. The goal is constructive discussion.",
+    "tone": "Opinionated but fair. Direct. Draw on real experience — not just docs. Use concrete examples. Each post has a 'good' section and a 'warts' section. Aim for 600-900 words. Write in first person."
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "title": "Literal Data Structures",
+      "slug": "pwaa-1-literal-data-structures",
+      "status": "published",
+      "notes": {
+        "good": [
+          "dict, list, tuple, set literals are concise and readable",
+          "JSON compatibility means Python data structures translate directly",
+          "Compare to Java: nested HashMap requires type declarations on both sides",
+          "Universal appeal — like pop music, everyone understands Python literals even across languages",
+          "The REPL shows you the structure immediately"
+        ],
+        "warts": [
+          "Tuple trailing comma surprise: (1) is an int, (1,) is a tuple — this trips up everyone",
+          "Empty set syntax: {} creates a dict, NOT a set. You must write set()",
+          "No frozendict in stdlib — you have to use third-party or tuple-of-tuples for hashable dicts",
+          "The word 'dictionary' — every other language calls it a map or hash. Python insists on dictionary.",
+          "Limited immutable data structures out of the box — no persistent data structures like Clojure"
+        ],
+        "links": [
+          {"text": "Java nested HashMap example (what we're avoiding)", "url": "https://howtodoinjava.com/java/collections/hashmap/java-nested-map/"}
+        ]
+      }
+    },
+    {
+      "num": 2,
+      "title": "The Python Data Model",
+      "slug": "pwaa-2-data-model",
+      "status": "published",
+      "notes": {
+        "good": [
+          "Dunder (double underscore) methods let you plug into Python's built-in syntax",
+          "len(obj) calls obj.__len__() — this means any object can behave like a built-in",
+          "Operator overloading feels natural: __add__, __eq__, __lt__",
+          "__repr__ and __str__ — two levels of string representation for different contexts",
+          "Everything is an object, including functions and classes",
+          "Context managers via __enter__ / __exit__ are elegant"
+        ],
+        "warts": [
+          "Magic method proliferation — there are over 80 dunder methods. Nobody memorizes them all.",
+          "__new__ vs __init__ confusion — __new__ creates the object, __init__ initializes it. Most people never need __new__ but it exists to bite you.",
+          "__slots__ can optimize memory but breaks some Python conventions and surprises people",
+          "Comparison methods: if you define __eq__ you should probably define __hash__ too, or your object becomes unhashable silently",
+          "deepcopy complexity — __copy__ vs __deepcopy__ is non-obvious",
+          "Descriptors (__get__, __set__, __delete__) are powerful but almost nobody understands them correctly"
+        ],
+        "links": [
+          {"text": "Python Data Model reference", "url": "https://docs.python.org/3/reference/datamodel.html"},
+          {"text": "Fluent Python ch. 1", "url": "https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/"}
+        ]
+      }
+    },
+    {
+      "num": 3,
+      "title": "Comprehensions",
+      "slug": "pwaa-3-comprehensions",
+      "status": "not_started",
+      "notes": {
+        "good": [
+          "List comprehensions: [x*2 for x in items if x > 0] — readable and Pythonic",
+          "Dict comprehensions: {k: v for k, v in pairs}",
+          "Set comprehensions: {x.lower() for x in words}",
+          "Generator expressions: (x*2 for x in items) — lazy, memory-efficient",
+          "Faster than equivalent for loops in CPython due to bytecode optimization",
+          "Filter + transform in one expression is expressive and functional"
+        ],
+        "warts": [
+          "Nested comprehensions are a readability disaster: [[row[i] for row in matrix] for i in range(4)]",
+          "The walrus operator := in comprehensions is clever but hard to read: [y := f(x), y**2, y**3]",
+          "No easy way to get 'the first matching item' — you write next(x for x in items if pred(x)) and it raises StopIteration if empty",
+          "No comprehension syntax for flattening: you need itertools.chain or nested comprehensions",
+          "Generator expressions are stateful and single-use — passing one to two functions is a bug waiting to happen",
+          "Leaking variables: in Python 2, list comprehensions leaked their loop variable. Fixed in Python 3, but the muscle memory persists."
+        ],
+        "links": []
+      }
+    },
+    {
+      "num": 4,
+      "title": "Generators",
+      "slug": "pwaa-4-generators",
+      "status": "not_started",
+      "notes": {
+        "good": [
+          "yield turns any function into a lazy iterator — memory-efficient pipeline",
+          "yield from delegates to a sub-generator, enabling composable generators",
+          "Processing infinite or huge streams without loading everything into memory",
+          "Generator expressions as arguments: sum(x*x for x in range(1000000))",
+          "send() and throw() make generators a lightweight coroutine mechanism",
+          "Readable data pipeline: read -> parse -> filter -> transform, all lazy"
+        ],
+        "warts": [
+          "Can only iterate once — this surprises everyone. list(gen); list(gen) gives [] on the second call.",
+          "Hard to debug — you can't print a generator, you have to consume it",
+          "No peek without consuming: you need itertools.islice(gen, 1) or next() with a default",
+          "Generator vs iterator confusion — a generator is an iterator, but not all iterators are generators",
+          "send() and throw() are obscure and mostly replaced by async/await now",
+          "StopIteration propagation inside a generator silently terminates it in Python 3.7+ (PEP 479)",
+          "The three types of 'generators' — generator functions, generator expressions, and generator objects — add terminology overhead"
+        ],
+        "links": [
+          {"text": "PEP 255 — Simple Generators", "url": "https://peps.python.org/pep-0255/"},
+          {"text": "PEP 342 — Coroutines via Enhanced Generators", "url": "https://peps.python.org/pep-0342/"}
+        ]
+      }
+    },
+    {
+      "num": 5,
+      "title": "REPL",
+      "slug": "pwaa-5-repl",
+      "status": "not_started",
+      "notes": {
+        "good": [
+          "The standard REPL is always available — no setup needed",
+          "_ holds the last result — useful for quick calculations",
+          "dir() and help() turn the REPL into interactive documentation",
+          "IPython/Jupyter: tab completion, magic commands, inline plots, %timeit, %pdb",
+          "Python's introspective nature makes REPL exploration natural",
+          "Quick prototyping — test an idea in 30 seconds without a file"
+        ],
+        "warts": [
+          "Multi-line editing in the standard REPL is painful — indentation errors are unrecoverable without retyping",
+          "No persistent history across sessions in the standard REPL (IPython saves history, stdlib doesn't by default)",
+          "Pasting multi-line code often fails due to indentation requirements",
+          "No easy way to save a REPL session to a file (IPython %save helps but isn't universal)",
+          "Standard REPL has no syntax highlighting, no auto-complete — you need IPython for a modern experience",
+          "The gap between standard REPL and IPython/Jupyter is huge — beginners get the bad experience"
+        ],
+        "links": [
+          {"text": "IPython", "url": "https://ipython.org/"},
+          {"text": "ptpython — a better REPL", "url": "https://github.com/prompt-toolkit/ptpython"}
+        ]
+      }
+    },
+    {
+      "num": 6,
+      "title": "Typing",
+      "slug": "pwaa-6-typing",
+      "status": "not_started",
+      "notes": {
+        "good": [
+          "Gradual typing — add types incrementally, no big bang migration",
+          "Modern syntax (3.10+): int | None instead of Optional[int]; list[int] instead of List[int]",
+          "Protocol for structural subtyping — duck typing with documentation",
+          "TypeVar and Generic for reusable typed containers",
+          "TypedDict for typed dictionaries without full class overhead",
+          "dataclasses with type hints are clean and boilerplate-free",
+          "mypy, pyright, and pytype all provide static analysis"
+        ],
+        "warts": [
+          "Types are not enforced at runtime — def f(x: int): pass; f('oops') works fine",
+          "Optional[X] vs X | None — two syntaxes for the same thing, era-dependent",
+          "Complex types become unreadable: Callable[[int, str], Optional[Dict[str, List[Tuple[int, ...]]]]]",
+          "TypedDict vs dataclass vs NamedTuple vs attrs vs pydantic — too many options for structured data",
+          "The typing module itself is a wart — List, Dict, Tuple are deprecated but still everywhere",
+          "runtime_checkable Protocol only checks method names, not signatures — false safety",
+          "Type narrowing edge cases: mypy and pyright disagree on some valid patterns",
+          "No built-in way to enforce types at runtime without a library (pydantic fills this gap)"
+        ],
+        "links": [
+          {"text": "mypy documentation", "url": "https://mypy.readthedocs.io/"},
+          {"text": "PEP 484 — Type Hints", "url": "https://peps.python.org/pep-0484/"}
+        ]
+      }
+    },
+    {
+      "num": 7,
+      "title": "Asynchronous",
+      "slug": "pwaa-7-asynchronous",
+      "status": "not_started",
+      "notes": {
+        "good": [
+          "async/await syntax is clear and readable compared to callback soup",
+          "asyncio enables high-concurrency I/O without threads",
+          "FastAPI, aiohttp, and httpx make async web development excellent",
+          "asyncio.gather() for concurrent tasks is elegant",
+          "async context managers and async iterators are well-designed",
+          "Task groups (Python 3.11+) improve structured concurrency"
+        ],
+        "warts": [
+          "Async is viral — one async call forces everything up the stack to be async",
+          "Blocking I/O in an async context silently degrades performance — no warning by default",
+          "Three concurrency models (threading, multiprocessing, asyncio) with different use cases and non-trivial tradeoffs",
+          "The GIL means threads don't actually parallelize CPU work — async doesn't help with CPU-bound tasks either",
+          "asyncio.run() vs event loops vs get_event_loop() — the API evolved publicly and shows its seams",
+          "Mixing sync and async code requires run_in_executor() which is cumbersome",
+          "async generators are subtly different from regular generators in teardown behavior",
+          "Debugging async code is harder — stack traces are less informative"
+        ],
+        "links": [
+          {"text": "Python asyncio docs", "url": "https://docs.python.org/3/library/asyncio.html"},
+          {"text": "Trio — alternative async framework", "url": "https://trio.readthedocs.io/"}
+        ]
+      }
+    },
+    {
+      "num": 8,
+      "title": "Packaging",
+      "slug": "pwaa-8-packaging",
+      "status": "not_started",
+      "notes": {
+        "good": [
+          "PyPI has over 500,000 packages — the ecosystem is enormous",
+          "uv (2024) is a revelation: blazing fast, replaces pip/venv/pyenv in one tool",
+          "pyproject.toml is a clean, standard project configuration format",
+          "Virtual environments are a solved problem — venv is built in",
+          "Wheels make binary distribution practical",
+          "pip install is so simple it democratized software distribution"
+        ],
+        "warts": [
+          "The tooling history is a graveyard: setup.py → setup.cfg → pyproject.toml, distutils → setuptools → flit → poetry → hatch → rye → uv",
+          "pip's dependency resolver was broken for years — it would happily install conflicting versions",
+          "pip install in a system Python can break your OS on some Linux distros (now blocked with PEP 668)",
+          "Too many competing tools with overlapping purposes: conda, poetry, pipenv, pyenv, virtualenv, venv",
+          "Publishing to PyPI requires understanding twine, build backends, and trusted publishing",
+          "No standard way to lock dependencies until pip-tools/poetry/uv popularized lock files",
+          "PYTHONPATH manipulation is a footgun that persists in many projects"
+        ],
+        "links": [
+          {"text": "uv — the new Python package manager", "url": "https://docs.astral.sh/uv/"},
+          {"text": "Python Packaging User Guide", "url": "https://packaging.python.org/"}
+        ]
+      }
+    },
+    {
+      "num": 9,
+      "title": "Maintenance",
+      "slug": "pwaa-9-maintenance",
+      "status": "not_started",
+      "notes": {
+        "good": [
+          "Python's backwards compatibility commitment within major versions is strong",
+          "The deprecation cycle (usually 2 releases) gives migration time",
+          "pyupgrade automates syntax modernization",
+          "The community produces excellent tooling: black, ruff, mypy all handle maintenance tasks",
+          "Python 3.12+ has significantly improved error messages",
+          "SECURITY fixes are backported to maintained versions"
+        ],
+        "warts": [
+          "The Python 2 → 3 migration was a decade-long disaster that fractured the ecosystem",
+          "__future__ imports as a migration band-aid: from __future__ import annotations",
+          "Minor version breaking changes: walrus operator in 3.8, structural pattern matching in 3.10 — production code must track Python versions carefully",
+          "Deprecation warnings are often invisible in production — warnings are silenced by default",
+          "C extension maintenance is painful — binary compatibility breaks across Python minor versions",
+          "No built-in upgrade path: pip install --upgrade doesn't update the Python version itself",
+          "pyenv, asdf, and mise all solve Python version management differently — no canonical answer"
+        ],
+        "links": [
+          {"text": "pyupgrade", "url": "https://github.com/asottile/pyupgrade"},
+          {"text": "ruff — fast Python linter", "url": "https://docs.astral.sh/ruff/"}
+        ]
+      }
+    },
+    {
+      "num": 10,
+      "title": "Scripting / Building CLIs",
+      "slug": "pwaa-10-scripting-clis",
+      "status": "not_started",
+      "notes": {
+        "good": [
+          "Python is the lingua franca of scripting — available everywhere",
+          "Typer (built on Click) makes building typed CLIs effortless",
+          "Rich makes terminal output beautiful with one import",
+          "click + rich is a killer combo for production CLIs",
+          "Shebang support: #!/usr/bin/env python3",
+          "sys.argv is simple; argparse works for basic cases",
+          "uv run script.py can run a script with inline dependencies (PEP 723)"
+        ],
+        "warts": [
+          "Distributing standalone scripts is painful — users need Python installed, the right version, and the right packages",
+          "argparse is extremely verbose for simple CLIs — it requires writing 3 lines per argument",
+          "The if __name__ == '__main__': pattern is an awkward entry point convention",
+          "sys.path manipulation is a common script anti-pattern that causes hard-to-debug import errors",
+          "Click's decorator-heavy style makes functions hard to test in isolation",
+          "PyInstaller/Nuitka produce large binaries and have complex edge cases",
+          "No standard way to write cross-platform scripts — Windows vs Unix path handling is manual"
+        ],
+        "links": [
+          {"text": "Typer", "url": "https://typer.tiangolo.com/"},
+          {"text": "Rich", "url": "https://rich.readthedocs.io/"},
+          {"text": "PEP 723 — Inline Script Metadata", "url": "https://peps.python.org/pep-0723/"}
+        ]
+      }
+    }
+  ]
+}

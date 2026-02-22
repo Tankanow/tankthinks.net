@@ -236,6 +236,89 @@ This is an AI-drafted blog post for the Python Warts and All series.
         print(f"PR creation failed (you can create it manually):\n{result.stderr}", file=sys.stderr)
 
 
+LINKEDIN_SYSTEM_PROMPT = """\
+You write LinkedIn posts for a software engineer's personal blog.
+
+Tone:
+- Professional but conversational, not corporate-speak
+- First person
+- No cringe hashtag spam — at most 3 relevant hashtags at the end
+- Hook in the first line (no "Excited to share..." opener)
+- 150-250 words total
+
+Structure:
+1. Opening hook (1 sentence — something punchy or provocative about the topic)
+2. What the post covers (2-3 sentences)
+3. A teaser — one concrete insight or surprising take from the post
+4. Call to action with the link
+5. 2-3 relevant hashtags on their own line
+
+Output ONLY the LinkedIn post text. No commentary, no labels.
+"""
+
+
+def blog_post_url(post_path: Path) -> str:
+    """Derive the live blog URL from the post file path."""
+    # Path is like .../home/src/posts/2026/02/pwaa-3-comprehensions.md
+    # URL is https://tankthinks.net/posts/2026/02/pwaa-3-comprehensions/
+    parts = post_path.parts
+    posts_idx = next(i for i, p in enumerate(parts) if p == "posts")
+    url_path = "/".join(parts[posts_idx:])
+    slug = url_path.removesuffix(".md")
+    return f"https://tankthinks.net/{slug}/"
+
+
+def generate_linkedin_post(client: anthropic.Anthropic, chapter: dict, post_content: str, url: str) -> str:
+    prompt = f"""Here is a blog post I just published. Write a LinkedIn post to promote it.
+
+Blog post URL: {url}
+
+Chapter: {chapter['num']} — {chapter['title']}
+Series: Python Warts and All
+
+--- BEGIN POST ---
+{post_content[:3000]}
+--- END POST ---
+"""
+    message = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=512,
+        system=LINKEDIN_SYSTEM_PROMPT,
+        messages=[{"role": "user", "content": prompt}],
+    )
+    return message.content[0].text.strip()
+
+
+def write_job_summary(chapter: dict, url: str, linkedin_text: str) -> None:
+    """Write a copy-pasteable LinkedIn block to the GitHub Actions job summary."""
+    summary_file = os.environ.get("GITHUB_STEP_SUMMARY")
+    separator = "─" * 60
+
+    block = f"""## LinkedIn Post — Chapter {chapter['num']}: {chapter['title']}
+
+**Blog post:** {url}
+
+Copy and paste the text below into LinkedIn:
+
+```
+{linkedin_text}
+```
+
+{separator}
+"""
+
+    # Always print to stdout so it shows in raw logs too
+    print("\n" + separator)
+    print(f"LINKEDIN POST FOR CHAPTER {chapter['num']}: {chapter['title']}")
+    print(separator)
+    print(linkedin_text)
+    print(separator + "\n")
+
+    if summary_file:
+        with open(summary_file, "a") as f:
+            f.write(block)
+
+
 def main() -> None:
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
@@ -263,6 +346,12 @@ def main() -> None:
     post_content = message.content[0].text
     post_path = determine_post_path(chapter)
     write_post(post_content, post_path)
+
+    url = blog_post_url(post_path)
+    print(f"Blog post URL: {url}")
+
+    linkedin_text = generate_linkedin_post(client, chapter, post_content, url)
+    write_job_summary(chapter, url, linkedin_text)
 
     create_pr(chapter, post_path)
 

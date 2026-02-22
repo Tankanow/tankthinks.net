@@ -2,11 +2,16 @@
 	"name": "tankthinks.net",
 	"version": "1.0.0",
 	"description": "blog built with eleventy & tailwindcss.",
+	"packageManager": "pnpm@10.30.1",
+	"engines": {
+		"node": ">=18",
+		"pnpm": ">=9"
+	},
 	"scripts": {
-		"serve": "ELEVENTY_ENV=dev npx eleventy --serve",
-		"start": "npm run serve",
-		"build": "ELEVENTY_ENV=dev npx eleventy",
-		"build:prod": "ELEVENTY_ENV=prod npx eleventy"
+		"serve": "ELEVENTY_ENV=dev eleventy --serve",
+		"start": "pnpm run serve",
+		"build": "ELEVENTY_ENV=dev eleventy",
+		"build:prod": "ELEVENTY_ENV=prod eleventy"
 	},
 	"keywords": [
 		"11ty",
@@ -36,5 +41,11 @@
 	"overrides": {
 		"minimatch": "^10.2.1",
 		"js-yaml": "^4.1.0"
+	},
+	"pnpm": {
+		"overrides": {
+			"minimatch": "^10.2.1",
+			"js-yaml": "^4.1.0"
+		}
 	}
 }

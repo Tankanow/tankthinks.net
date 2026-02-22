@@ -19,7 +19,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginRss)
 	eleventyConfig.addPlugin(pluginSyntaxHighlight)
 
-	eleventyConfig.setDataDeepMerge(true)
+	// Data deep merge is enabled by default in Eleventy 3.x
 
 	eleventyConfig.addShortcode('respimg', (path, alt, style) => {
 		const fetchBase = `https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/image/upload/`

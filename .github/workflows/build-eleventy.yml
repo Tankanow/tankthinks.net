@@ -15,15 +15,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22.x
-      - name: npm install
-        working-directory: ./home
-        run: |
-          npm install
 
-      - name: npm run build:prod
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+          run_install: false
+
+      - name: pnpm install
         working-directory: ./home
         run: |
-          npm run build:prod
+          pnpm install --frozen-lockfile
+
+      - name: pnpm run build:prod
+        working-directory: ./home
+        run: |
+          pnpm run build:prod
 
       - name: Upload Site
         uses: actions/upload-artifact@v4

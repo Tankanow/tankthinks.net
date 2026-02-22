@@ -31,7 +31,7 @@ This series is structured as a mini-book — each post is a chapter, and each ch
 
 1. [Literal Data Structures](../../posts/2023/07/pwaa-1-literal-data-structures/)
 2. [The Python Data Model](../../posts/2023/07/pwaa-2-data-model/)
-3. Comprehensions *(coming soon)*
+3. [Comprehensions](../../posts/2026/02/pwaa-3-comprehensions/)
 4. Generators *(coming soon)*
 5. REPL *(coming soon)*
 6. Typing *(coming soon)*

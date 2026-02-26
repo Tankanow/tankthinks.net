@@ -18,7 +18,9 @@ published: true
 
 Today was the first day in a while where I'm not sure if I was more productive vibe coding. That's worth unpacking.
 
-I've spent the last year advocating for [extending DevOps principles to AI](/2025/07/ai-devops-post-1/). I've talked about governance, systems thinking, the whole playbook. Today I got to experience the tension firsthand — not as a conference talk, but as a regular Tuesday where I needed to ship a cross-repo infrastructure change and decided to let an AI agent drive.
+This is not a "first time I tried AI coding" story. I've been vibe coding real features for months — full implementations shipped from my phone in Claude Code while waiting for my kids at practice, multi-repo changes landed from the couch on a Saturday morning. It works. I've [advocated for extending DevOps principles to AI](/2025/07/ai-devops-post-1/) because I believe in the tooling enough to want governance around it.
+
+So when I say today felt different, I mean something that had been consistently delightful backslid a bit. That's a more interesting question than "is vibe coding good?" The question is: what changed?
 
 ## The Task
 

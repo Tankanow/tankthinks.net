@@ -40,15 +40,17 @@ That's not an exaggeration. Forty minutes. For work that would have been a solid
 
 ## The Regret
 
-**Scope creep nearly sank the day — and it came from the AI, not me.**
+**Scope creep nearly sank the day — and it was both of us.**
 
-Around midday, I had a reasonable idea: make the authorizer more friendly for dev namespaces by adding a permissive mode for unmapped endpoints. That was a well-scoped enhancement. But during planning, the AI independently decided to also add a "save custom config" feature that let developers push arbitrary endpoint configurations. I approved the plan without scrutinizing that addition closely enough.
+Around midday, I had a reasonable idea: make the authorizer more friendly for dev namespaces by adding a permissive mode for unmapped endpoints. That was a well-scoped enhancement. But during planning, the AI proposed an additional "save custom config" feature that let developers push arbitrary endpoint configurations. It sounded useful. I said yes without thinking hard about it.
 
-It was architecturally broken in practice. The custom config generated auth tokens scoped to the wrong namespace, which caused every single smoke test to fail with 401 Unauthorized. About **1.5 hours of a 6-hour day was spent implementing, debugging, and reverting a feature the AI invented and I rubber-stamped.**
+This is the same dynamic that plays out in every standup and sprint planning meeting. A manager asks "can you just add one more thing?" and a week of team toil follows. The difference here is that the AI plays both roles — it proposes the scope _and_ builds it before you've finished your coffee. The feedback loop between "that sounds reasonable" and "it's already implemented" is dangerously short.
 
-The permissive authorizer already solved the problem. I had to stop the agent and ask "What is this feature? Why do we need it?" — a question I should have asked at planning time.
+The custom config was architecturally broken in practice. It generated auth tokens scoped to the wrong namespace, which caused every single smoke test to fail with 401 Unauthorized. About **1.5 hours of a 6-hour day was spent implementing, debugging, and reverting a feature we both talked ourselves into.**
 
-The AI's instinct to add "helpful" features is a trap. It generates plausible-sounding scope that a tired human will approve on autopilot. I've written about [offloading critical thinking to AI](/2025/07/ai-devops-post-4/) before. Today I lived it.
+The permissive authorizer already solved the problem. I had to stop the agent and ask "What is this feature? Why do we need it?" — a question I should have asked at planning time. But I'd been riding the high of the first 40 minutes, and saying yes was easy when I wasn't the one typing.
+
+I've written about [offloading critical thinking to AI](/2025/07/ai-devops-post-4/) before. Today I lived it.
 
 **Convention drift was real and insidious.** The agent's initial implementation used `monkeypatch` for environment variables (the codebase uses a custom fixture) and introduced infrastructure parameters where the codebase favors in-code detection. Both violations made it past the agent's own conformer check. I caught them during review and forced a rewrite. The lesson: AI can check _syntax_ patterns reliably, but _architectural_ conventions require human eyes.
 
@@ -88,7 +90,7 @@ I'll keep vibe coding. The 40-minute magic at the start of my day was real. But 
 
 # tl;dr
 
-AI-assisted coding delivered 3-5x mechanical throughput across three repos, CI/CD, and AWS. It also invented a feature I didn't ask for, which cost 25% of my day. The most productive thing I did was spend 30 seconds asking "why do we need this?" Vibe coding is a force multiplier for execution. For design decisions, the human is still the bottleneck — and that's a feature, not a bug.
+AI-assisted coding delivered 3-5x mechanical throughput across three repos, CI/CD, and AWS. But together we talked ourselves into a feature that wasn't needed, and it cost 25% of my day. The most productive thing I did was spend 30 seconds asking "why do we need this?" Vibe coding is a force multiplier for execution. For design decisions, the human is still the bottleneck — and that's a feature, not a bug.
 
 # Notes
 

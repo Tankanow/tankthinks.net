@@ -18,7 +18,7 @@ published: true
 
 Today was the first day in a while where I'm not sure if I was more productive vibe coding. That's worth unpacking.
 
-This is not a "first time I tried AI coding" story. I've been vibe coding real features for months — full implementations shipped from my phone in Claude Code while waiting for my kids at practice, multi-repo changes landed from the couch on a Saturday morning. It works. I've [advocated for extending DevOps principles to AI](/2025/07/ai-devops-post-1/) because I believe in the tooling enough to want governance around it.
+This is not a "first time I tried AI coding" story. I've been vibe coding real features for months — full implementations shipped from my phone in Claude Code while waiting for my kids at practice. Literally. On a metal bench outside a winter baseball session, no laptop, just the Claude and GitHub iOS Apps. It works. I've [advocated for extending DevOps principles to AI](/2025/07/ai-devops-post-1/) because I believe in the tooling enough to want governance around it.
 
 So when I say today felt different, I mean something that had been consistently delightful backslid a bit. That's a more interesting question than "is vibe coding good?" The question is: what changed?
 
@@ -36,27 +36,23 @@ That's not an exaggeration. Forty minutes. For work that would have been a solid
 
 **Multi-repo orchestration was the killer feature.** The workflow required sequencing release candidate deploys across three repos (the authorizer must publish before the orchestrator can reference it), cross-referencing semantic versions in nested infrastructure templates, and running smoke tests against a live API Gateway. The agent managed this like a seasoned release engineer — triggering CI, monitoring progress, bumping version references in the right order, verifying each step before moving to the next.
 
-**The mechanical work was free.** Lint fixes, style conformer alignment, git operations, AWS CLI calls, CloudWatch log tailing — these are the taxes of software development. Having them automated wasn't just faster; it was _cognitively_ freeing. I could think about architecture while the agent handled plumbing. This is exactly the Flow State advantage I wrote about [last week](/2026/02/first-principles-7-flow-state/). The agent absorbed the interrupts so I didn't have to context-switch.
+**The mechanical work was free.** Lint fixes, conform code to existing style, git operations, AWS CLI calls, CloudWatch log tailing — these are the taxes of software development. Having them automated wasn't just faster; it was _cognitively_ freeing. I could think about architecture while the agent handled plumbing. This is exactly the Flow State advantage I wrote about [last week](/2026/02/first-principles-7-flow-state/). The agent absorbed the interrupts so I didn't have to context-switch.
 
 ## The Regret
 
 **Scope creep nearly sank the day — and it was both of us.**
 
-Around midday, I had a reasonable idea: make the authorizer more friendly for dev namespaces by adding a permissive mode for unmapped endpoints. That was a well-scoped enhancement. But during planning, the AI proposed an additional "save custom config" feature that let developers push arbitrary endpoint configurations. It sounded useful. I said yes without thinking hard about it.
+Around midday, I had a reasonable idea: make the authorizer more friendly for dev namespaces. It was essentially the same pattern we had just implemented, just in a slightly new context. It was a well-scoped enhancement. But during planning, the AI proposed an additional "save custom config" feature that let developers push arbitrary endpoint configurations. I didn't really notice when I reviewed the plan. I said yes without thinking hard about it.
 
 This is the same dynamic that plays out in every standup and sprint planning meeting. A manager asks "can you just add one more thing?" and a week of team toil follows. The difference here is that the AI plays both roles — it proposes the scope _and_ builds it before you've finished your coffee. The feedback loop between "that sounds reasonable" and "it's already implemented" is dangerously short.
 
-The custom config was architecturally broken in practice. It generated auth tokens scoped to the wrong namespace, which caused every single smoke test to fail with 401 Unauthorized. About **1.5 hours of a 6-hour day was spent implementing, debugging, and reverting a feature we both talked ourselves into.**
+The custom config was architecturally broken in practice. It generated auth tokens scoped to the wrong namespace, which caused every single smoke test to fail with 401 Unauthorized. About **1.5 hours of a 6-hour day was spent implementing, debugging, and reverting a feature I thought was easy, AI misunderstood, added to, and poorly implemented.**
 
-The permissive authorizer already solved the problem. I had to stop the agent and ask "What is this feature? Why do we need it?" — a question I should have asked at planning time. But I'd been riding the high of the first 40 minutes, and saying yes was easy when I wasn't the one typing.
+In fact, the agent had already implemented the feature I asked for (though with bad patterns) — but continued on to the feature it thought was a good idea that I had rubber stamped. I had to stop the agent and ask "What is this feature? Why do we need it?" — a question I should have asked at planning time. But I'd been riding the high of the first 40 minutes, and saying yes was easy when I wasn't the one typing.
 
 I've written about [offloading critical thinking to AI](/2025/07/ai-devops-post-4/) before. Today I lived it.
 
-**Convention drift was real and insidious.** The agent's initial implementation used `monkeypatch` for environment variables (the codebase uses a custom fixture) and introduced infrastructure parameters where the codebase favors in-code detection. Both violations made it past the agent's own conformer check. I caught them during review and forced a rewrite. The lesson: AI can check _syntax_ patterns reliably, but _architectural_ conventions require human eyes.
-
-**Small bugs compound.** A dictionary key in the wrong case. Test assertions against raw dicts when the handler JSON-serializes the body. A `git add -A` that staged two entire cloned repos into a commit. Each was a two-minute fix, but they erode trust incrementally — you start second-guessing every line and the speed advantage evaporates.
-
-**The same bug bit us twice.** The authorizer caches configuration in memory for about a minute. Both times we ran smoke tests immediately after setup, all 21 tests failed. Both times the fix was "wait and retry." The agent diagnosed it correctly the first time but didn't internalize the lesson for the second. It has no persistent memory across that kind of boundary. Today's AI doesn't learn from its own mistakes within a session the way a human would.
+**Convention drift was real and insidious.** The agent's initial implementation of feature 1 was pristine: clean code following surrounding conventions. But its implementation of feature 2 looked like it had farmed it out to its own junior intern agent. It broke all code conventions, introduced new mutations and side-effects, and did not check for conformance with existing patterns. Luckily, I caught them during review and forced a rewrite.
 
 ## The Scorecard
 
@@ -72,7 +68,7 @@ I've written about [offloading critical thinking to AI](/2025/07/ai-devops-post-
 
 ## The Verdict
 
-Vibe coding is phenomenal for _execution_. The mechanical throughput across repos, CI/CD pipelines, and AWS environments was easily 3-5x what I'd do manually. But it's dangerous for _design_. The AI optimizes for forward progress. It will happily build the wrong thing fast, and its confidence makes you less likely to question it.
+Vibe coding is phenomenal for _execution_. The mechanical throughput across repos, CI/CD pipelines, and AWS environments was easily 5x what I'd do manually. But it's dangerous when it lulls you to sleep and you are overwhelmed with planning fatigue. The AI optimizes for forward progress. It will happily build the wrong thing fast, and its confidence makes you less likely to question it.
 
 The most valuable moment of my day was the 30 seconds I spent asking "wait, why do we need this?" That question saved an hour of further debugging. Thirty seconds of critical thinking vs. sixty minutes of rework. That's leverage.
 
@@ -90,7 +86,7 @@ I'll keep vibe coding. The 40-minute magic at the start of my day was real. But 
 
 # tl;dr
 
-AI-assisted coding delivered 3-5x mechanical throughput across three repos, CI/CD, and AWS. But together we talked ourselves into a feature that wasn't needed, and it cost 25% of my day. The most productive thing I did was spend 30 seconds asking "why do we need this?" Vibe coding is a force multiplier for execution. For design decisions, the human is still the bottleneck — and that's a feature, not a bug.
+AI-assisted coding delivered at least a 5x mechanical throughput across three repos, CI/CD, and AWS. But together we talked ourselves into a feature that wasn't needed, and it cost 25% of my day. The most productive thing I did was spend 30 seconds asking "why do we need this?" Scope creep effects AI systems just like human systems.
 
 # Notes
 

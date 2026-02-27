@@ -78,7 +78,11 @@ Be very careful expanding scope.
 
 This isn't an AI lesson. It's a project management lesson that predates AI by decades. Teams of humans have always burned exponential time on "just one more thing." Fred Brooks called it the [Second-System Effect](https://en.wikipedia.org/wiki/Second-system_effect) in 1975.[^1] The first system works because constraints force simplicity. The second system collapses under the weight of every feature you wished you'd built the first time around.
 
-AI's initial implementation — the first system — gives you the confidence that you can quickly [add all the things](https://res.cloudinary.com/ddkpjnidm/image/upload/v1772198300/tankthinks.net/all-the-things_yzxs4r.jpg). But human or AI, the second-system effect exists. The debugging, integration, and rework costs compound the same way regardless of who proposed the extra work.
+AI's initial implementation — the first system — gives you the confidence that you can quickly add all the things.
+
+{% figure "all-the-things_yzxs4r", "Add all the things meme", "Add All The Things" %}
+
+But human or AI, the second-system effect exists. The debugging, integration, and rework costs compound the same way regardless of who proposed the extra work.
 
 AI makes it _feel_ like scope creep doesn't exist, because saying yes to one more feature costs nothing when you're not the one typing. But it does — for your swarm of AI agents, and more importantly, for your users.
 

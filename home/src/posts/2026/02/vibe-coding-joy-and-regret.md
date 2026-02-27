@@ -76,9 +76,11 @@ The most valuable moment of my day was the 30 seconds I spent asking "wait, why 
 
 Be very careful expanding scope.
 
-This isn't an AI lesson. It's a project management lesson that predates AI by decades. Teams of humans have always burned exponential time on "just one more thing." Fred Brooks wrote about it in 1975.[^1] The debugging, integration, and rework costs compound the same way regardless of who proposed the extra work.
+This isn't an AI lesson. It's a project management lesson that predates AI by decades. Teams of humans have always burned exponential time on "just one more thing." Fred Brooks called it the [Second-System Effect](https://en.wikipedia.org/wiki/Second-system_effect) in 1975.[^1] The first system works because constraints force simplicity. The second system collapses under the weight of every feature you wished you'd built the first time around.
 
-AI just makes it faster to get into trouble, because saying yes to one more feature costs nothing when you're not the one typing.
+AI's initial implementation — the first system — gives you the confidence that you can quickly [add all the things](https://i.imgflip.com/2fayqh.jpg). But human or AI, the second-system effect exists. The debugging, integration, and rework costs compound the same way regardless of who proposed the extra work.
+
+AI makes it _feel_ like scope creep doesn't exist, because saying yes to one more feature costs nothing when you're not the one typing. But it does — for your swarm of AI agents, and more importantly, for your users.
 
 The pattern is the same one I keep writing about in this series: **powerful tools require disciplined operators**. A Formula 1 car doesn't win races by default. Neither does an AI agent writing infrastructure code. The human in the loop — the one asking "wait, why?" — is still the most important part of the system.
 
@@ -86,7 +88,7 @@ I'll keep vibe coding. The 40-minute magic at the start of my day was real. But 
 
 # tl;dr
 
-AI-assisted coding delivered at least a 5x mechanical throughput across three repos, CI/CD, and AWS. But together we talked ourselves into a feature that wasn't needed, and it cost 25% of my day. The most productive thing I did was spend 30 seconds asking "why do we need this?" Scope creep affects AI systems just like human systems.
+AI-assisted coding delivered at least a 5x mechanical throughput across three repos, CI/CD, and AWS. But together we talked ourselves into a feature that wasn't needed, and it cost 25% of my day. The most productive thing I did was spend 30 seconds asking "why do we need this?" AI makes scope creep feel like it doesn't exist — but Fred Brooks' Second-System Effect applies to AI agents just like it applies to human teams.
 
 # Notes
 

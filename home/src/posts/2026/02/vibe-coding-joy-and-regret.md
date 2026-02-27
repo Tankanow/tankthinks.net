@@ -1,9 +1,9 @@
 ---
 templateEngineOverride: njk,md
 metaTitle: Joy and Regret in 6 Hours of Vibe Coding
-metaDescription: What happens when AI-assisted coding delivers 3-5x mechanical throughput but also invents features you never asked for. A field report.
+metaDescription: What happens when AI-assisted coding delivers 5x mechanical throughput but scope creep costs 25% of your day. A field report.
 title: Joy and Regret in 6 Hours of Vibe Coding
-description: What happens when AI-assisted coding delivers 3-5x mechanical throughput but also invents features you never asked for. A field report.
+description: What happens when AI-assisted coding delivers 5x mechanical throughput but scope creep costs 25% of your day. A field report.
 featuredImg:
 subHeading: A Field Report from the Frontier
 tags: ['ai', 'devops', 'founding-engineer', 'devaiops']
@@ -36,19 +36,19 @@ That's not an exaggeration. Forty minutes. For work that would have been a solid
 
 **Multi-repo orchestration was the killer feature.** The workflow required sequencing release candidate deploys across three repos (the authorizer must publish before the orchestrator can reference it), cross-referencing semantic versions in nested infrastructure templates, and running smoke tests against a live API Gateway. The agent managed this like a seasoned release engineer — triggering CI, monitoring progress, bumping version references in the right order, verifying each step before moving to the next.
 
-**The mechanical work was free.** Lint fixes, conform code to existing style, git operations, AWS CLI calls, CloudWatch log tailing — these are the taxes of software development. Having them automated wasn't just faster; it was _cognitively_ freeing. I could think about architecture while the agent handled plumbing. This is exactly the Flow State advantage I wrote about [last week](/2026/02/first-principles-7-flow-state/). The agent absorbed the interrupts so I didn't have to context-switch.
+**The mechanical work was free.** Lint fixes, conforming code to existing style, git operations, AWS CLI calls, CloudWatch log tailing — these are the taxes of software development. Having them automated wasn't just faster; it was _cognitively_ freeing. I could think about architecture while the agent handled plumbing. This is exactly the Flow State advantage I wrote about [last week](/2026/02/first-principles-7-flow-state/). The agent absorbed the interrupts so I didn't have to context-switch.
 
 ## The Regret
 
 **Scope creep nearly sank the day — and it was both of us.**
 
-Around midday, I had a reasonable idea: make the authorizer more friendly for dev namespaces. It was essentially the same pattern we had just implemented, just in a slightly new context. It was a well-scoped enhancement. But during planning, the AI proposed an additional "save custom config" feature that let developers push arbitrary endpoint configurations. I didn't really notice when I reviewed the plan. I said yes without thinking hard about it.
+Around midday, I had a reasonable idea: make the authorizer more friendly for dev namespaces. It was essentially the same pattern we had just implemented, in a slightly new context. It was a well-scoped enhancement. But during planning, the AI proposed an additional "save custom config" feature that let developers push arbitrary endpoint configurations. I didn't really notice when I reviewed the plan. I said yes without thinking hard about it.
 
 This is the same dynamic that plays out in every standup and sprint planning meeting. A manager asks "can you just add one more thing?" and a week of team toil follows. The difference here is that the AI plays both roles — it proposes the scope _and_ builds it before you've finished your coffee. The feedback loop between "that sounds reasonable" and "it's already implemented" is dangerously short.
 
-The custom config was architecturally broken in practice. It generated auth tokens scoped to the wrong namespace, which caused every single smoke test to fail with 401 Unauthorized. About **1.5 hours of a 6-hour day was spent implementing, debugging, and reverting a feature I thought was easy, AI misunderstood, added to, and poorly implemented.**
+The custom config was architecturally broken in practice. It generated auth tokens scoped to the wrong namespace, which caused every single smoke test to fail with 401 Unauthorized. About **1.5 hours of a 6-hour day was spent implementing, debugging, and reverting a feature I thought was easy but that the AI misunderstood, expanded, and poorly implemented.**
 
-In fact, the agent had already implemented the feature I asked for (though with bad patterns) — but continued on to the feature it thought was a good idea that I had rubber stamped. I had to stop the agent and ask "What is this feature? Why do we need it?" — a question I should have asked at planning time. But I'd been riding the high of the first 40 minutes, and saying yes was easy when I wasn't the one typing.
+In fact, the agent had already implemented the feature I asked for (though with bad patterns) — but continued on to the feature it thought was a good idea that I had rubber-stamped. I had to stop the agent and ask "What is this feature? Why do we need it?" — a question I should have asked at planning time. But I'd been riding the high of the first 40 minutes, and saying yes was easy when I wasn't the one typing.
 
 I've written about [offloading critical thinking to AI](/2025/07/ai-devops-post-4/) before. Today I lived it.
 
@@ -86,7 +86,7 @@ I'll keep vibe coding. The 40-minute magic at the start of my day was real. But 
 
 # tl;dr
 
-AI-assisted coding delivered at least a 5x mechanical throughput across three repos, CI/CD, and AWS. But together we talked ourselves into a feature that wasn't needed, and it cost 25% of my day. The most productive thing I did was spend 30 seconds asking "why do we need this?" Scope creep effects AI systems just like human systems.
+AI-assisted coding delivered at least a 5x mechanical throughput across three repos, CI/CD, and AWS. But together we talked ourselves into a feature that wasn't needed, and it cost 25% of my day. The most productive thing I did was spend 30 seconds asking "why do we need this?" Scope creep affects AI systems just like human systems.
 
 # Notes
 

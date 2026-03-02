@@ -97,3 +97,9 @@ Merging to `main` triggers the full deploy pipeline automatically:
 
 Infrastructure (S3, CloudFront, WAF, Route53, ACM) is defined in
 `template.yaml` and managed via AWS SAM.
+
+# Writing Style
+- ABOVE ALL remain consistent to my voice (as evidenced by other posts)
+- THE PRIMARY THRUST of this blog is to apply LINDY PRINCIPLES and IDEAS to MODERN PROBLEMS.
+  - IDEALLY, each post references a book, paper, or idea that is at least 15 years old
+- When in doubt, keep everything in line with my principles on home/src/about.md

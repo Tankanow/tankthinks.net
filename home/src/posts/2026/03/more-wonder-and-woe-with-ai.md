@@ -81,3 +81,20 @@ Eric Evans, _Domain-Driven Design: Tackling Complexity in the Heart of Software_
 
 Dr. John, "Right Place Wrong Time" (1973). A song about timing, miscommunication, and having all the right ingredients in all the wrong arrangements. Also a perfect description of a five-phase project plan.
 
+---
+
+## LinkedIn
+
+The AI asked the right question during planning. I gave the right answer. Then we wrote five phase plans that forgot to mention it.
+
+Built a V2 API with AI assistance. Fifteen sessions, twelve commits, 2,500 lines of plans. The mechanical throughput was exceptional. Every endpoint was clean, tested, well-structured — and returning nulls across the board.
+
+The public API calls the entity a "role." Internally, it's a "group" — different name, different service, different data layer. I knew this. The AI asked about it. We discussed it in chat. But across five increasingly detailed plans, not one contained the sentence: "A role IS a group — use the groups service." Ten seconds to write. Sixty percent of the project saved.
+
+Eric Evans formalized this in Domain-Driven Design (2003): teams need a deliberate process to surface AND record knowledge that feels obvious to whoever holds it. He called it Ubiquitous Language. Twenty-three years later, the lesson applies to AI-assisted work more than ever.
+
+More detail is not better than the right detail.
+
+Full post: https://tankthinks.net/2026/03/more-wonder-and-woe-with-ai/
+
+</div>

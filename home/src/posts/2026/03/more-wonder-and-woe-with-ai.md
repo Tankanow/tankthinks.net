@@ -42,7 +42,7 @@ Phase B built the V2 API by going directly to the roles data layer — a lower-l
 
 <figure class="mb-10">
   <img loading="lazy" src="https://frinkiac.com/img/S05E15/1052951.jpg" alt="Homer Simpson in the space shuttle, realizing he's made a grave mistake" width="720" height="540">
-  <figcaption class="text-center text-sm mt-3 text-gray-600 dark:text-gray-200">Me, realizing the API was built on the wrong abstraction for two days</figcaption>
+  <figcaption class="text-center text-sm mt-3 text-gray-600 dark:text-gray-200">Me, realizing the API was built on the wrong abstraction while preparing to welcome our AI overlords.</figcaption>
 </figure>
 
 Phase E was a rewrite — not a bug fix. Five phases when there should have been three.

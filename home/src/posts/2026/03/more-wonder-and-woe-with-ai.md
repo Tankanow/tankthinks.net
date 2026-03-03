@@ -81,16 +81,3 @@ Eric Evans, _Domain-Driven Design: Tackling Complexity in the Heart of Software_
 
 Dr. John, "Right Place Wrong Time" (1973). A song about timing, miscommunication, and having all the right ingredients in all the wrong arrangements. Also a perfect description of a five-phase project plan.
 
----
-
-## LinkedIn
-
-Built a V2 API with AI over two days. Should have been three phases — it was five. The AI asked the right domain question during planning. I gave the right answer. Then we buried it under 2,500 lines of detailed phase plans.
-
-The API called the entity a "role." Internally it was a "group." We discussed this — then the plans said "build a roles service" and nobody caught the gap. Clean code, wrong abstraction, null responses. More detail is not better than the right detail.
-
-Eric Evans described this in Domain-Driven Design (2003): teams need a process to surface AND record knowledge that feels obvious. Make sure the plan captures what matters.
-
-Full post: https://tankthinks.net/2026/03/more-wonder-and-woe-with-ai/
-
-</div>

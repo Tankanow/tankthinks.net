@@ -49,25 +49,27 @@ Phase E was a rewrite — not a bug fix. Five phases when there should have been
 
 ## Write Things Down
 
-Here's the thing: I _knew_ that a role was a group. It wasn't trapped in my head, either — the AI actually asked me about it during planning. We discussed it in chat. But somehow, that conversation never made it into the implementation plan. The insight survived the discussion and died in the document.
+Here's the thing: I _knew_ that a role was a group. It wasn't trapped in my head, either — the AI actually asked me about it during planning. We discussed it in chat. The right knowledge was surfaced at the right time.
 
-That's the lossy step. Not brain-to-conversation — conversation-to-plan. We talked about the right abstraction, and then the plan said "build a roles service" and neither of us caught the gap. What's not in the plan doesn't exist — not for the AI picking it up in a new session, and frankly, not for any collaborator picking it up on a Monday morning.
+Then it disappeared. Not because nobody said it — because we buried it under five increasingly detailed phase plans totaling 2,500 lines of implementation steps. The insight was _in_ the conversation. It just didn't survive the iterative process of writing more detailed plans. Each new phase document was thorough about _how_ to build things and silent about _which things to build on_. As Dr. John put it: "I'd have said the right thing, but I must have used the wrong line."[^2]
 
-This is [Principle #1](/2023/07/first-principles-1-write-things-down/) on this blog for a reason. The goal isn't to tell the AI how to write every line. It's to make sure the _important_ stuff — the domain mappings, the architectural decisions, the one sentence that changes which service you build on — is written down where it can't be lost. "A V2 role IS a V1 group — use the groups service." Ten seconds to write. Sixty percent of the project saved.
+That's the failure mode. Not a lack of knowledge — a lack of the _right_ detail in the _right_ place. More detail is not better than the right detail. 2,500 lines of plans, and not one of them contained the sentence: "A V2 role IS a V1 group — use the groups service." Ten seconds to write. Sixty percent of the project saved.
 
-Eric Evans formalized this in _Domain-Driven Design_ twenty-three years ago.[^1] His central insight isn't just "understand the domain" — it's that teams need a deliberate _process_ to surface and _record_ knowledge that feels obvious to whoever holds it. He called it _Ubiquitous Language_: a shared vocabulary, written down and enforced, that aligns code with reality. Evans' whole methodology exists because the instinct — _surely everyone knows this_ — is reliably wrong. We proved it. The AI asked. I answered. And we both moved on without writing it down.
+This is [Principle #1](/2023/07/first-principles-1-write-things-down/) on this blog for a reason. The goal isn't to tell the AI how to write every line. It's to make sure the important stuff — the domain mappings, the architectural decisions, the one sentence that changes which service you build on — makes it from conversation into the plan and _stays_ there through every revision.
+
+Eric Evans formalized this in _Domain-Driven Design_ twenty-three years ago.[^1] His central insight isn't just "understand the domain" — it's that teams need a deliberate _process_ to surface and _record_ knowledge that feels obvious to whoever holds it. He called it _Ubiquitous Language_: a shared vocabulary, written down and enforced, that aligns code with reality. Evans' whole methodology exists because the instinct — _surely everyone knows this_ — is reliably wrong. We proved it. The AI asked. I answered. And then we wrote five plans that forgot to mention it.
 
 The AI makes this failure mode sharper. It optimizes for the plan you give it. A clear, concise, _complete_ plan produces excellent work. A plan missing one key insight produces confident, clean, well-tested code built on the wrong foundation. Don't micromanage the implementation. But make damn sure the plan captures what matters.
 
-## One Plan, Not Five
+## The Right Detail, Not More Detail
 
-The other lesson is structural. Five phases, five plans, five deploy-test-discover cycles. Each phase existed because the previous one was incomplete. If I had written one comprehensive plan — dependencies, domain mapping, API contract, implementation on the correct service, infrastructure, docs — the project compresses to three phases at most. One upfront plan that captures the full picture beats five iterative plans that each discover what the last one missed. The iteration _felt_ productive. Each phase had clean execution. But the aggregate cost of building, deploying, discovering, replanning, and rebuilding dwarfed what a single morning of thorough planning would have cost.
+Five phases. Five plans. Five deploy-test-discover cycles. Each phase existed because the previous one was incomplete — not because it lacked detail, but because it lacked the _right_ detail. If I had written one comprehensive plan with the domain mapping front and center — dependencies, "role = group," API contract, implementation on the correct service, infrastructure, docs — the project compresses to three phases at most. One upfront plan with the right ten words beats five detailed plans that each discover what the last one missed.
 
 The pattern is the same one I keep writing about: **powerful tools require disciplined operators**. The AI's execution was never the problem. My preparation was.
 
 # tl;dr
 
-Built a V2 API with AI over two days. Took five phases instead of three because a critical domain insight — "a role IS a group" — was discussed in chat but never written into the plan. The AI asked the right question. I gave the right answer. Neither of us wrote it down. Eric Evans described this in _Domain-Driven Design_ (2003): teams need a deliberate process to surface _and record_ knowledge that feels obvious to whoever holds it. Don't tell the AI how to write every line. Make sure the plan captures what matters.
+Built a V2 API with AI over two days. Took five phases instead of three because a critical domain insight — "a role IS a group" — was discussed in chat but got lost across 2,500 lines of increasingly detailed phase plans. The AI asked the right question. I gave the right answer. Then we wrote five plans that forgot to mention it. More detail is not better than the right detail. Eric Evans described this in _Domain-Driven Design_ (2003): teams need a deliberate process to surface _and record_ knowledge that feels obvious to whoever holds it. Make sure the plan captures what matters.
 
 # Notes
 
@@ -75,15 +77,19 @@ Built a V2 API with AI over two days. Took five phases instead of three because 
 
 Eric Evans, _Domain-Driven Design: Tackling Complexity in the Heart of Software_ (2003). The book that coined "Ubiquitous Language" and "Bounded Context." His core methodology is a _process_ for extracting domain knowledge from the people who have it and encoding it where the whole team — or your AI agent — can use it. Twenty-three years old and more relevant than ever. Lindy approves.
 
+#### 2
+
+Dr. John, "Right Place Wrong Time" (1973). A song about timing, miscommunication, and having all the right ingredients in all the wrong arrangements. Also a perfect description of a five-phase project plan.
+
 ---
 
 ## LinkedIn
 
-Built a V2 API with AI over two days. Should have been three phases — it was five. The AI asked the right domain question during planning. I gave the right answer. Neither of us wrote it down in the plan.
+Built a V2 API with AI over two days. Should have been three phases — it was five. The AI asked the right domain question during planning. I gave the right answer. Then we buried it under 2,500 lines of detailed phase plans.
 
-The API called the entity a "role." Internally it was a "group." We discussed this — then the plan said "build a roles service" and nobody caught the gap. Clean code, wrong abstraction, null responses.
+The API called the entity a "role." Internally it was a "group." We discussed this — then the plans said "build a roles service" and nobody caught the gap. Clean code, wrong abstraction, null responses. More detail is not better than the right detail.
 
-Eric Evans described this in Domain-Driven Design (2003): teams need a process to surface AND record knowledge that feels obvious. Don't micromanage the AI. Make sure the plan captures what matters.
+Eric Evans described this in Domain-Driven Design (2003): teams need a process to surface AND record knowledge that feels obvious. Make sure the plan captures what matters.
 
 Full post: https://tankthinks.net/2026/03/more-wonder-and-woe-with-ai/
 

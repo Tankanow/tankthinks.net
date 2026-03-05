@@ -24,9 +24,9 @@ Build a V2 public API exposing an existing capability. The V1 had been serving c
 
 ## The Wonder
 
-The AI execution loop worked exactly as advertised. Phase A was dependency upgrades: bumping the runtime and internal libraries. I wrote a plan, handed it over, the AI executed — updating configs, fixing breaking changes, running tests, committing. Phase B was the initial API: five endpoints, unit tests, smoke tests against staging. Clean code, logical commits, good conventions. Across the whole project: roughly fifteen sessions, a hundred human messages, twelve commits, and five phase plans totaling about 2,500 lines. The mechanical throughput was exceptional.
+I started with a solid PRD: the domain mapping, the endpoints, the conventions, the service dependencies. Then I did what felt responsible — I broke it into phases. Phase A: dependency upgrades. Phase B: initial API. Each phase got its own detailed plan. The AI executed each one beautifully: clean code, logical commits, passing tests. Fifteen sessions, a hundred human messages, five phase plans totaling about 2,500 lines. It _felt_ like going very fast.
 
-When the plan was clear, the AI was phenomenal.
+That feeling is the wonder — and the trap. Each phase plan was a translation of the original PRD into implementation steps, and each translation got more specific about _how_ while getting quieter about _why_. The PRD said "a role is a group — use the groups service." Phase B's plan said "implement CRUD endpoints for roles" and listed eighteen steps for doing it. The domain mapping didn't survive the decomposition. Not because anyone deleted it — because phasing _selects for_ implementation detail and _selects against_ the kind of foundational context that doesn't look like a task.
 
 ## The Woe
 

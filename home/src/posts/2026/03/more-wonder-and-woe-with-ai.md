@@ -1,11 +1,11 @@
 ---
 templateEngineOverride: njk,md
-metaTitle: More Wonder and Woe with AI
-metaDescription: An AI-assisted API build took 5 phases instead of 3 because domain knowledge stayed in one person's head. Eric Evans told us why in 2003.
-title: More Wonder and Woe with AI
-description: An AI-assisted API build took 5 phases instead of 3 because domain knowledge stayed in one person's head. Eric Evans told us why in 2003.
+metaTitle: The Right Detail, Not More Detail
+metaDescription: AI artifacts generated from AI artifacts lose signal fast. One clear document and lots of validation beats five detailed plans that each discover what the last one missed.
+title: The Right Detail, Not More Detail
+description: AI artifacts generated from AI artifacts lose signal fast. One clear document and lots of validation beats five detailed plans that each discover what the last one missed.
 featuredImg:
-subHeading: What Happens When You Skip the Map
+subHeading: What AI-Assisted Development Taught Me About Signal and Noise
 tags: ['ai', 'founding-engineer', 'devaiops', 'first-principles']
 date: 2026-03-02
 updated:
@@ -14,71 +14,81 @@ published: true
 
 <div class="col-start-3 col-end-9">
 
-# More Wonder and Woe with AI
+# The Right Detail, Not More Detail
 
-Last week I wrote about [joy and regret in a day of vibe coding](/2026/02/vibe-coding-joy-and-regret/). That was a scope creep story — fast execution, rubber-stamped expansion, 25% of a day lost. This week's failure mode is different and, I think, more important: building confidently in the wrong direction because the plan never captured what mattered most.
+Last week I wrote about [joy and regret in a day of vibe coding](/2026/02/vibe-coding-joy-and-regret/). That was a scope creep story. This one is about something quieter and more dangerous: signal decay.
 
 ## The Task
 
-Build a V2 public API exposing an existing capability. The V1 had been serving customers for years through a web app; now external consumers needed direct programmatic access. Five CRUD endpoints, pagination, an OpenAPI spec, infrastructure routing. Textbook AI-assisted work — clear patterns, a reference implementation to follow.
+Build a V2 public API exposing an existing capability. The V1 had been serving customers for years through a web app; now external consumers needed direct programmatic access. Five CRUD endpoints, pagination, an OpenAPI spec, infrastructure routing. Textbook AI-assisted work.
 
-## The Wonder
+## What Happened
 
-I started with a solid PRD: the domain mapping, the endpoints, the conventions, the service dependencies. Then I did what felt responsible — I broke it into phases. Phase A: dependency upgrades. Phase B: initial API. Each phase got its own detailed plan. The AI executed each one beautifully: clean code, logical commits, passing tests. Fifteen sessions, a hundred human messages, five phase plans totaling about 2,500 lines. It _felt_ like going very fast.
+I wrote a PRD. It was solid — domain mapping, endpoints, conventions, service dependencies. Then I handed it to an AI agent and asked it to generate a detailed implementation plan. That plan was good, so I asked for a more detailed plan for the first phase. That plan was good, so I asked for a more detailed plan for the next phase. Five phases, five plans, 2,500 lines of implementation steps.
 
-That feeling is the wonder — and the trap. Each phase plan was a translation of the original PRD into implementation steps, and each translation got more specific about _how_ while getting quieter about _why_. The PRD said "a role is a group — use the groups service." Phase B's plan said "implement CRUD endpoints for roles" and listed eighteen steps for doing it. The domain mapping didn't survive the decomposition. Not because anyone deleted it — because phasing _selects for_ implementation detail and _selects against_ the kind of foundational context that doesn't look like a task.
+Each plan was generated from the one before it. Each was more detailed than the last. And each was a little further from the original document that actually mattered.
 
-## The Woe
+Here's the sentence that was in my PRD: **"A V2 role IS a V1 group — use the groups service."**
 
-Then I started UAT and sent a few curl requests. Every metadata field came back null. Names, descriptions, audit timestamps — all empty. Data access filters? Missing entirely. Structurally correct responses, full of nothing. The response shapes didn't follow our documented API conventions either — no wrapping object, no pagination, no filtering. These are standard requirements for any API we ship, but they weren't in the plan, so they weren't built.
+Here's what Phase B's plan said: "Implement CRUD endpoints for roles." Eighteen steps. Not one mentioned the groups service.
 
-That kicked off Phase D: eighteen steps fixing five issues that should have been specified from the start. But Phase D only treated symptoms.
+The AI built the V2 API by going directly to the roles data layer — a lower-level abstraction that touches one database table. It was the obvious choice _if you looked at the name_ ("roles API -> roles service"). But in our system, what the public API calls a "role" is what the internal system calls a "group." Same entity, different names, different services. The metadata lived on group entities. The access logic lived in the groups service. Two-plus years of battle-tested business logic, all bypassed.
 
-Phase E revealed the disease. The V2 API had been built on the wrong service entirely.
-
-In our system, what the public API calls a "role" is what the internal system calls a "group." Same entity, different names, different services. The V1 app had been using the groups service for years — it knew where the metadata lived, how to resolve access filters, how to traverse entity relationships. Two-plus years of battle-tested business logic.
-
-Phase B built the V2 API by going directly to the roles data layer — a lower-level abstraction that touches one database table. It was the obvious choice _if you looked at the name_ ("roles API → roles service"). But the metadata lived on group entities. The access logic lived in the groups service. We'd bypassed all of it and gone straight to raw data, then wondered why the responses were empty.
+I ran a few curl requests. Every metadata field came back null. Data access filters? Missing entirely. Structurally correct responses, full of nothing.
 
 <figure class="mb-10">
   <img loading="lazy" src="https://frinkiac.com/img/S05E15/1052951.jpg" alt="Homer Simpson in the space shuttle, realizing he's made a grave mistake" width="720" height="540">
-  <figcaption class="text-center text-sm mt-3 text-gray-600 dark:text-gray-200">Me, realizing the API was built on the wrong abstraction while preparing to welcome our AI overlords.</figcaption>
+  <figcaption class="text-center text-sm mt-3 text-gray-600 dark:text-gray-200">Me, realizing the API was built on the wrong abstraction.</figcaption>
 </figure>
 
-Phase E was a rewrite — not a bug fix. Five phases when there should have been three.
+Five phases when there should have been three. Not because the AI was bad — the code was clean, the tests passed, the commits were logical. Because the one sentence that mattered didn't survive the game of telephone I'd set up between my documents.
 
-## Write Things Down
+## Signal Decay
 
-Here's the thing: I _knew_ that a role was a group. It wasn't trapped in my head, either — the AI actually asked me about it during planning. We discussed it in chat. The right knowledge was surfaced at the right time.
+Here's the pattern: you write a document. You ask the AI to generate a more detailed document from it. You ask the AI to generate a more detailed document from _that_. Each generation is a lossy compression. Implementation detail goes up. Domain context goes down. By the third derivative, the AI is optimizing for the shape of the plan, not the shape of the problem.
 
-Then it disappeared. Not because nobody said it — because we buried it under five increasingly detailed phase plans totaling 2,500 lines of implementation steps. The insight was _in_ the conversation. It just didn't survive the iterative process of writing more detailed plans. Each new phase document was thorough about _how_ to build things and silent about _which things to build on_. As Dr. John put it: "I'd have said the right thing, but I must have used the wrong line."[^2]
+This is the same thing that happens when you photocopy a photocopy. Or when a meeting summary gets summarized into a status report that gets summarized into an executive briefing. Each step selects for what _looks_ like the right kind of detail and drops what doesn't fit the format. The critical insight — "a role is a group" — doesn't look like an implementation step, so it doesn't survive.
 
-That's the failure mode. Not a lack of knowledge — a lack of the _right_ detail in the _right_ place. More detail is not better than the right detail. 2,500 lines of plans, and not one of them contained the sentence: "A V2 role IS a V1 group — use the groups service." Ten seconds to write. Sixty percent of the project saved.
+As Dr. John put it: "I been in the right place, but it must have been the wrong time."[^2] The knowledge was surfaced at the right moment. The AI actually _asked me_ about the domain mapping during planning. I answered correctly. Then we generated five plans that forgot to mention it.
 
-This is [Principle #1](/2023/07/first-principles-1-write-things-down/) on this blog for a reason. The goal isn't to tell the AI how to write every line. It's to make sure the important stuff — the domain mappings, the architectural decisions, the one sentence that changes which service you build on — makes it from conversation into the plan and _stays_ there through every revision.
+Eric Evans described this problem twenty-three years ago in _Domain-Driven Design_.[^1] His central insight isn't "understand your domain" — any competent engineer does that. It's that teams need a deliberate process to surface and _record_ knowledge that feels obvious to whoever holds it. He called it _Ubiquitous Language_: a shared vocabulary, written down and enforced, that keeps code aligned with reality. Evans' whole methodology exists because the instinct — _surely everyone knows this_ — is reliably wrong. AI makes it worse, because the AI _did_ know it, briefly, in one conversation, before burying it under 2,500 lines of generated plans.
 
-Eric Evans formalized this in _Domain-Driven Design_ twenty-three years ago.[^1] His central insight isn't just "understand the domain" — it's that teams need a deliberate _process_ to surface and _record_ knowledge that feels obvious to whoever holds it. He called it _Ubiquitous Language_: a shared vocabulary, written down and enforced, that aligns code with reality. Evans' whole methodology exists because the instinct — _surely everyone knows this_ — is reliably wrong. We proved it. The AI asked. I answered. And then we wrote five plans that forgot to mention it.
+I've [written about this before](/2023/08/first-principles-4-domain/). _Make the important parts important._ The failure here wasn't that I didn't understand my domain. It was that I let the important parts get diluted across a stack of derivative documents until they weren't important anymore.
 
-The AI makes this failure mode sharper. It optimizes for the plan you give it. A clear, concise, _complete_ plan produces excellent work. A plan missing one key insight produces confident, clean, well-tested code built on the wrong foundation. Don't micromanage the implementation. But make damn sure the plan captures what matters.
+## One Document, Many Validators
 
-## The Right Detail, Not More Detail
+The fix isn't "write better plans." It's: **write one clear document and then spend the rest of your time validating it.**
 
-Five phases. Five plans. Five deploy-test-discover cycles. Each phase existed because the previous one was incomplete — not because it lacked detail, but because it lacked the _right_ detail. If I had written one comprehensive plan with the domain mapping front and center — dependencies, "role = group," API contract, implementation on the correct service, infrastructure, docs — the project compresses to three phases at most. One upfront plan with the right ten words beats five detailed plans that each discover what the last one missed.
+That one document is your domain map. Not a phase plan. Not a task list. A short, authoritative source of truth that says _what things are_, _what they're called_, and _which services own them_. The kind of document Evans would call a Ubiquitous Language spec. In my case, the ten words that would have saved 40% of the project: "A V2 role IS a V1 group — use the groups service."
 
-The pattern is the same one I keep writing about: **powerful tools require disciplined operators**. The AI's execution was never the problem. My preparation was.
+Then, instead of generating more plans from that document, point agents _at_ it as validators:
+
+- A **unit test agent** that writes tests against the domain map, not the implementation. "Does the roles endpoint call the groups service?"
+- A **conformance agent** that checks the implementation against your API conventions. "Does every response include the wrapping object, pagination, and filtering?"
+- A **UAT agent** that runs curl requests and verifies real responses against expected shapes. "Does the metadata come back populated?"
+
+Each of these agents is cheap. Each one catches a different class of drift. And critically, each one points _back_ at the source document rather than generating a new derivative of it. The document stays still. The validators orbit around it.
+
+This is the inversion that matters: don't use AI to generate more artifacts from your plan. Use AI to _validate_ the artifact you already have. More detail is not better than the right detail. One document and five validators beats five documents and zero validators every time.
+
+## The Pattern
+
+It's the same one I keep writing about: **powerful tools require disciplined operators**. The AI's execution was never the problem. The game of telephone I set up between my documents was.
+
+Write the domain map. Keep it short. Keep it authoritative. Then stop generating plans and start generating tests.
 
 # tl;dr
 
-Built a V2 API with AI over two days. Took five phases instead of three because a critical domain insight — "a role IS a group" — was discussed in chat but got lost across 2,500 lines of increasingly detailed phase plans. The AI asked the right question. I gave the right answer. Then we wrote five plans that forgot to mention it. More detail is not better than the right detail. Eric Evans described this in _Domain-Driven Design_ (2003): teams need a deliberate process to surface _and record_ knowledge that feels obvious to whoever holds it. Make sure the plan captures what matters.
+Built a V2 API with AI assistance. A critical domain insight — "a role IS a group" — was in my original PRD but got lost across five AI-generated plans, each more detailed and further from the source. The code was clean; it was just built on the wrong service. AI artifacts generated from AI artifacts lose signal fast. Eric Evans told us why in 2003: teams need a deliberate process to record knowledge that feels obvious. The fix: write one clear domain document and spend the rest of your time on validation agents — unit tests, conformance checks, UAT — that point back at the source instead of generating more derivatives from it.
 
 # Notes
 
 #### 1
 
-Eric Evans, _Domain-Driven Design: Tackling Complexity in the Heart of Software_ (2003). The book that coined "Ubiquitous Language" and "Bounded Context." His core methodology is a _process_ for extracting domain knowledge from the people who have it and encoding it where the whole team — or your AI agent — can use it. Twenty-three years old and more relevant than ever. Lindy approves.
+Eric Evans, _Domain-Driven Design: Tackling Complexity in the Heart of Software_ (2003). The book that coined "Ubiquitous Language" and "Bounded Context." His core methodology is a process for extracting domain knowledge from the people who have it and encoding it where the whole team — or your AI agent — can use it. Twenty-three years old and more relevant than ever. Lindy approves.
 
 #### 2
 
-Dr. John, "Right Place Wrong Time" (1973). A song about timing, miscommunication, and having all the right ingredients in all the wrong arrangements. Also a perfect description of a five-phase project plan.
+Dr. John, "Right Place Wrong Time" (1973). A song about timing, miscommunication, and having all the right ingredients in all the wrong arrangements. Also a perfect description of domain knowledge that gets surfaced in chat and buried in plans.
 
 </div>

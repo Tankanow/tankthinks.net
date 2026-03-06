@@ -24,15 +24,12 @@ Build a V2 public API exposing an existing capability. The V1 had been serving c
 
 ## What Happened
 
-I wrote a PRD. It was solid — domain mapping, endpoints, conventions, service dependencies. Then I handed it to an AI agent and asked it to generate a detailed implementation plan. That plan was good, so I asked for a more detailed plan for the first phase. That plan was good, so I asked for a more detailed plan for the next phase. Five phases, five plans, 2,500 lines of implementation steps.
+AI an I wrote a PRD together. Claude asked good questions. The PRD was solid — domain mapping, endpoints, conventions, service dependencies. Then I handed it to an AI agent for implementation. The AI agent discovered that our implementation required a few major version dependency upgrades. OK ... let's do that in a Phase 1 iteration _before_ the actual implementation, right? Whoops. AI generated 3 phases of implementation from our PRD. Each one inconveniently "forgot" important details from the PRD, for example:
+  
+  - **"A V2 role IS a V1 group — use the groups service."**
+  - **"Follow the V2 API Convention with Paginiation, Filtering, and Sorting"**
 
-Each plan was generated from the one before it. Each was more detailed than the last. And each was a little further from the original document that actually mattered.
-
-Here's the sentence that was in my PRD: **"A V2 role IS a V1 group — use the groups service."**
-
-Here's what Phase B's plan said: "Implement CRUD endpoints for roles." Eighteen steps. Not one mentioned the groups service.
-
-The AI built the V2 API by going directly to the roles data layer — a lower-level abstraction that touches one database table. It was the obvious choice _if you looked at the name_ ("roles API -> roles service"). But in our system, what the public API calls a "role" is what the internal system calls a "group." Same entity, different names, different services. The metadata lived on group entities. The access logic lived in the groups service. Two-plus years of battle-tested business logic, all bypassed.
+Here's what Phase B's plan said: "Implement CRUD endpoints for roles." Eighteen steps. Not one mentioned the important invariants captured in the PRD!
 
 I ran a few curl requests. Every metadata field came back null. Data access filters? Missing entirely. Structurally correct responses, full of nothing.
 
@@ -41,15 +38,15 @@ I ran a few curl requests. Every metadata field came back null. Data access filt
   <figcaption class="text-center text-sm mt-3 text-gray-600 dark:text-gray-200">Me, realizing the API was built on the wrong abstraction.</figcaption>
 </figure>
 
-Five phases when there should have been three. Not because the AI was bad — the code was clean, the tests passed, the commits were logical. Because the one sentence that mattered didn't survive the game of telephone I'd set up between my documents.
+Then we did 3 more Phases of cleanup work bridging the gap from implementation back to PRD.
+
+Five phases when there should have been three. Why?
 
 ## Signal Decay
 
-Here's the pattern: you write a document. You ask the AI to generate a more detailed document from it. You ask the AI to generate a more detailed document from _that_. Each generation is a lossy compression. Implementation detail goes up. Domain context goes down. By the third derivative, the AI is optimizing for the shape of the plan, not the shape of the problem.
+Here's the pattern: you write a document. You ask the AI to generate a more detailed document from it. AI spits out 2500 lines of implementation plan that is just as difficult to review as the code itself. Spaghetti Monster help you if you need to generate _another_ document from one of these detailed plans! Each generation is a lossy compression. Implementation detail goes up. Domain context goes down. By the third derivative, the AI is optimizing for the shape of the plan, not the shape of the problem.
 
-This is the same thing that happens when you photocopy a photocopy. Or when a meeting summary gets summarized into a status report that gets summarized into an executive briefing. Each step selects for what _looks_ like the right kind of detail and drops what doesn't fit the format. The critical insight — "a role is a group" — doesn't look like an implementation step, so it doesn't survive.
-
-As Dr. John put it: "I been in the right place, but it must have been the wrong time."[^2] The knowledge was surfaced at the right moment. The AI actually _asked me_ about the domain mapping during planning. I answered correctly. Then we generated five plans that forgot to mention it.
+As Dr. John put it: "I'd have said the right thing, but I must have used the wrong line."[^2] The knowledge was there. The AI actually _asked me_ about the domain mapping during planning. I answered correctly. Then we generated detailed implementation plans that forgot to mention it.
 
 Eric Evans described this problem twenty-three years ago in _Domain-Driven Design_.[^1] His central insight isn't "understand your domain" — any competent engineer does that. It's that teams need a deliberate process to surface and _record_ knowledge that feels obvious to whoever holds it. He called it _Ubiquitous Language_: a shared vocabulary, written down and enforced, that keeps code aligned with reality. Evans' whole methodology exists because the instinct — _surely everyone knows this_ — is reliably wrong. AI makes it worse, because the AI _did_ know it, briefly, in one conversation, before burying it under 2,500 lines of generated plans.
 
@@ -79,7 +76,7 @@ Write the domain map. Keep it short. Keep it authoritative. Then stop generating
 
 # tl;dr
 
-Built a V2 API with AI assistance. A critical domain insight — "a role IS a group" — was in my original PRD but got lost across five AI-generated plans, each more detailed and further from the source. The code was clean; it was just built on the wrong service. AI artifacts generated from AI artifacts lose signal fast. Eric Evans told us why in 2003: teams need a deliberate process to record knowledge that feels obvious. The fix: write one clear domain document and spend the rest of your time on validation agents — unit tests, conformance checks, UAT — that point back at the source instead of generating more derivatives from it.
+Built a V2 API with AI assistance. A critical domain insight — "a role IS a group" — was in my original PRD but got lost across five AI-generated plans, each more detailed, further from the source, and harder to review. The code was clean; it was just built on the wrong service. AI artifacts generated from AI artifacts lose signal fast. Eric Evans told us why in 2003: teams need a deliberate process to record knowledge that feels obvious. The fix: write one clear domain document and spend the rest of your time on validation agents — unit tests, conformance checks, UAT — that point back at the source instead of generating more derivatives from it.
 
 # Notes
 

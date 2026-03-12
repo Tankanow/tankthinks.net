@@ -1,8 +1,8 @@
 ---
 layout: single.njk
-metaTitle: Resume — Adam Tankanow
+metaTitle: Experience — Adam Tankanow
 metaDescription: Founding engineer. Nine years. Zero to 270k lines of code. Strong beliefs, loosely held.
-title: Resume
+title: Experience
 description: I'm not looking for a job. I just believe in writing things down.
 featuredImg:
 templateEngineOverride: njk,md
@@ -10,7 +10,7 @@ templateEngineOverride: njk,md
 
 <div class="col-start-3 col-end-9">
 
-# Resume
+# Experience
 
 I'm not looking for a job. But one of my [first principles](/about/) is _Write Things Down_ — you won't remember tomorrow. My last resume was from October 2015. That's a decade of unwritten things. Time to fix that.
 
@@ -87,7 +87,7 @@ This is the part that matters. Not a job description — an honest accounting.
 
 ## What I Learned
 
-These aren't resume bullets. These are first principles earned over nine years, not inherited. I got most of them wrong at least once before I got them right.
+These aren't bullet points for a recruiter. These are first principles earned over nine years, not inherited. I got most of them wrong at least once before I got them right.
 
 - **Code is liability.** Write less of it whenever possible.
 - **Understand the domain.** The best code is the code that most clearly represents domain rules. If you don't understand the business, your abstractions are fiction.
@@ -107,6 +107,18 @@ After building a platform from zero, watching it scale, making every category of
 The strongest one: the hard part was never the code. It was understanding what to build, convincing people it mattered, and then writing it down so the next person didn't have to learn it the hard way.
 
 I'm a natural Learner, Cultivator, Connector, and Arranger. My superpower is connecting people — to ideas, to each other, to the thing they didn't know they needed to read. If you've gotten this far, we should probably talk.
+
+---
+
+## If You're Hiring
+
+I'm not actively looking — I'm still building at CloudZero and I'm not done yet. But I've advised startups in the Boston VC community on architecture, hiring, and engineering culture, and I'm always open to interesting conversations. If you're solving a hard problem and want a second opinion, I like those calls.
+
+If you _are_ recruiting and think there's a fit worth exploring, I'm flattered. Just know: if your interview process includes me live-coding a leetcode problem on a whiteboard (virtual or physical), come prepared to explain why that matters — especially to your business value. I've spent nine years solving real problems in production systems with real customers and real consequences. I'm happy to show you that work. I'm less interested in proving I can reverse a linked list under fluorescent lighting. Unless it's Clojure — I'm almost always happy to write Clojure — even in service of an increasingly Byzantine hiring practice.
+
+Strong belief, loosely held.
+
+If your applicant tracking system requires a PDF instead of a URL, [here you go](/static/adam-tankanow-experience.pdf).
 
 ---
 

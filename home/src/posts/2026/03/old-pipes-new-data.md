@@ -8,6 +8,7 @@ subHeading: "What an AI Hackathon Taught Me About First Principles"
 tags: ['ai', 'architecture', 'founding-engineer', 'devaiops', 'first-principles']
 date: 2026-03-12
 published: true
+featuredImg: https://res.cloudinary.com/ddkpjnidm/image/upload/v1773704773/tankthinks.net/old-pipes-new-data_i9pn7i.gif
 ---
 
 <div class="col-start-3 col-end-9">

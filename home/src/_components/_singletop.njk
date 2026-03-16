@@ -53,7 +53,11 @@
         <p class="mt-6 text-xl font-xl dark:text-gray-300">{{ description }}</p>
       </div>
       {% if featuredImg %}
+        {% if featuredImg.startsWith('http') %}
+          <img class="mt-6 col-span-full lg:col-start-3 lg:col-end-9 mx-auto mb-5" src="{{ featuredImg }}" alt="{{ title }}">
+        {% else %}
           {% respimg featuredImg, title, 'mt-6 col-span-full lg:col-start-2 lg:col-end-10 w-full mb-5' %}
+        {% endif %}
       {% endif %}
       {% include './_postmeta.njk' %}
     </div>

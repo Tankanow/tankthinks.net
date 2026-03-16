@@ -24,7 +24,7 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addShortcode('respimg', (path, alt, style) => {
 		const fetchBase = `https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/image/upload/`
-		const src = `${fetchBase}q_auto,f_auto,w_400/${path}.${eleventyConfig.format}`
+		const src = `${fetchBase}q_auto,f_auto,w_400/tankthinks.net/${path}.${eleventyConfig.format}`
 		const srcset = eleventyConfig.srcsetWidths
 			.map(({ w, v }) => {
 				return `${fetchBase}dpr_auto,q_auto,w_${w}/tankthinks.net/${path}.${eleventyConfig.format} ${v}w`
@@ -33,9 +33,9 @@ module.exports = function (eleventyConfig) {
 
 		return `<img class="${
 			style ? style : ''
-		}" loading="lazy" src="${src}" srcset="${srcset}" alt="${
+		}" src="${src}" srcset="${srcset}" alt="${
 			alt ? alt : ''
-		}" width="400" height="300" sizes="100vw">`
+		}" sizes="100vw">`
 	})
 
 	eleventyConfig.addShortcode('respsvg', (src, alt, style) => {
@@ -48,7 +48,7 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addShortcode('figure', (path, alt, caption) => {
 		const fetchBase = `https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/image/upload/`
-		const src = `${fetchBase}q_auto,f_auto,w_400/${path}.${eleventyConfig.format}`
+		const src = `${fetchBase}q_auto,f_auto,w_400/tankthinks.net/${path}.${eleventyConfig.format}`
 		const srcset = eleventyConfig.srcsetWidths
 			.map(({ w, v }) => {
 				return `${fetchBase}dpr_auto,q_auto,w_${w}/tankthinks.net/${path}.${eleventyConfig.format} ${v}w`

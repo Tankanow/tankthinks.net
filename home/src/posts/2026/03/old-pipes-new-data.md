@@ -14,7 +14,7 @@ published: true
 
 # Old Pipes, New Data
 
-Ten engineers. Three days. One goal: build a system that captures costs across the entire organization, in real time. Every person on the team ran with an AI coding assistant with many agents.
+Ten engineers. Three days. One goal: build a system that captures costs across the entire organization, in real time. Every person on the team ran with an AI coding assistant running multiple agents.
 
 I've written about [what happens when AI-assisted development goes well and when it doesn't](/posts/2026/02/vibe-coding-joy-and-regret/), and about [what happens when AI artifacts compound into signal loss](/posts/2026/03/more-wonder-and-woe-with-ai/). Those were solo field reports — one person, one day, one lesson. This is the version at scale: ten people, three days, a system spanning multiple repos and services, and a hard demo deadline. What holds up? What breaks? And which ideas — some of them decades old — predicted the answers?
 
@@ -31,7 +31,7 @@ The numbers tell the joy story on their own: AI scaffolded entire subsystems, ra
 
 ## What AI Hindered
 
-Eleven bug fix commits tell the real story — AI-generated code that compiled, passed lint, and looked structurally correct, but broke at runtime or under real data. That 908-line Flink app — it satisfied the Java compiler but failed on missing JARs and undefined methods; an IoT credential policy was syntactically valid but missing a business-rule prefix, silently killing every MQTT connection; two rewrites totaling 3,400+ lines were admissions that AI had optimized for the shape of the plan, not the shape of the problem — [signal decay](/posts/2026/03/more-wonder-and-woe-with-ai/) at hackathon speed. The pattern underneath all of it: when you're moving fast, you review less, and AI's confident mistakes compound.
+Eleven bug fix commits tell the real story — AI-generated code that compiled, passed lint, and looked structurally correct, but broke at runtime or under real data. That 908-line Flink app — it satisfied the Java compiler but failed on missing JARs and undefined methods; an IoT credential policy was syntactically valid but missing a business-rule prefix, silently killing every MQTT connection; two rewrites totaling 3,400+ lines were admissions that AI had optimized for the shape of the plan, not the shape of the problem — [signal decay](/posts/2026/03/more-wonder-and-woe-with-ai/) at hackathon speed. The pattern underneath all of it: when you're moving fast, you review less, and AI's confident mistakes compound.
 
 ## Three Old Ideas
 
@@ -43,9 +43,9 @@ Here's where it gets interesting. The hackathon surfaced three ideas, each older
 
 This is the biggie.
 
-The system architecture mirrored the team structure exactly. 5 2-person teams with one or two subsystems per team. Guess where the interfaces in the architecture were. The interfaces between systems — stream contracts, API specifications, event schemas — were the coordination points. And those coordination points still need design and ... teamwork. Whether or not you think AI can do this coordination in the future, the point is that communication and coordination is *important*. Even a 1M Token Context Window cannot hold your entire system design. Humans and AI need to coordinate. Those coordinations become important interfaces. 
+The system architecture mirrored the team structure exactly. 5 2-person teams with one or two subsystems per team. Guess where the interfaces in the architecture were. The interfaces between systems — stream contracts, API specifications, event schemas — were the coordination points. And those coordination points still need design — and teamwork. Whether or not you think AI can do this coordination in the future, the point is that communication and coordination is *important*. Even a 1M Token Context Window cannot hold your entire system design. Humans and AI need to coordinate. Those coordination points become important interfaces.
 
-AI - like a human - excelled _within_ a bounded context. Give it one repo, one service, one well-defined problem, and it produced. But everyone needs a bridge when crossing a chasm.
+AI — like a human — excelled _within_ a bounded context. Give it one repo, one service, one well-defined problem, and it produced. But everyone needs a bridge when crossing a chasm.
 
 Conway told us this fifty-nine years ago: the hard part is the seams, not the components.
 

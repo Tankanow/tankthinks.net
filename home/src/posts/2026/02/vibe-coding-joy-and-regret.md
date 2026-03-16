@@ -76,7 +76,7 @@ The most valuable moment of my day was the 30 seconds I spent asking "wait, why 
 
 Be very careful expanding scope.
 
-This isn't an AI lesson. It's a project management lesson that predates AI by decades. Teams of humans have always burned exponential time on "just one more thing." Fred Brooks called it the [Second-System Effect](https://en.wikipedia.org/wiki/Second-system_effect) in 1975.[^1] The first system works because constraints force simplicity. The second system collapses under the weight of every feature you wished you'd built the first time around.
+This isn't an AI lesson. It's a project management lesson that predates AI by decades. Teams of humans have always burned exponential time on "just one more thing." Fred Brooks called it the [Second-System Effect](https://en.wikipedia.org/wiki/Second-system_effect) in 1975.[<sup>1</sup>](#1) The first system works because constraints force simplicity. The second system collapses under the weight of every feature you wished you'd built the first time around.
 
 AI's initial implementation — the first system — gives you the confidence that you can quickly add all the things.
 

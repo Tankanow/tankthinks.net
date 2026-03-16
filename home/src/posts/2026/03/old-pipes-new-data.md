@@ -39,7 +39,7 @@ Here's where it gets interesting. The hackathon surfaced three ideas, each older
 
 ### Conway's Law (1967)
 
-"Organizations which design systems are constrained to produce designs which are copies of the communication structures of those organizations."[^1]
+"Organizations which design systems are constrained to produce designs which are copies of the communication structures of those organizations."[<sup>1</sup>](#1)
 
 This is the biggie.
 
@@ -51,7 +51,7 @@ Conway told us this fifty-nine years ago: the hard part is the seams, not the co
 
 ### Build-Measure-Learn (2011)
 
-Eric Ries formalized the Build-Measure-Learn loop in _The Lean Startup_, but the idea descends from Toyota's lean manufacturing principles in the 1950s.[^2] The insight is directional: you build in order to measure, and you measure in order to learn. Build is not the goal. Learning is.
+Eric Ries formalized the Build-Measure-Learn loop in _The Lean Startup_, but the idea descends from Toyota's lean manufacturing principles in the 1950s.[<sup>2</sup>](#2) The insight is directional: you build in order to measure, and you measure in order to learn. Build is not the goal. Learning is.
 
 AI compressed "Build" so dramatically that the bottleneck shifted to "Measure" and "Learn." The eleven bug fix commits, the 1,800-line rewrites — those are evidence of the team building faster than it could validate. Ninety-five thousand lines of code is a vanity metric. The question is how many survived first contact with production. The bug fixes _are_ the validated learning.
 
@@ -61,7 +61,7 @@ I can't stress this enough. When build is nearly free, measurement is *even more
 
 ### The Lindy Effect
 
-The patterns that held up under hackathon pressure — streaming pipelines, pub/sub messaging, fail-open contracts, event envelopes — are all forty to fifty years old. The hackathon didn't invent architecture. It stress-tested which old ideas still work when you're moving at AI speed. Every one of them was [Lindy](/posts/2023/08/first-principles-3-lindy/).[^3]
+The patterns that held up under hackathon pressure — streaming pipelines, pub/sub messaging, fail-open contracts, event envelopes — are all forty to fifty years old. The hackathon didn't invent architecture. It stress-tested which old ideas still work when you're moving at AI speed. Every one of them was [Lindy](/posts/2023/08/first-principles-3-lindy/).[<sup>3</sup>](#3)
 
 No one proposed a novel data structure. No one invented a new messaging paradigm. Under time pressure, we reached for the patterns that have survived decades of production use. AI accelerated the implementation of those patterns, but it didn't replace the judgment that selected them.
 

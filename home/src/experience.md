@@ -114,7 +114,7 @@ I'm a natural Learner, Cultivator, Connector, and Arranger. My superpower is con
 
 I'm not actively looking — I'm still building at CloudZero and I'm not done yet. But I've advised startups in the Boston VC community on architecture, hiring, and engineering culture, and I'm always open to interesting conversations. If you're solving a hard problem and want a second opinion, I like those calls.
 
-If you _are_ recruiting and think there's a fit worth exploring, I'm flattered. Just know: if your interview process includes me live-coding a leetcode problem on a whiteboard (virtual or physical), come prepared to explain why that matters — especially to your business value. I've spent nine years solving real problems in production systems with real customers and real consequences. I'm happy to show you that work. I'm less interested in proving I can reverse a linked list under fluorescent lighting. Unless it's Clojure — I'm almost always happy to write Clojure — even in service of an increasingly Byzantine hiring practice.
+If you _are_ recruiting and think there's a fit worth exploring, I'm flattered. Just know: if your interview process includes me live-coding a leetcode problem on a whiteboard (virtual or physical), come prepared to explain why that matters — especially to your business value. I've spent over twenty years solving real problems in production systems with real customers and real consequences. I'm happy to show you that work. I'm less interested in proving I can reverse a linked list under fluorescent lighting. Unless it's Clojure — I'm almost always happy to write Clojure — even in service of an increasingly Byzantine hiring practice.
 
 Strong belief, loosely held.
 

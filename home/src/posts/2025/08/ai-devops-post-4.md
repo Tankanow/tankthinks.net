@@ -4,7 +4,7 @@ metaTitle: DevAIOps - A Call to Action for the Heroes Among Us
 metaDescription: Why we need to stop the AI hype insanity and build real systems
 title: DevAIOps - A Call to Action for the Heroes Among Us
 description: Why we need to stop the AI hype insanity and build real systems
-featuredImg:
+featuredImg: https://res.cloudinary.com/ddkpjnidm/image/upload/v1774957903/tankthinks.net/fry-summer-ham_m0lcxq.jpg
 subHeading: Stop the Insanity, Start Building Systems
 tags: ['ai', 'devops', 'founding-engineer', 'devaiops']
 date: 2025-07-28

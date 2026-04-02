@@ -55,6 +55,26 @@ Resources:
   # S3 END
 
   # CloudFront START
+  UrlRewriteFunction:
+    Type: AWS::CloudFront::Function
+    Properties:
+      Name: !Sub '${AWS::StackName}-url-rewrite'
+      AutoPublish: true
+      FunctionCode: |
+        function handler(event) {
+            var request = event.request;
+            var uri = request.uri;
+            if (uri.endsWith('/')) {
+                request.uri += 'index.html';
+            } else if (!uri.includes('.')) {
+                request.uri += '/index.html';
+            }
+            return request;
+        }
+      FunctionConfig:
+        Comment: !Sub 'Rewrite URLs to append index.html for ${Domain}'
+        Runtime: cloudfront-js-2.0
+
   WebsiteBucketOAI:
     Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
     Properties:
@@ -107,6 +127,9 @@ Resources:
               - HEAD
               - GET
             CachePolicyId: !GetAtt DefaultCachePolicy.Id
+            FunctionAssociations:
+              - EventType: viewer-request
+                FunctionARN: !GetAtt UrlRewriteFunction.FunctionARN
         DefaultCacheBehavior:
           CachePolicyId: !GetAtt DefaultCachePolicy.Id
           AllowedMethods:
@@ -118,6 +141,9 @@ Resources:
             - GET
           TargetOriginId: WebsiteBucket
           ViewerProtocolPolicy: redirect-to-https
+          FunctionAssociations:
+            - EventType: viewer-request
+              FunctionARN: !GetAtt UrlRewriteFunction.FunctionARN
         ViewerCertificate:
           AcmCertificateArn: !Ref Certificate
           SslSupportMethod: 'sni-only'
